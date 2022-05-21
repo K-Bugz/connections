@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Input, Menu, Dropdown, Image } from 'semantic-ui-react'
+import { Input, Menu, Image } from 'semantic-ui-react'
+// import Dropdownmenu from '../../pages/dropdown'
 
 export default class NavBar extends Component {
   state = { activeItem: 'home' }
@@ -8,11 +9,11 @@ export default class NavBar extends Component {
 
   render() {
     const { activeItem } = this.state
-    const options = [
-        { key: 1, text: 'Profile', value: 1 },
-        { key: 2, text: 'My Account', value: 2 },
-        { key: 3, text: 'Choice 3', value: 3 },
-      ]
+    // const options = [
+    //   { key: 1, text: 'Choice 1', value: 1 },
+    //   { key: 2, text: 'Choice 2', value: 2 },
+    //   { key: 3, text: 'Choice 3', value: 3 },
+    // ]
     return (
       <Menu secondary>
         <Menu.Item
@@ -39,7 +40,10 @@ export default class NavBar extends Component {
             active={activeItem === 'logout'}
             onClick={this.handleItemClick}
           />
-           <Dropdown clearable options={options} selection />
+           {/* <Menu compact>
+    <Dropdown text='Dropdown' options={options} simple item />
+  </Menu> */}
+  {/* <Dropdownmenu/> */}
            <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' avatar />
     <span>Username</span>
         </Menu.Menu>

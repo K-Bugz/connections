@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { Container } from "semantic-ui-react";
 import NavBar from "./components/navbar/Navbar"
 
+
 const App = ({ children }) => (
   <Container style={{ margin: 20 }}>
     {/*  */}
