@@ -14,7 +14,7 @@ const navigation = [
   { name: 'Dashboard', href: '#', current: true },
   { name: 'Connect', href: '#', current: false },
   { name: 'Jobs', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
+  { name: 'Profile', href: '/Profile', current: false },
   { name: 'Register', href: '#', current: false },
   { name: 'Login', href: '#', current: false },
 ]
@@ -47,11 +47,13 @@ export default function Navbar() {
                 <div className="flex items-center justify-between h-16">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
-                      <img
-                        className="h-11 w-100"
-                        src={logo}
-                        alt="Workflow"
-                      />
+                      <a href="/">
+                        <img
+                          className="h-11 w-100"
+                          src={logo}
+                          alt="Workflow"
+                        />
+                      </a>
                     </div>
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
