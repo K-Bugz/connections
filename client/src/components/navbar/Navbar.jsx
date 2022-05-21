@@ -1,4 +1,4 @@
-import logo from '../../assets/Connected.png';
+import logo from '../../assets/connectedPurple.png';
 
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
@@ -48,7 +48,7 @@ export default function Navbar() {
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
                       <img
-                        className="h-10 w-100"
+                        className="h-11 w-100"
                         src={logo}
                         alt="Workflow"
                       />
@@ -187,20 +187,20 @@ export default function Navbar() {
           )}
         </Disclosure>
 
-        <header className="bg-white shadow">
+        {/* <header className="bg-white shadow">
           <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
             <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
           </div>
-        </header>
-        <main>
+        </header> */}
+        {/* <main>
           <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-            {/* Replace with your content */}
+           
             <div className="px-4 py-6 sm:px-0">
               <div className="border-4 border-dashed border-gray-200 rounded-lg h-96" />
             </div>
-            {/* /End replace */}
+            
           </div>
-        </main>
+        </main> */}
       </div>
     </>
   )
