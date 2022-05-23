@@ -1,3 +1,4 @@
+import React from 'react';
 import Header from '../components/register/Header';
 import Signup from '../components/register/Signup';
 
