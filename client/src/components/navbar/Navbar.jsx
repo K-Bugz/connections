@@ -4,6 +4,7 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 
+
 const user = {
   name: 'Tom Cook',
   email: 'tom@example.com',
@@ -11,12 +12,12 @@ const user = {
     'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
+  { name: 'Dashboard', href: '/Dashboard', current: true },
   { name: 'Connect', href: '#', current: false },
   { name: 'Jobs', href: '#', current: false },
   { name: 'Calendar', href: '#', current: false },
   { name: 'Register', href: '#', current: false },
-  { name: 'Login', href: '#', current: false },
+  { name: 'Login', href: '/Login', current: true },
 ]
 const userNavigation = [
   { name: 'Your Profile', href: '#' },
