@@ -11,6 +11,7 @@ import SignupPage from './pages/Signup';
 import LoginPage from './pages/Login';
 import ProfilePage from './components/profile/Profile';
 import ProfileCard from './components/profile/ProfileCard';
+import Dashboard from './pages/Dashboard'
 
 function App() {
 // const[state] = displayDashboard
@@ -25,6 +26,7 @@ function App() {
           <Route path='/signup' element={<SignupPage />} />
           <Route path='/profile' element={<ProfilePage />} />
           <Route path='/profiledetail' element={<ProfileCard />} />
+          <Route path='/Dashboard' element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
     </React.Fragment>
