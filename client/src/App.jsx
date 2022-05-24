@@ -5,25 +5,26 @@ import {
   BrowserRouter,
   Routes,
   Route,
-} from "react-router-dom";
+} from 'react-router-dom';
 import SignupPage from './pages/Signup';
 import LoginPage from './pages/Login';
 import ProfilePage from './components/profile/Profile';
-
+import ProfileCard from './components/profile/ProfileCard';
 
 function App() {
   return (
-    <div>
+    <React.Fragment>
       <Navbar>
       </Navbar>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LoginPage />} />
-          <Route path="/signup" element={<SignupPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
+          <Route path='/' element={<LoginPage />} />
+          <Route path='/signup' element={<SignupPage />} />
+          <Route path='/profile' element={<ProfilePage />} />
+          <Route path='/profiledetail' element={<ProfileCard />} />
         </Routes>
       </BrowserRouter>
-    </div>
+    </React.Fragment>
   );
 }
 

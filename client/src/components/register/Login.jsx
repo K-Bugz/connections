@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { loginFields } from "../../constants/formFields";
-import FormAction from "./FormAction";
-import FormExtra from "./FormExtra";
-import Input from "./Input";
+import { loginFields } from '../../constants/formFields';
+import FormAction from './FormAction';
+import FormExtra from './FormExtra';
+import Input from './Input';
 
 const fields = loginFields;
 let fieldsState = {};
@@ -46,10 +46,10 @@ export default function Login() {
 
 
     return (
-        <div className="min-h-min flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-md w-full space-y-8">
-                <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-                    <div className="-space-y-px">
+        <div className='min-h-min flex justify-center py-0 px-4 sm:px-6 lg:px-8'>
+            <div className='max-w-md w-full space-y-6'>
+                <form className='mt-0 space-y-6' onSubmit={handleSubmit}>
+                    <div className='-space-y-px'>
                         {
                             fields.map(field =>
                                 <Input
@@ -68,7 +68,7 @@ export default function Login() {
                         }
                     </div>
                     <FormExtra />
-                    <FormAction handleSubmit={handleSubmit} text="Login" />
+                    <FormAction handleSubmit={handleSubmit} text='Login' />
                 </form>
             </div>
         </div>

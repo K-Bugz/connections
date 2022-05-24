@@ -9,11 +9,14 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
-
+    title: String
+    about: String
+    website: String
   }
 
   type Jobpost {
     _id: ID
+    jobtitle: String
     username: String
     createdAt: String
   }
