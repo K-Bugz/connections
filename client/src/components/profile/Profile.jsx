@@ -1,8 +1,11 @@
 import React from 'react';
 import { PaperClipIcon } from '@heroicons/react/solid'
+import Navbar from '../../components/navbar/Navbar';
 
 export default function Profile() {
     return (
+        <React.Fragment>
+        <Navbar></Navbar>
         <div className='bg-gray-100'>
             <div className='min-h-full flex justify-center px-4'>
                 <div className='max-w-2xl mt-6 w-full space-y-6'>
@@ -29,7 +32,7 @@ export default function Profile() {
                                                             name='Username'
                                                             id='Username'
                                                             className=''
-                                                            placeholder='Bill Gates'
+                                                            placeholder='Ada Lovelace'
                                                         />
                                                     </span>
                                                 </div>
@@ -332,5 +335,6 @@ export default function Profile() {
                 </div>
             </div> */}
         </div>
+    </React.Fragment>
     )
 }

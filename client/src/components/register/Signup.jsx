@@ -4,6 +4,7 @@ import { signupFields } from '../../constants/formFields'
 import FormAction from './FormAction';
 import Input from './Input';
 
+
 const fields = signupFields;
 let fieldsState = {};
 
@@ -26,6 +27,7 @@ export default function Signup() {
   }
 
   return (
+    <React.Fragment>
     <div className='min-h-min flex justify-center py-0 px-4 sm:px-6 lg:px-8'>
       <div className='max-w-md w-full space-y-8'>
         <form className='mt-8 space-y-6' onSubmit={handleSubmit}>
@@ -51,5 +53,6 @@ export default function Signup() {
         </form>
       </div>
     </div >
+    </React.Fragment>
   )
 }
