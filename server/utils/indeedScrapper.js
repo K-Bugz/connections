@@ -1,8 +1,8 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-async function linkedInScraper(nameOfCity) {
-    let url = `const url = "https://www.indeed.com/jobs?q=fullstack%20developer&l=${nameOfCity}&vjk=78c74011e4b1caaa";`;
+async function indeedScraper(nameOfCity) {
+    let url = `https://www.indeed.com/jobs?q=fullstack+developer&${nameOfCity}`;
 
     try {
         // Fetch HTML of the page we want to scrape
@@ -26,20 +26,19 @@ async function linkedInScraper(nameOfCity) {
             let title = $(el).find('.jobTitle').text().replace(/\s\s+/g, '');
             // get the href attribute of the 'a' element in each li
             // const link = $(el).find('.base-card__full-link').attr('href');
-            const link = $(el).find('.jcs-JobTitle').attr('href');
+            const link = 'https://www.indeed.com' + $(el).find('.jcs-JobTitle').attr('href');
             const company = $(el).find('.companyName').text().replace(/\s\s+/g, '');
             const location = $(el).find('.companyLocation').text().replace(/\s\s+/g, '');
-            const timePosted = $(el).find('.date').text().replace(/\s\s+/g, '');
+            const timePosted = $(el).find('.date').text().replace(/\s\s+/g, '').replace(/Posted/g, 'Posted ').replace(/EmployerActive/g, 'Employer Active');
             // save scraped data to post object
             post.title = title;
             post.link = link;
             post.company = company;
             post.location = location;
             post.timePosted = timePosted;
-            console.log(post);
             // add post object to the array
             if (post.title) {
-                jobs.push(post);
+                jobposts.push(post);
             }
         });
 
@@ -52,4 +51,4 @@ async function linkedInScraper(nameOfCity) {
     }
 }
 
-module.exports = IndeedScraper;
+module.exports = indeedScraper;
