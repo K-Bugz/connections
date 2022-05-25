@@ -37,12 +37,12 @@ const userSchema = new Schema(
             type: String,
             required: false,
         },
-        CoverPhoto: { // here 
+        coverPhoto: { // here 
             type: String,
             required: false,
         },
         resume: {
-            type: string,
+            type: String,
             required: false,
         },
         password: {
@@ -63,7 +63,7 @@ const userSchema = new Schema(
                 ref: 'Message'
             }
         ],
-        connections: [ // connections is jobs
+        connections: [ // connections is the saved jobs
             {
                 type: Schema.Types.ObjectId,
                 ref: 'Jobpost'
@@ -82,7 +82,6 @@ userSchema.pre('save', async function (next) {
         const saltRounds = 10;
         this.password = await bcrypt.hash(this.password, saltRounds);
     }
-
     next();
 });
 
@@ -98,6 +97,6 @@ userSchema.virtual('connectionsCount').get(function () {
     return this.connections.length;
 })
 
-const User = model('User', userSchema);
+const User = model('User', userSchema); // the first parameter is how we reference to as ref!!!
 
 module.exports = User;

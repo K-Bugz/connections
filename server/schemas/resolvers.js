@@ -13,9 +13,13 @@ const resolvers = {
         user: async (parent, { username }) => { // get a user by username
             return User.findOne({ username })
                 .select('-__v -password') // omitting this data from the search
-                .populate()
-                .populate()
+                .populate('messages') // populate this users messages
+                .populate('connections')
         },
+        messages: async (parent, { username }) => {
+            const params = username ? { username } : {};
+            return Message.find(params).sort({ createdAt: -1 });
+        }
     }
 };
 

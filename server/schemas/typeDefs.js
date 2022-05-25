@@ -17,7 +17,7 @@ const typeDefs = gql`
     resume: String
   }
 
-  type Jobpost {
+  type JobPost {
     _id: ID
     title: String
     link: String
@@ -28,8 +28,18 @@ const typeDefs = gql`
 
   type Message {
     _id: ID
+    sender: String
+    reciever: String
     messageText: String
     createdAt: String
+    reply: [Reply]
+  }
+
+  type Reply {
+    _id: ID
+    reactionBody: String
+    createdAt: String
+    senderUserName: String
   }
 
   type Auth {
@@ -43,13 +53,11 @@ const typeDefs = gql`
   type Query {
     me: User
     users: [User]
+    messeges(userName: _id!): Message
     user(username: String!): User
     jobposts(username: String!): JobPost
   }
   
-  type Mutation {
-    
-  }
 `;
 
 // exporting
