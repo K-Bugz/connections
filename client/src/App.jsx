@@ -12,8 +12,16 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
+import SignupPage from './pages/Signup';
+import LoginPage from './pages/Login';
+import ProfilePage from './components/profile/Profile';
+import ProfileCard from './components/profile/ProfileCard';
+import Dashboard from './pages/Dashboard'
+import Messages from './pages/Messages'
 
 function App() {
+// const[state] = displayDashboard
+  
   return (
     <React.Fragment>
       <BrowserRouter>
@@ -23,7 +31,8 @@ function App() {
           <Route path='/signup' element={<SignupPage />} />
           <Route path='/profile' element={<ProfilePage />} />
           <Route path='/profiledetail' element={<ProfileCard />} />
-          <Route path='/map' element={< Map />} />
+          <Route path='/Dashboard' element={<Dashboard />} />
+          <Route path='/Messages' element={<Messages />} />
         </Routes>
       </BrowserRouter>
     </React.Fragment>

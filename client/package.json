@@ -4,18 +4,29 @@
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.6.4",
+    "@fullcalendar/core": "^5.11.0",
+    "@fullcalendar/daygrid": "^5.11.0",
+    "@fullcalendar/interaction": "^5.11.0",
+    "@fullcalendar/list": "^5.11.0",
+    "@fullcalendar/react": "^5.11.1",
+    "@fullcalendar/timegrid": "^5.11.0",
     "@headlessui/react": "^1.6.2",
     "@heroicons/react": "^1.0.6",
     "@react-google-maps/api": "^2.11.8",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.27.2",
     "graphql": "^16.5.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+<<<<<<< HEAD
     "styled-components": "^5.3.5",
+=======
+    "reactstrap": "^9.0.2",
+>>>>>>> feature/dashboard
     "web-vitals": "^2.1.4"
   },
   "scripts": {
