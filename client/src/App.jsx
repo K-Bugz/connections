@@ -12,6 +12,7 @@ import LoginPage from './pages/Login';
 import ProfilePage from './components/profile/Profile';
 import ProfileCard from './components/profile/ProfileCard';
 import Dashboard from './pages/Dashboard'
+import Messages from './pages/Messages'
 
 function App() {
 // const[state] = displayDashboard
@@ -27,6 +28,7 @@ function App() {
           <Route path='/profile' element={<ProfilePage />} />
           <Route path='/profiledetail' element={<ProfileCard />} />
           <Route path='/Dashboard' element={<Dashboard />} />
+          <Route path='/Messages' element={<Messages />} />
         </Routes>
       </BrowserRouter>
     </React.Fragment>
