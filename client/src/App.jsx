@@ -5,6 +5,7 @@ import SignupPage from './pages/Signup';
 import LoginPage from './pages/Login';
 import ProfilePage from './components/profile/Profile';
 import ProfileCard from './components/profile/ProfileCard';
+import Map from './components/googlemaps/Map';
 import Main from './pages/Main';
 import {
   BrowserRouter,
@@ -22,6 +23,7 @@ function App() {
           <Route path='/signup' element={<SignupPage />} />
           <Route path='/profile' element={<ProfilePage />} />
           <Route path='/profiledetail' element={<ProfileCard />} />
+          <Route path='/map' element={< Map />} />
         </Routes>
       </BrowserRouter>
     </React.Fragment>

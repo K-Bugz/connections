@@ -6,6 +6,7 @@
     "@apollo/client": "^3.6.4",
     "@headlessui/react": "^1.6.2",
     "@heroicons/react": "^1.0.6",
+    "@react-google-maps/api": "^2.11.8",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
