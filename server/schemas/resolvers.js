@@ -9,9 +9,18 @@ const resolvers = {
                 .select('-__v -password')
                 .populate('friends');
         },
+    },
+    Mutation: {
+        addUser: async (parent, args) => {
+            // created user with args as data
+            const user = await User.create(args);
+
+            // const token = signToken(user);
+            // return { user, token };
+
+            return user;
+        }
     }
-
-
 };
 
 module.exports = resolvers;
