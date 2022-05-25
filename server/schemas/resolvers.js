@@ -45,6 +45,21 @@ const resolvers = {
             const token = signToken(user)
             return { token, user };
         },
+        addMessage: async (parent, args, context) => {
+            // if context is logged in
+            if (context.user) {
+                const message = await Message.create({ ...args, username: context.user.username });
+
+                await User.findByIdAndUpdate(
+                    { _id: context.user._id },
+                    { $push: { messages: message._id } },
+                    { new: true },
+                );
+
+                return message;
+            }
+            throw new AuthenticationError('You need to be logged in!!!');
+        }
     }
 };
 
