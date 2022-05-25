@@ -14,7 +14,6 @@ const resolvers = {
 
                 return userData;
             }
-
             throw new AuthenticationError('Not logged in');
         },
         // find all users
