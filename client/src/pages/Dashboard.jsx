@@ -1,11 +1,15 @@
 import "./pages.styles/Dashboard.css";
+import React from 'react';
 import Calendario from "./Calender";
+import Navbar from '../components/navbar/Navbar';
 
 
 
 export default function Dashboard() {
     
   return (
+    <React.Fragment>
+    <Navbar></Navbar>
     <main class="bg-gray-100 dark:bg-gray-800  h-screen overflow-hidden relative">
       <div class="flex items-start justify-between">
         <div class="h-screen hidden lg:block my-4 ml-4 shadow-lg relative w-80">
@@ -1207,5 +1211,6 @@ export default function Dashboard() {
         </div>
       </div>
     </main>
+    </React.Fragment>
   );
 }

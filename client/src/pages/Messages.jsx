@@ -1,9 +1,10 @@
-
+import React from 'react';
+import Navbar from '../components/navbar/Navbar';
 
 export default function Messages() {
     return (
-        
-   
+        <React.Fragment>
+        <Navbar></Navbar>   
 <div class="flex flex-row h-screen antialiased text-gray-800">
     <div class="flex flex-row w-96 flex-shrink-0 bg-gray-100 p-4">
       <div class="flex flex-col items-center py-4 flex-shrink-0 w-20 bg-indigo-800 rounded-3xl">
@@ -586,5 +587,6 @@ export default function Messages() {
       </div>
     </div>
   </div>
+  </React.Fragment>
     )
 }

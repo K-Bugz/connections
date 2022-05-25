@@ -5,25 +5,21 @@ import SignupPage from './pages/Signup';
 import LoginPage from './pages/Login';
 import ProfilePage from './components/profile/Profile';
 import ProfileCard from './components/profile/ProfileCard';
-import Map from './components/googlemaps/Map';
+// import Map from './components/googlemaps/Map';
 import Main from './pages/Main';
 import {
   BrowserRouter,
   Routes,
   Route,
 } from 'react-router-dom';
-import SignupPage from './pages/Signup';
-import LoginPage from './pages/Login';
-import ProfilePage from './components/profile/Profile';
-import ProfileCard from './components/profile/ProfileCard';
+
 import Dashboard from './pages/Dashboard'
 import Messages from './pages/Messages'
 
 function App() {
-// const[state] = displayDashboard
   
   return (
-    <React.Fragment>
+    <React.Fragment>     
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Main />} />
