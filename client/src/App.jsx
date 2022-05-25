@@ -1,27 +1,29 @@
 
+import React from 'react';
 import './App.css';
-import Navbar from './components/navbar/Navbar'
+import SignupPage from './pages/Signup';
+import LoginPage from './pages/Login';
+import ProfilePage from './components/profile/Profile';
+import ProfileCard from './components/profile/ProfileCard';
+import Map from './components/googlemaps/Map';
+import Main from './pages/Main';
 import {
   BrowserRouter,
   Routes,
   Route,
 } from 'react-router-dom';
-import SignupPage from './pages/Signup';
-import LoginPage from './pages/Login';
-import ProfilePage from './components/profile/Profile';
-import ProfileCard from './components/profile/ProfileCard';
 
 function App() {
   return (
     <React.Fragment>
-      <Navbar>
-      </Navbar>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<LoginPage />} />
+          <Route path='/' element={<Main />} />
+          <Route path='/login' element={<LoginPage />} />
           <Route path='/signup' element={<SignupPage />} />
           <Route path='/profile' element={<ProfilePage />} />
           <Route path='/profiledetail' element={<ProfileCard />} />
+          <Route path='/map' element={< Map />} />
         </Routes>
       </BrowserRouter>
     </React.Fragment>

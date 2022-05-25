@@ -1,3 +1,4 @@
+import React from 'react';
 import logo from '../../assets/connectedPurple.png';
 
 import { Fragment } from 'react'
@@ -16,7 +17,7 @@ const navigation = [
   { name: 'Jobs', href: '#', current: false },
   { name: 'Profile', href: '/Profile', current: false },
   { name: 'Register', href: '/Signup', current: false },
-  { name: 'Login', href: '/', current: false },
+  { name: 'Login', href: '/login', current: false },
 ]
 const userNavigation = [
   { name: 'Your Profile', href: '/Profile' },
@@ -33,7 +34,7 @@ export default function Navbar() {
   return (
     <React.Fragment>
       <div className='min-h-full'>
-        <Disclosure as='nav' className='bg-gray-800'>
+        <Disclosure as='nav' className='bg-zinc-900'>
           {({ open }) => (
             <>
               <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
