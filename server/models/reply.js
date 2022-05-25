@@ -8,7 +8,7 @@ const replySchema = new Schema(
             required: true,
             maxlength: 280
         },
-        senderUserName: {
+        sender: { // sender user name
             type: String,
             required: true
         },

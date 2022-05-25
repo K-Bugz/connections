@@ -53,11 +53,14 @@ const typeDefs = gql`
   type Query {
     me: User
     users: [User]
-    messeges(userName: _id!): Message
     user(username: String!): User
+    messeges(sender: String): [Message]
     jobposts(username: String!): JobPost
   }
   
+  type Mutation {
+    login(email: String!, password: String!): Auth
+  }
 `;
 
 // exporting
