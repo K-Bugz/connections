@@ -15,6 +15,30 @@ const userSchema = new Schema(
             unique: true,
             match: [/.+@.+\..+/, 'Must match an email address!']
         },
+        title: {
+            type: String,
+            required: false,
+        },
+        about: {
+            type: String,
+            required: false,
+        },
+        website: {
+            type: String,
+            required: false,
+        },
+        profilePic: { // here 
+            type: String,
+            required: false,
+        },
+        coverPhoto: { // here 
+            type: String,
+            required: false,
+        },
+        resume: {
+            type: String,
+            required: false,
+        },
         password: {
             type: String,
             required: true,
@@ -26,7 +50,14 @@ const userSchema = new Schema(
                 ref: 'User'
             }
         ],
-        connections: [
+        // May need to put back in for our own API for messages.
+        // messages: [
+        //     {
+        //         type: Schema.Types.ObjectId,
+        //         ref: 'Message'
+        //     }
+        // ],
+        connections: [ // connections is the saved jobs
             {
                 type: Schema.Types.ObjectId,
                 ref: 'Jobpost'
@@ -45,7 +76,6 @@ userSchema.pre('save', async function (next) {
         const saltRounds = 10;
         this.password = await bcrypt.hash(this.password, saltRounds);
     }
-
     next();
 });
 
@@ -61,6 +91,6 @@ userSchema.virtual('connectionsCount').get(function () {
     return this.connections.length;
 })
 
-const User = model('User', userSchema);
+const User = model('User', userSchema); // the first parameter is how we reference to as ref!!!
 
 module.exports = User;
