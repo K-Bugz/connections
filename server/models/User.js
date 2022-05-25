@@ -1,6 +1,12 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
+/* How do we add schema types of images? 
+1) image
+2) Cover photo
+3) Resume 
+*/
+
 const userSchema = new Schema(
     {
         username: {
@@ -15,6 +21,30 @@ const userSchema = new Schema(
             unique: true,
             match: [/.+@.+\..+/, 'Must match an email address!']
         },
+        title: {
+            type: String,
+            required: false,
+        },
+        about: {
+            type: String,
+            required: false,
+        },
+        website: {
+            type: String,
+            required: false,
+        },
+        profilePic: { // here 
+            type: String,
+            required: false,
+        },
+        CoverPhoto: { // here 
+            type: String,
+            required: false,
+        },
+        resume: {
+            type: string,
+            required: false,
+        },
         password: {
             type: String,
             required: true,
@@ -26,7 +56,14 @@ const userSchema = new Schema(
                 ref: 'User'
             }
         ],
-        connections: [
+        // May need to update this
+        messages: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Message'
+            }
+        ],
+        connections: [ // connections is jobs
             {
                 type: Schema.Types.ObjectId,
                 ref: 'Jobpost'
