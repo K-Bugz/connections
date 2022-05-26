@@ -11,7 +11,7 @@ export default function Dashboard() {
   return (
     <React.Fragment>
       <Navbar></Navbar>
-      <main className="bg-white  h-screen overflow-hidden relative">
+      <main className="bg-white h-screen overflow-hidden relative">
         <div className="flex items-start justify-between">
           <div className="h-screen hidden bg-white lg:block my-4 ml-4 relative w-80"> 
             {/* Sidenav */}
@@ -223,8 +223,11 @@ export default function Dashboard() {
               <div className="flex flex-col flex-wrap sm:flex-row ">
                 <div className="w-full sm:w-1/2 xl:w-1/3">
                    <JobCard></JobCard>  
-{/*          
-                  <div className="mb-4">
+                   <JobCard></JobCard>
+                   <JobCard></JobCard>
+                   <JobCard></JobCard>
+          
+                  {/* <div className="mb-4">
                     <div className="shadow-lg rounded-2xl p-4 bg-white dark:bg-gray-700 w-full">
                       <div className="flex items-center justify-between mb-6">
                         <div className="flex items-center">
@@ -354,10 +357,10 @@ export default function Dashboard() {
                         DUE DATE : 18 JUN
                       </span>
                     </div>
-                  </div> */}
-                </div>
+                  </div>  */}
+                </div> 
 {/* Start Task Component */}
-                {/* <div className="w-full sm:w-1/2 xl:w-1/3">
+                <div className="w-full sm:w-1/2 xl:w-1/3">
                   <div className="mb-4 mx-0 sm:ml-4 xl:mr-4">
                     <div className="shadow-lg rounded-2xl bg-white dark:bg-gray-700 w-full">
                       <p className="font-bold text-md p-4 text-black dark:text-white">
@@ -792,7 +795,7 @@ export default function Dashboard() {
                       </div>
                     </div>
                   </div>
-                </div> */}
+                </div>
     {/* End Task Component */}
 
                 <div className="w-full sm:w-1/2 xl:w-1/3">
