@@ -14,9 +14,22 @@ const typeDefs = gql`
     resume: String
   }
 
+  type Jobpost {
+    _id: ID
+    title: String!
+    link: String!
+    company: String!
+    location: String
+    timePosted: String
+    isSaved: Boolean
+    createdAt: String
+  }
+
   type Query {
     users: [User]
     user(email: String!): User
+    jobposts: [Jobpost]
+    jobpost(_id: ID!): Jobpost
   }
 
   type Auth {
@@ -27,6 +40,10 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(email: String!, password: String!): Auth
+    addJobs(title: String!, link: String!, company: String!, location: String, timePosted: String): [Jobpost]
+    updateJob(_id: ID!, isSaved: Boolean!): Jobpost
+    deleteJobpost(_id: ID!): Jobpost
+    deleteJobposts: [Jobpost]
   }
 `;
 

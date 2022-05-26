@@ -22,6 +22,10 @@ const jobpostSchema = new Schema(
         timePosted: {
             type: String
         },
+        isSaved: {
+            type: Boolean,
+            default: false
+        },
         createdAt: {
             type: Date,
             default: Date.now,
