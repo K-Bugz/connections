@@ -1,5 +1,6 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models');
+const { Error } = require('mongoose');
+const { User, Jobpost } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -16,6 +17,14 @@ const resolvers = {
                 .populate('friends')
                 .populate('connections');
         },
+        jobposts: async () => {
+            return Jobpost.find();
+        },
+        jobpost: async (parent, { _id }) => {
+            return Jobpost.findOne(
+                { _id: _id }
+            )
+        }
     },
     Mutation: {
         addUser: async (parent, args) => {
@@ -42,6 +51,41 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
             // return user;
+        },
+        addJobs: async (parent, args) => {
+            const newjob = await Jobpost.insertMany({
+                title: args.title,
+                link: args.link,
+                company: args.company,
+                location: args.location,
+                timePosted: args.timePosted
+            })
+            return newjob;
+        },
+        updateJob: async (parent, { _id, isSaved }) => {
+            const updatedJob = await Jobpost.findByIdAndUpdate(
+                { _id: _id },
+                { isSaved: isSaved },
+                { new: true }
+            )
+            return updatedJob;
+        },
+        deleteJobpost: async (parent, { _id}) => {
+            const deletedJob = await Jobpost.findByIdAndDelete({ _id: _id });
+            if (!deletedJob) {
+                throw new Error('No job with that id found');
+            }
+            return deletedJob;
+        },
+        deleteJobposts: async () => {
+            try {
+                const remainingJobs = await Jobpost.deleteMany({ isSaved: false });
+                if (remainingJobs) {
+                    return Jobpost.find();
+                }
+            } catch (err) {
+                console.log(err)
+            }
         }
     }
 };
