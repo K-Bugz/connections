@@ -23,13 +23,13 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Main />} />
-          <Route path='/login' element={<LoginPage />} />
-          <Route path='/signup' element={<SignupPage />} />
-          <Route path='/profile' element={<ProfilePage />} />
-          <Route path='/profiledetail' element={<ProfileCard />} />
+          <Route path='/Login' element={<LoginPage />} />
+          <Route path='/Signup' element={<SignupPage />} />
+          <Route path='/Profile' element={<ProfilePage />} />
+          <Route path='/Profiledetail' element={<ProfileCard />} />
           <Route path='/Dashboard' element={<Dashboard />} />
           <Route path='/Messages' element={<Messages />} />
-          <Route path='/map' element={ <Map />} />
+          <Route path='/Map' element={ <Map />} />
         </Routes>
       </BrowserRouter>
     </React.Fragment>

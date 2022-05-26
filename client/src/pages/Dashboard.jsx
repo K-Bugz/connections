@@ -2,7 +2,7 @@ import "./pages.styles/Dashboard.css";
 import React from 'react';
 import Calendario from "./Calender";
 import Navbar from '../components/navbar/Navbar';
-
+import Connects from '../components/connects/Connects'
 
 
 export default function Dashboard() {
@@ -10,12 +10,12 @@ export default function Dashboard() {
   return (
     <React.Fragment>
     <Navbar></Navbar>
-    <main class="bg-gray-100 dark:bg-gray-800  h-screen overflow-hidden relative">
-      <div class="flex items-start justify-between">
-        <div class="h-screen hidden lg:block my-4 ml-4 shadow-lg relative w-80">
+    <main className="bg-gray-100 dark:bg-gray-800  h-screen overflow-hidden relative">
+      <div className="flex items-start justify-between">
+        <div className="h-screen hidden lg:block my-4 ml-4 shadow-lg relative w-80">
             {/* Sidenav */}
-          <div class="bg-white h-full rounded-2xl dark:bg-gray-700">
-            <div class="flex items-center justify-center pt-6">
+          <div className="bg-white h-full rounded-2xl dark:bg-gray-700">
+            <div className="flex items-center justify-center pt-6">
               <svg
                 width="35"
                 height="30"
@@ -32,11 +32,11 @@ export default function Dashboard() {
                     id="linearGradient-1"
                   >
                     <stop
-                      stop-color="#FF0057"
-                      stop-opacity="0.16"
+                      stopColor="#FF0057"
+                      stopOpacity="0.16"
                       offset="0%"
                     ></stop>
-                    <stop stop-color="#FF0057" offset="86.1354%"></stop>
+                    <stop stopColor="#FF0057" offset="86.1354%"></stop>
                   </linearGradient>
                 </defs>
                 <g>
@@ -62,13 +62,13 @@ export default function Dashboard() {
                 </g>
               </svg>
             </div>
-            <nav class="mt-6">
+            <nav className="mt-6">
               <div>
                 <a
-                  class="w-full font-thin uppercase text-blue-500 flex items-center p-4 my-2 transition-colors duration-200 justify-start bg-gradient-to-r from-white to-blue-100 border-r-4 border-blue-500 dark:from-gray-700 dark:to-gray-800 border-r-4 border-blue-500"
-                  href="#"
+                  className="w-full font-thin uppercase text-blue-500 flex items-center p-4 my-2 transition-colors duration-200 justify-start bg-gradient-to-r from-white to-blue-100 border-r-4 border-blue-500 dark:from-gray-700 dark:to-gray-800 border-r-4 border-blue-500"
+                  href="replace"
                 >
-                  <span class="text-left">
+                  <span className="text-left">
                     <svg
                       width="20"
                       height="20"
@@ -79,71 +79,71 @@ export default function Dashboard() {
                       <path d="M1070 1178l306-564h-654l-306 564h654zm722-282q0 182-71 348t-191 286-286 191-348 71-348-71-286-191-191-286-71-348 71-348 191-286 286-191 348-71 348 71 286 191 191 286 71 348z"></path>
                     </svg>
                   </span>
-                  <span class="mx-4 text-sm font-normal">Dashboard</span>
+                  <span className="mx-4 text-sm font-normal">Dashboard</span>
                 </a>
                 <a
-                  class="w-full font-thin uppercase text-gray-500 dark:text-gray-200 flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500"
-                  href="#"
+                  className="w-full font-thin uppercase text-gray-500 dark:text-gray-200 flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500"
+                  href="replace"
                 >
-                  <span class="text-left">
+                  <span className="text-left">
                     <svg
                       width="20"
                       height="20"
                       fill="currentColor"
-                      class="m-auto"
+                      className="m-auto"
                       viewBox="0 0 2048 1792"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path d="M1024 1131q0-64-9-117.5t-29.5-103-60.5-78-97-28.5q-6 4-30 18t-37.5 21.5-35.5 17.5-43 14.5-42 4.5-42-4.5-43-14.5-35.5-17.5-37.5-21.5-30-18q-57 0-97 28.5t-60.5 78-29.5 103-9 117.5 37 106.5 91 42.5h512q54 0 91-42.5t37-106.5zm-157-520q0-94-66.5-160.5t-160.5-66.5-160.5 66.5-66.5 160.5 66.5 160.5 160.5 66.5 160.5-66.5 66.5-160.5zm925 509v-64q0-14-9-23t-23-9h-576q-14 0-23 9t-9 23v64q0 14 9 23t23 9h576q14 0 23-9t9-23zm0-260v-56q0-15-10.5-25.5t-25.5-10.5h-568q-15 0-25.5 10.5t-10.5 25.5v56q0 15 10.5 25.5t25.5 10.5h568q15 0 25.5-10.5t10.5-25.5zm0-252v-64q0-14-9-23t-23-9h-576q-14 0-23 9t-9 23v64q0 14 9 23t23 9h576q14 0 23-9t9-23zm256-320v1216q0 66-47 113t-113 47h-352v-96q0-14-9-23t-23-9h-64q-14 0-23 9t-9 23v96h-768v-96q0-14-9-23t-23-9h-64q-14 0-23 9t-9 23v96h-352q-66 0-113-47t-47-113v-1216q0-66 47-113t113-47h1728q66 0 113 47t47 113z"></path>
                     </svg>
                   </span>
-                  <span class="mx-4 text-sm font-normal">Projects</span>
+                  <span className="mx-4 text-sm font-normal">Projects</span>
                 </a>
                 <a
-                  class="w-full font-thin uppercase text-gray-500 dark:text-gray-200 flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500"
-                  href="#"
+                  className="w-full font-thin uppercase text-gray-500 dark:text-gray-200 flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500"
+                  href="replace"
                 >
-                  <span class="text-left">
+                  <span className="text-left">
                     <svg
                       width="20"
                       height="20"
                       fill="currentColor"
-                      class="m-auto"
+                      className="m-auto"
                       viewBox="0 0 2048 1792"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path d="M685 483q16 0 27.5-11.5t11.5-27.5-11.5-27.5-27.5-11.5-27 11.5-11 27.5 11 27.5 27 11.5zm422 0q16 0 27-11.5t11-27.5-11-27.5-27-11.5-27.5 11.5-11.5 27.5 11.5 27.5 27.5 11.5zm-812 184q42 0 72 30t30 72v430q0 43-29.5 73t-72.5 30-73-30-30-73v-430q0-42 30-72t73-30zm1060 19v666q0 46-32 78t-77 32h-75v227q0 43-30 73t-73 30-73-30-30-73v-227h-138v227q0 43-30 73t-73 30q-42 0-72-30t-30-73l-1-227h-74q-46 0-78-32t-32-78v-666h918zm-232-405q107 55 171 153.5t64 215.5h-925q0-117 64-215.5t172-153.5l-71-131q-7-13 5-20 13-6 20 6l72 132q95-42 201-42t201 42l72-132q7-12 20-6 12 7 5 20zm477 488v430q0 43-30 73t-73 30q-42 0-72-30t-30-73v-430q0-43 30-72.5t72-29.5q43 0 73 29.5t30 72.5z"></path>
                     </svg>
                   </span>
-                  <span class="mx-4 text-sm font-normal">My tasks</span>
+                  <span className="mx-4 text-sm font-normal">My tasks</span>
                 </a>
                 <a
-                  class="w-full font-thin uppercase text-gray-500 dark:text-gray-200 flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500"
-                  href="#"
+                  className="w-full font-thin uppercase text-gray-500 dark:text-gray-200 flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500"
+                  href="replace"
                 >
-                  <span class="text-left">
+                  <span className="text-left">
                     <svg
                       width="20"
                       height="20"
                       fill="currentColor"
-                      class="m-auto"
+                      className="m-auto"
                       viewBox="0 0 2048 1792"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path d="M960 0l960 384v128h-128q0 26-20.5 45t-48.5 19h-1526q-28 0-48.5-19t-20.5-45h-128v-128zm-704 640h256v768h128v-768h256v768h128v-768h256v768h128v-768h256v768h59q28 0 48.5 19t20.5 45v64h-1664v-64q0-26 20.5-45t48.5-19h59v-768zm1595 960q28 0 48.5 19t20.5 45v128h-1920v-128q0-26 20.5-45t48.5-19h1782z"></path>
                     </svg>
                   </span>
-                  <span class="mx-4 text-sm font-normal">Calendar</span>
+                  <span className="mx-4 text-sm font-normal">Calendar</span>
                 </a>
                 <a
-                  class="w-full font-thin uppercase text-gray-500 dark:text-gray-200 flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500"
-                  href="#"
+                  className="w-full font-thin uppercase text-gray-500 dark:text-gray-200 flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500"
+                  href="replace"
                 >
-                  <span class="text-left">
+                  <span className="text-left">
                     <svg
                       width="20"
                       height="20"
-                      class="m-auto"
+                      className="m-auto"
                       fill="currentColor"
                       viewBox="0 0 2048 1792"
                       xmlns="http://www.w3.org/2000/svg"
@@ -151,61 +151,61 @@ export default function Dashboard() {
                       <path d="M1070 1178l306-564h-654l-306 564h654zm722-282q0 182-71 348t-191 286-286 191-348 71-348-71-286-191-191-286-71-348 71-348 191-286 286-191 348-71 348 71 286 191 191 286 71 348z"></path>
                     </svg>
                   </span>
-                  <span class="mx-4 text-sm font-normal">Time manage</span>
+                  <span className="mx-4 text-sm font-normal">Time manage</span>
                 </a>
                 <a
-                  class="w-full font-thin uppercase text-gray-500 dark:text-gray-200 flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500"
-                  href="#"
+                  className="w-full font-thin uppercase text-gray-500 dark:text-gray-200 flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500"
+                  href="replace"
                 >
-                  <span class="text-left">
+                  <span className="text-left">
                     <svg
                       width="20"
                       height="20"
                       fill="currentColor"
-                      class="m-auto"
+                      className="m-auto"
                       viewBox="0 0 2048 1792"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path d="M1024 1131q0-64-9-117.5t-29.5-103-60.5-78-97-28.5q-6 4-30 18t-37.5 21.5-35.5 17.5-43 14.5-42 4.5-42-4.5-43-14.5-35.5-17.5-37.5-21.5-30-18q-57 0-97 28.5t-60.5 78-29.5 103-9 117.5 37 106.5 91 42.5h512q54 0 91-42.5t37-106.5zm-157-520q0-94-66.5-160.5t-160.5-66.5-160.5 66.5-66.5 160.5 66.5 160.5 160.5 66.5 160.5-66.5 66.5-160.5zm925 509v-64q0-14-9-23t-23-9h-576q-14 0-23 9t-9 23v64q0 14 9 23t23 9h576q14 0 23-9t9-23zm0-260v-56q0-15-10.5-25.5t-25.5-10.5h-568q-15 0-25.5 10.5t-10.5 25.5v56q0 15 10.5 25.5t25.5 10.5h568q15 0 25.5-10.5t10.5-25.5zm0-252v-64q0-14-9-23t-23-9h-576q-14 0-23 9t-9 23v64q0 14 9 23t23 9h576q14 0 23-9t9-23zm256-320v1216q0 66-47 113t-113 47h-352v-96q0-14-9-23t-23-9h-64q-14 0-23 9t-9 23v96h-768v-96q0-14-9-23t-23-9h-64q-14 0-23 9t-9 23v96h-352q-66 0-113-47t-47-113v-1216q0-66 47-113t113-47h1728q66 0 113 47t47 113z"></path>
                     </svg>
                   </span>
-                  <span class="mx-4 text-sm font-normal">Reports</span>
+                  <span className="mx-4 text-sm font-normal">Reports</span>
                 </a>
                 <a
-                  class="w-full font-thin uppercase text-gray-500 dark:text-gray-200 flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500"
-                  href="#"
+                  className="w-full font-thin uppercase text-gray-500 dark:text-gray-200 flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500"
+                  href="replace"
                 >
-                  <span class="text-left">
+                  <span className="text-left">
                     <svg
                       width="20"
                       fill="currentColor"
                       height="20"
-                      class="h-5 w-5"
+                      className="h-5 w-5"
                       viewBox="0 0 1792 1792"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path d="M1088 1256v240q0 16-12 28t-28 12h-240q-16 0-28-12t-12-28v-240q0-16 12-28t28-12h240q16 0 28 12t12 28zm316-600q0 54-15.5 101t-35 76.5-55 59.5-57.5 43.5-61 35.5q-41 23-68.5 65t-27.5 67q0 17-12 32.5t-28 15.5h-240q-15 0-25.5-18.5t-10.5-37.5v-45q0-83 65-156.5t143-108.5q59-27 84-56t25-76q0-42-46.5-74t-107.5-32q-65 0-108 29-35 25-107 115-13 16-31 16-12 0-25-8l-164-125q-13-10-15.5-25t5.5-28q160-266 464-266 80 0 161 31t146 83 106 127.5 41 158.5z"></path>
                     </svg>
                   </span>
-                  <span class="mx-4 text-sm font-normal">Settings</span>
+                  <span className="mx-4 text-sm font-normal">Settings</span>
                 </a>
               </div>
             </nav>
           </div>
         </div>
-        <div class="flex flex-col w-full pl-0 md:p-4 md:space-y-4">
+        <div className="flex flex-col w-full pl-0 md:p-4 md:space-y-4">
           
-            <div class="relative z-20 flex flex-col justify-center h-full px-3 mx-auto flex-center">
-              <div class="relative items-center pl-1 flex w-full lg:max-w-68 sm:pr-2 sm:ml-0">
-                <div class="container relative left-0 z-50 flex w-3/4 h-auto h-full">
-                  <div class="relative flex items-center w-full lg:w-64 h-full group">
-                    <div class="absolute z-50 flex items-center justify-center block w-auto h-10 p-3 pr-2 text-sm text-gray-500 uppercase cursor-pointer sm:hidden">
+            <div className="relative z-20 flex flex-col justify-center h-full px-3 mx-auto flex-center">
+              <div className="relative items-center pl-1 flex w-full lg:max-w-68 sm:pr-2 sm:ml-0">
+                <div className="container relative left-0 z-50 flex w-3/4 h-auto h-full">
+                  <div className="relative flex items-center w-full lg:w-64 h-full group">
+                    <div className="absolute z-50 flex items-center justify-center block w-auto h-10 p-3 pr-2 text-sm text-gray-500 uppercase cursor-pointer sm:hidden">
                       <svg
                         fill="none"
-                        class="relative w-5 h-5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
+                        className="relative w-5 h-5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
                       >
@@ -218,14 +218,14 @@ export default function Dashboard() {
               </div>
             </div>
           
-          <div class=" h-screen pb-24 pt-2 pr-2 pl-2 md:pt-0 md:pr-0 md:pl-0">
-            <div class="flex flex-col flex-wrap sm:flex-row ">
-              <div class="w-full sm:w-1/2 xl:w-1/3">
-                <div class="mb-4">
-                  <div class="shadow-lg rounded-2xl p-4 bg-white dark:bg-gray-700 w-full">
-                    <div class="flex items-center justify-between mb-6">
-                      <div class="flex items-center">
-                        <span class="rounded-xl relative p-2 bg-blue-100">
+          <div className=" h-screen pb-24 pt-2 pr-2 pl-2 md:pt-0 md:pr-0 md:pl-0">
+            <div className="flex flex-col flex-wrap sm:flex-row ">
+              <div className="w-full sm:w-1/2 xl:w-1/3">
+                <div className="mb-4">
+                  <div className="shadow-lg rounded-2xl p-4 bg-white dark:bg-gray-700 w-full">
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="flex items-center">
+                        <span className="rounded-xl relative p-2 bg-blue-100">
                           <svg
                             width="25"
                             height="25"
@@ -251,29 +251,29 @@ export default function Dashboard() {
                             ></path>
                           </svg>
                         </span>
-                        <div class="flex flex-col">
-                          <span class="font-bold text-md text-black dark:text-white ml-2">
+                        <div className="flex flex-col">
+                          <span className="font-bold text-md text-black dark:text-white ml-2">
                             Google
                           </span>
-                          <span class="text-sm text-gray-500 dark:text-white ml-2">
+                          <span className="text-sm text-gray-500 dark:text-white ml-2">
                             Google Inc.
                           </span>
                         </div>
                       </div>
-                      <div class="flex items-center">
-                        <button class="border p-1 border-gray-200 rounded-full">
+                      <div className="flex items-center">
+                        <button className="border p-1 border-gray-200 rounded-full">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="20"
                             height="20"
-                            class="w-4 h-4 text-yellow-500"
+                            className="w-4 h-4 text-yellow-500"
                             fill="currentColor"
                             viewBox="0 0 1792 1792"
                           >
                             <path d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z"></path>
                           </svg>
                         </button>
-                        <button class="text-gray-200">
+                        <button className="text-gray-200">
                           <svg
                             width="25"
                             height="25"
@@ -286,83 +286,83 @@ export default function Dashboard() {
                         </button>
                       </div>
                     </div>
-                    <div class="flex items-center justify-between mb-4 space-x-12">
-                      <span class="px-2 py-1 flex items-center font-semibold text-xs rounded-md text-gray-500 bg-gray-200">
+                    <div className="flex items-center justify-between mb-4 space-x-12">
+                      <span className="px-2 py-1 flex items-center font-semibold text-xs rounded-md text-gray-500 bg-gray-200">
                         PROGRESS
                       </span>
-                      <span class="px-2 py-1 flex items-center font-semibold text-xs rounded-md text-red-400 border border-red-400  bg-white">
+                      <span className="px-2 py-1 flex items-center font-semibold text-xs rounded-md text-red-400 border border-red-400  bg-white">
                         HIGH PRIORITY
                       </span>
                     </div>
-                    <div class="block m-auto">
+                    <div className="block m-auto">
                       <div>
-                        <span class="text-sm inline-block text-gray-500 dark:text-gray-100">
+                        <span className="text-sm inline-block text-gray-500 dark:text-gray-100">
                           Task done :
-                          <span class="text-gray-700 dark:text-white font-bold">
+                          <span className="text-gray-700 dark:text-white font-bold">
                             25
                           </span>
                           /50
                         </span>
                       </div>
-                      <div class="w-full h-2 bg-gray-200 rounded-full mt-2">
-                        <div class="w-1/2 h-full text-center text-xs text-white bg-purple-500 rounded-full"></div>
+                      <div className="w-full h-2 bg-gray-200 rounded-full mt-2">
+                        <div className="w-1/2 h-full text-center text-xs text-white bg-purple-500 rounded-full"></div>
                       </div>
                     </div>
-                    <div class="flex items-center justify-start my-4 space-x-4">
-                      <span class="px-2 py-1 flex items-center text-xs rounded-md font-semibold text-green-500 bg-green-50">
+                    <div className="flex items-center justify-start my-4 space-x-4">
+                      <span className="px-2 py-1 flex items-center text-xs rounded-md font-semibold text-green-500 bg-green-50">
                         IOS APP
                       </span>
-                      <span class="px-2 py-1 flex items-center text-xs rounded-md text-blue-500 font-semibold bg-blue-100">
+                      <span className="px-2 py-1 flex items-center text-xs rounded-md text-blue-500 font-semibold bg-blue-100">
                         UI/UX
                       </span>
                     </div>
-                    <div class="flex -space-x-2">
-                      <a href="#" class="">
+                    <div className="flex -space-x-2">
+                      <a href="replace" className="">
                         <img
-                          class="inline-block h-10 w-10 rounded-full object-cover ring-2 ring-white"
+                          className="inline-block h-10 w-10 rounded-full object-cover ring-2 ring-white"
                           src="/images/person/1.jpg"
                           alt="Guy"
                         />
                       </a>
-                      <a href="#" class="">
+                      <a href="replace" className="">
                         <img
-                          class="inline-block h-10 w-10 rounded-full object-cover ring-2 ring-white"
+                          className="inline-block h-10 w-10 rounded-full object-cover ring-2 ring-white"
                           src="/images/person/2.jpeg"
                           alt="Max"
                         />
                       </a>
-                      <a href="#" class="">
+                      <a href="replace" className="">
                         <img
-                          class="inline-block h-10 w-10 rounded-full object-cover ring-2 ring-white"
+                          className="inline-block h-10 w-10 rounded-full object-cover ring-2 ring-white"
                           src="/images/person/3.jpg"
                           alt="Charles"
                         />
                       </a>
-                      <a href="#" class="">
+                      <a href="replace" className="">
                         <img
-                          class="inline-block h-10 w-10 rounded-full object-cover ring-2 ring-white"
+                          className="inline-block h-10 w-10 rounded-full object-cover ring-2 ring-white"
                           src="/images/person/4.jpg"
                           alt="Jade"
                         />
                       </a>
                     </div>
-                    <span class="px-2 py-1 flex w-36 mt-4 items-center text-xs rounded-md font-semibold text-yellow-500 bg-yellow-100">
+                    <span className="px-2 py-1 flex w-36 mt-4 items-center text-xs rounded-md font-semibold text-yellow-500 bg-yellow-100">
                       DUE DATE : 18 JUN
                     </span>
                   </div>
                 </div>
-                <div class="mb-4">
-                  <div class="shadow-lg rounded-2xl p-4 bg-white dark:bg-gray-700 w-full">
-                    <div class="flex items-center justify-between mb-6">
-                      <div class="flex items-center">
-                        <span class="rounded-xl relative p-2 bg-blue-100">
+                <div className="mb-4">
+                  <div className="shadow-lg rounded-2xl p-4 bg-white dark:bg-gray-700 w-full">
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="flex items-center">
+                        <span className="rounded-xl relative p-2 bg-blue-100">
                           <svg
                             width="25"
                             height="25"
                             viewBox="0 0 2447.6 2452.5"
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <g clip-rule="evenodd" fill-rule="evenodd">
+                            <g clipRule="evenodd" fillRule="evenodd">
                               <path
                                 d="m897.4 0c-135.3.1-244.8 109.9-244.7 245.2-.1 135.3 109.5 245.1 244.8 245.2h244.8v-245.1c.1-135.3-109.5-245.1-244.9-245.3.1 0 .1 0 0 0m0 654h-652.6c-135.3.1-244.9 109.9-244.8 245.2-.2 135.3 109.4 245.1 244.7 245.3h652.7c135.3-.1 244.9-109.9 244.8-245.2.1-135.4-109.5-245.2-244.8-245.3z"
                                 fill="#36c5f0"
@@ -382,29 +382,29 @@ export default function Dashboard() {
                             </g>
                           </svg>
                         </span>
-                        <div class="flex flex-col">
-                          <span class="font-bold text-md text-black dark:text-white ml-2">
+                        <div className="flex flex-col">
+                          <span className="font-bold text-md text-black dark:text-white ml-2">
                             Slack
                           </span>
-                          <span class="text-sm text-gray-500 dark:text-white ml-2">
+                          <span className="text-sm text-gray-500 dark:text-white ml-2">
                             Slack corporation
                           </span>
                         </div>
                       </div>
-                      <div class="flex items-center">
-                        <button class="border p-1 border-gray-200 rounded-full">
+                      <div className="flex items-center">
+                        <button className="border p-1 border-gray-200 rounded-full">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="20"
                             height="20"
-                            class="w-4 h-4 text-yellow-500"
+                            className="w-4 h-4 text-yellow-500"
                             fill="currentColor"
                             viewBox="0 0 1792 1792"
                           >
                             <path d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z"></path>
                           </svg>
                         </button>
-                        <button class="text-gray-200">
+                        <button className="text-gray-200">
                           <svg
                             width="25"
                             height="25"
@@ -417,92 +417,92 @@ export default function Dashboard() {
                         </button>
                       </div>
                     </div>
-                    <div class="flex items-center justify-between mb-4 space-x-12">
-                      <span class="px-2 py-1 flex items-center font-semibold text-xs rounded-md text-green-700 bg-green-50">
+                    <div className="flex items-center justify-between mb-4 space-x-12">
+                      <span className="px-2 py-1 flex items-center font-semibold text-xs rounded-md text-green-700 bg-green-50">
                         COMPLETED
                       </span>
-                      <span class="px-2 py-1 flex items-center font-semibold text-xs rounded-md text-green-600 border border-green-600 bg-white">
+                      <span className="px-2 py-1 flex items-center font-semibold text-xs rounded-md text-green-600 border border-green-600 bg-white">
                         MEDIUM PRIORITY
                       </span>
                     </div>
-                    <div class="block m-auto">
+                    <div className="block m-auto">
                       <div>
-                        <span class="text-sm inline-block text-gray-500 dark:text-gray-100">
+                        <span className="text-sm inline-block text-gray-500 dark:text-gray-100">
                           Task done :
-                          <span class="text-gray-700 dark:text-white font-bold">
+                          <span className="text-gray-700 dark:text-white font-bold">
                             50
                           </span>
                           /50
                         </span>
                       </div>
-                      <div class="w-full h-2 bg-gray-200 rounded-full mt-2">
-                        <div class="w-full h-full text-center text-xs text-white bg-pink-400 rounded-full"></div>
+                      <div className="w-full h-2 bg-gray-200 rounded-full mt-2">
+                        <div className="w-full h-full text-center text-xs text-white bg-pink-400 rounded-full"></div>
                       </div>
                     </div>
-                    <div class="flex items-center justify-start my-4 space-x-4">
-                      <span class="px-2 py-1 flex items-center text-xs rounded-md font-semibold text-green-500 bg-green-50">
+                    <div className="flex items-center justify-start my-4 space-x-4">
+                      <span className="px-2 py-1 flex items-center text-xs rounded-md font-semibold text-green-500 bg-green-50">
                         IOS APP
                       </span>
-                      <span class="px-2 py-1 flex items-center text-xs rounded-md text-yellow-600 font-semibold bg-yellow-200">
+                      <span className="px-2 py-1 flex items-center text-xs rounded-md text-yellow-600 font-semibold bg-yellow-200">
                         ANDROID
                       </span>
                     </div>
-                    <div class="flex -space-x-2">
-                      <a href="#" class="">
+                    <div className="flex -space-x-2">
+                      <a href="replace" className="">
                         <img
-                          class="inline-block h-10 w-10 rounded-full object-cover ring-2 ring-white"
+                          className="inline-block h-10 w-10 rounded-full object-cover ring-2 ring-white"
                           src="/images/person/1.jpg"
                           alt="Guy"
                         />
                       </a>
-                      <a href="#" class="">
+                      <a href="replace" className="">
                         <img
-                          class="inline-block h-10 w-10 rounded-full object-cover ring-2 ring-white"
+                          className="inline-block h-10 w-10 rounded-full object-cover ring-2 ring-white"
                           src="/images/person/2.jpeg"
                           alt="Max"
                         />
                       </a>
-                      <a href="#" class="">
+                      <a href="replace" className="">
                         <img
-                          class="inline-block h-10 w-10 rounded-full object-cover ring-2 ring-white"
+                          className="inline-block h-10 w-10 rounded-full object-cover ring-2 ring-white"
                           src="/images/person/3.jpg"
                           alt="Charles"
                         />
                       </a>
-                      <a href="#" class="">
+                      <a href="replace" className="">
                         <img
-                          class="inline-block h-10 w-10 rounded-full object-cover ring-2 ring-white"
+                          className="inline-block h-10 w-10 rounded-full object-cover ring-2 ring-white"
                           src="/images/person/4.jpg"
                           alt="Jade"
                         />
                       </a>
                     </div>
-                    <span class="px-2 py-1 flex w-36 mt-4 items-center text-xs rounded-md font-semibold text-yellow-500 bg-yellow-100">
+                    <span className="px-2 py-1 flex w-36 mt-4 items-center text-xs rounded-md font-semibold text-yellow-500 bg-yellow-100">
                       DUE DATE : 18 JUN
                     </span>
                   </div>
                 </div>
               </div>
-              <div class="w-full sm:w-1/2 xl:w-1/3">
-                <div class="mb-4 mx-0 sm:ml-4 xl:mr-4">
-                  <div class="shadow-lg rounded-2xl bg-white dark:bg-gray-700 w-full">
-                    <p class="font-bold text-md p-4 text-black dark:text-white">
+              <div className="w-full sm:w-1/2 xl:w-1/3">
+                <div className="mb-4 mx-0 sm:ml-4 xl:mr-4">
+                  <div className="shadow-lg rounded-2xl bg-white dark:bg-gray-700 w-full">
+                    <p className="font-bold text-md p-4 text-black dark:text-white">
                       My Tasks
-                      <span class="text-sm text-gray-500 dark:text-gray-300 dark:text-white ml-2">
+                      <span className="text-sm text-gray-500 dark:text-gray-300 dark:text-white ml-2">
                         (05)
                       </span>
                     </p>
                     <ul>
-                      <li class="flex items-center text-gray-600 dark:text-gray-200 justify-between py-3 border-b-2 border-gray-100 dark:border-gray-800">
-                        <div class="flex items-center justify-start text-sm">
-                          <span class="mx-4">01</span>
+                      <li className="flex items-center text-gray-600 dark:text-gray-200 justify-between py-3 border-b-2 border-gray-100 dark:border-gray-800">
+                        <div className="flex items-center justify-start text-sm">
+                          <span className="mx-4">01</span>
                           <span>Create wireframe</span>
                         </div>
                         <svg
                           width="20"
                           height="20"
                           fill="currentColor"
-                          class="mx-4 text-gray-400 dark:text-gray-300"
+                          className="mx-4 text-gray-400 dark:text-gray-300"
                           viewBox="0 0 1024 1024"
                         >
                           <path
@@ -515,17 +515,17 @@ export default function Dashboard() {
                           ></path>
                         </svg>
                       </li>
-                      <li class="flex items-center text-gray-600 dark:text-gray-200 justify-between py-3 border-b-2 border-gray-100 dark:border-gray-800">
-                        <div class="flex items-center justify-start text-sm">
-                          <span class="mx-4">02</span>
+                      <li className="flex items-center text-gray-600 dark:text-gray-200 justify-between py-3 border-b-2 border-gray-100 dark:border-gray-800">
+                        <div className="flex items-center justify-start text-sm">
+                          <span className="mx-4">02</span>
                           <span>Dashboard design</span>
-                          <span class="lg:ml-6 ml-2 flex items-center text-gray-400 dark:text-gray-300">
+                          <span className="lg:ml-6 ml-2 flex items-center text-gray-400 dark:text-gray-300">
                             3
                             <svg
                               width="15"
                               height="15"
                               fill="currentColor"
-                              class="ml-1"
+                              className="ml-1"
                               viewBox="0 0 512 512"
                             >
                               <path
@@ -534,12 +534,12 @@ export default function Dashboard() {
                               ></path>
                             </svg>
                           </span>
-                          <span class="mx-4 flex items-center text-gray-400 dark:text-gray-300">
+                          <span className="mx-4 flex items-center text-gray-400 dark:text-gray-300">
                             3
                             <svg
                               width="15"
                               height="15"
-                              class="ml-1"
+                              className="ml-1"
                               fill="currentColor"
                               viewBox="0 0 384 512"
                             >
@@ -554,7 +554,7 @@ export default function Dashboard() {
                           width="20"
                           height="20"
                           fill="currentColor"
-                          class="mx-4 text-gray-400 dark:text-gray-300"
+                          className="mx-4 text-gray-400 dark:text-gray-300"
                           viewBox="0 0 1024 1024"
                         >
                           <path
@@ -567,17 +567,17 @@ export default function Dashboard() {
                           ></path>
                         </svg>
                       </li>
-                      <li class="flex items-center text-gray-600 dark:text-gray-200 justify-between py-3 border-b-2 border-gray-100 dark:border-gray-800">
-                        <div class="flex items-center justify-start text-sm">
-                          <span class="mx-4">03</span>
+                      <li className="flex items-center text-gray-600 dark:text-gray-200 justify-between py-3 border-b-2 border-gray-100 dark:border-gray-800">
+                        <div className="flex items-center justify-start text-sm">
+                          <span className="mx-4">03</span>
                           <span>Components card</span>
-                          <span class="lg:ml-6 ml-2 flex items-center text-gray-400 dark:text-gray-300">
+                          <span className="lg:ml-6 ml-2 flex items-center text-gray-400 dark:text-gray-300">
                             3
                             <svg
                               width="15"
                               height="15"
                               fill="currentColor"
-                              class="ml-1"
+                              className="ml-1"
                               viewBox="0 0 512 512"
                             >
                               <path
@@ -591,7 +591,7 @@ export default function Dashboard() {
                           width="20"
                           height="20"
                           fill="currentColor"
-                          class="mx-4 text-gray-400 dark:text-gray-300"
+                          className="mx-4 text-gray-400 dark:text-gray-300"
                           viewBox="0 0 1024 1024"
                         >
                           <path
@@ -604,17 +604,17 @@ export default function Dashboard() {
                           ></path>
                         </svg>
                       </li>
-                      <li class="flex items-center text-gray-400 justify-between py-3 border-b-2 border-gray-100 dark:border-gray-800">
-                        <div class="flex items-center justify-start text-sm">
-                          <span class="mx-4">04</span>
-                          <span class="line-through">Google logo design</span>
+                      <li className="flex items-center text-gray-400 justify-between py-3 border-b-2 border-gray-100 dark:border-gray-800">
+                        <div className="flex items-center justify-start text-sm">
+                          <span className="mx-4">04</span>
+                          <span className="line-through">Google logo design</span>
                         </div>
                         <svg
                           width="20"
                           height="20"
                           fill="currentColor"
                           viewBox="0 0 1024 1024"
-                          class="text-green-500 mx-4"
+                          className="text-green-500 mx-4"
                         >
                           <path
                             d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448s448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 0 1-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8l157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z"
@@ -622,17 +622,17 @@ export default function Dashboard() {
                           ></path>
                         </svg>
                       </li>
-                      <li class="flex items-center text-gray-400  justify-between py-3 border-b-2 border-gray-100 dark:border-gray-800">
-                        <div class="flex items-center justify-start text-sm">
-                          <span class="mx-4">05</span>
-                          <span class="line-through">Header navigation</span>
+                      <li className="flex items-center text-gray-400  justify-between py-3 border-b-2 border-gray-100 dark:border-gray-800">
+                        <div className="flex items-center justify-start text-sm">
+                          <span className="mx-4">05</span>
+                          <span className="line-through">Header navigation</span>
                         </div>
                         <svg
                           width="20"
                           height="20"
                           fill="currentColor"
                           viewBox="0 0 1024 1024"
-                          class="text-green-500 mx-4"
+                          className="text-green-500 mx-4"
                         >
                           <path
                             d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448s448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 0 1-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8l157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z"
@@ -640,17 +640,17 @@ export default function Dashboard() {
                           ></path>
                         </svg>
                       </li>
-                      <li class="flex items-center text-gray-600 dark:text-gray-200 justify-between py-3 border-b-2 border-gray-100 dark:border-gray-800">
-                        <div class="flex items-center justify-start text-sm">
-                          <span class="mx-4">06</span>
+                      <li className="flex items-center text-gray-600 dark:text-gray-200 justify-between py-3 border-b-2 border-gray-100 dark:border-gray-800">
+                        <div className="flex items-center justify-start text-sm">
+                          <span className="mx-4">06</span>
                           <span>International</span>
-                          <span class="lg:ml-6 ml-2 flex items-center text-gray-400 dark:text-gray-300">
+                          <span className="lg:ml-6 ml-2 flex items-center text-gray-400 dark:text-gray-300">
                             3
                             <svg
                               width="15"
                               height="15"
                               fill="currentColor"
-                              class="ml-1"
+                              className="ml-1"
                               viewBox="0 0 512 512"
                             >
                               <path
@@ -659,12 +659,12 @@ export default function Dashboard() {
                               ></path>
                             </svg>
                           </span>
-                          <span class="mx-4 flex items-center text-gray-400 dark:text-gray-300">
+                          <span className="mx-4 flex items-center text-gray-400 dark:text-gray-300">
                             3
                             <svg
                               width="15"
                               height="15"
-                              class="ml-1"
+                              className="ml-1"
                               fill="currentColor"
                               viewBox="0 0 384 512"
                             >
@@ -679,7 +679,7 @@ export default function Dashboard() {
                           width="20"
                           height="20"
                           fill="currentColor"
-                          class="mx-4 text-gray-400 dark:text-gray-300"
+                          className="mx-4 text-gray-400 dark:text-gray-300"
                           viewBox="0 0 1024 1024"
                         >
                           <path
@@ -692,16 +692,16 @@ export default function Dashboard() {
                           ></path>
                         </svg>
                       </li>
-                      <li class="flex items-center text-gray-600 dark:text-gray-200 justify-between py-3">
-                        <div class="flex items-center justify-start text-sm">
-                          <span class="mx-4">07</span>
+                      <li className="flex items-center text-gray-600 dark:text-gray-200 justify-between py-3">
+                        <div className="flex items-center justify-start text-sm">
+                          <span className="mx-4">07</span>
                           <span>Production data</span>
                         </div>
                         <svg
                           width="20"
                           height="20"
                           fill="currentColor"
-                          class="mx-4 text-gray-400 dark:text-gray-300"
+                          className="mx-4 text-gray-400 dark:text-gray-300"
                           viewBox="0 0 1024 1024"
                         >
                           <path
@@ -717,13 +717,13 @@ export default function Dashboard() {
                     </ul>
                   </div>
                 </div>
-                <div class="mb-4 sm:ml-4 xl:mr-4">
-                  <div class="shadow-lg rounded-2xl bg-white dark:bg-gray-700 w-full">
-                    <div class="flex items-center p-4 justify-between">
-                      <p class="font-bold text-md text-black dark:text-white">
+                <div className="mb-4 sm:ml-4 xl:mr-4">
+                  <div className="shadow-lg rounded-2xl bg-white dark:bg-gray-700 w-full">
+                    <div className="flex items-center p-4 justify-between">
+                      <p className="font-bold text-md text-black dark:text-white">
                         Google
                       </p>
-                      <button class="text-sm p-1 text-gray-400 border rounded border-gray-400 mr-4">
+                      <button className="text-sm p-1 text-gray-400 border rounded border-gray-400 mr-4">
                         <svg
                           width="15"
                           height="15"
@@ -739,13 +739,13 @@ export default function Dashboard() {
                         </svg>
                       </button>
                     </div>
-                    <div class="py-2 px-4 bg-blue-100 dark:bg-gray-800 text-gray-600 border-l-4 border-blue-500 flex items-center justify-between">
-                      <p class="text-xs flex items-center dark:text-white">
+                    <div className="py-2 px-4 bg-blue-100 dark:bg-gray-800 text-gray-600 border-l-4 border-blue-500 flex items-center justify-between">
+                      <p className="text-xs flex items-center dark:text-white">
                         <svg
                           width="20"
                           height="20"
                           fill="currentColor"
-                          class="text-blue-500 mr-2"
+                          className="text-blue-500 mr-2"
                           viewBox="0 0 24 24"
                         >
                           <g fill="none">
@@ -757,17 +757,17 @@ export default function Dashboard() {
                         </svg>
                         Create wireframe
                       </p>
-                      <div class="flex items-center">
-                        <span class="font-bold text-xs dark:text-gray-200 mr-2 ml-2 md:ml-4">
+                      <div className="flex items-center">
+                        <span className="font-bold text-xs dark:text-gray-200 mr-2 ml-2 md:ml-4">
                           25 min 20s
                         </span>
-                        <button class="text-sm p-1 text-gray-400 border rounded bg-blue-500 mr-4">
+                        <button className="text-sm p-1 text-gray-400 border rounded bg-blue-500 mr-4">
                           <svg
                             width="17"
                             height="17"
                             fill="currentColor"
                             viewBox="0 0 24 24"
-                            class="text-white"
+                            className="text-white"
                           >
                             <g fill="none">
                               <path
@@ -779,11 +779,11 @@ export default function Dashboard() {
                         </button>
                       </div>
                     </div>
-                    <div class="flex items-center p-4 justify-between border-b-2 border-gray-100">
-                      <p class="font-bold text-md text-black dark:text-white">
+                    <div className="flex items-center p-4 justify-between border-b-2 border-gray-100">
+                      <p className="font-bold text-md text-black dark:text-white">
                         Slack
                       </p>
-                      <button class="text-sm p-1 text-gray-400 border rounded border-gray-400 mr-4">
+                      <button className="text-sm p-1 text-gray-400 border rounded border-gray-400 mr-4">
                         <svg
                           width="15"
                           height="15"
@@ -799,13 +799,13 @@ export default function Dashboard() {
                         </svg>
                       </button>
                     </div>
-                    <div class="py-2 px-4 text-gray-600 flex items-center justify-between border-b-2 border-gray-100">
-                      <p class="text-xs flex items-center dark:text-white">
+                    <div className="py-2 px-4 text-gray-600 flex items-center justify-between border-b-2 border-gray-100">
+                      <p className="text-xs flex items-center dark:text-white">
                         <svg
                           width="20"
                           height="20"
                           fill="currentColor"
-                          class="mr-2"
+                          className="mr-2"
                           viewBox="0 0 24 24"
                         >
                           <g fill="none">
@@ -817,11 +817,11 @@ export default function Dashboard() {
                         </svg>
                         International
                       </p>
-                      <div class="flex items-center">
-                        <span class="text-xs text-gray-400 mr-2 ml-2 md:ml-4">
+                      <div className="flex items-center">
+                        <span className="text-xs text-gray-400 mr-2 ml-2 md:ml-4">
                           30 min
                         </span>
-                        <button class="text-sm p-1 text-gray-400 border rounded border-gray-400 mr-4">
+                        <button className="text-sm p-1 text-gray-400 border rounded border-gray-400 mr-4">
                           <svg
                             width="15"
                             height="15"
@@ -838,13 +838,13 @@ export default function Dashboard() {
                         </button>
                       </div>
                     </div>
-                    <div class="py-2 px-4 text-gray-600 flex items-center justify-between border-b-2 border-gray-100">
-                      <p class="text-xs flex items-center dark:text-white">
+                    <div className="py-2 px-4 text-gray-600 flex items-center justify-between border-b-2 border-gray-100">
+                      <p className="text-xs flex items-center dark:text-white">
                         <svg
                           width="20"
                           height="20"
                           fill="currentColor"
-                          class="mr-2"
+                          className="mr-2"
                           viewBox="0 0 24 24"
                         >
                           <g fill="none">
@@ -856,11 +856,11 @@ export default function Dashboard() {
                         </svg>
                         Slack logo design
                       </p>
-                      <div class="flex items-center">
-                        <span class="text-xs text-gray-400 mr-2 ml-2 md:ml-4">
+                      <div className="flex items-center">
+                        <span className="text-xs text-gray-400 mr-2 ml-2 md:ml-4">
                           30 min
                         </span>
-                        <button class="text-sm p-1 text-gray-400 border rounded border-gray-400 mr-4">
+                        <button className="text-sm p-1 text-gray-400 border rounded border-gray-400 mr-4">
                           <svg
                             width="15"
                             height="15"
@@ -877,13 +877,13 @@ export default function Dashboard() {
                         </button>
                       </div>
                     </div>
-                    <div class="py-2 px-4 text-gray-600 flex items-center justify-between">
-                      <p class="text-xs flex items-center dark:text-white">
+                    <div className="py-2 px-4 text-gray-600 flex items-center justify-between">
+                      <p className="text-xs flex items-center dark:text-white">
                         <svg
                           width="20"
                           height="20"
                           fill="currentColor"
-                          class="mr-2"
+                          className="mr-2"
                           viewBox="0 0 24 24"
                         >
                           <g fill="none">
@@ -895,11 +895,11 @@ export default function Dashboard() {
                         </svg>
                         Dahboard template
                       </p>
-                      <div class="flex items-center">
-                        <span class="text-xs text-gray-400 mr-2 ml-2 md:ml-4">
+                      <div className="flex items-center">
+                        <span className="text-xs text-gray-400 mr-2 ml-2 md:ml-4">
                           30 min
                         </span>
-                        <button class="text-sm p-1 text-gray-400 border rounded border-gray-400 mr-4">
+                        <button className="text-sm p-1 text-gray-400 border rounded border-gray-400 mr-4">
                           <svg
                             width="15"
                             height="15"
@@ -919,20 +919,20 @@ export default function Dashboard() {
                   </div>
                 </div>
               </div>
-              <div class="w-full sm:w-1/2 xl:w-1/3">
-                <div class="mb-4">
+              <div className="w-full sm:w-1/2 xl:w-1/3">
+                <div className="mb-4">
                     {/* Calendar example */}
                     <Calendario/>
                     
-                  {/* <div class="shadow-lg rounded-2xl p-4 bg-white dark:bg-gray-700">
-                    <div class="flex flex-wrap overflow-hidden">
-                      <div class="w-full rounded shadow-sm">
-                        <div class="flex items-center justify-between mb-4">
-                          <div class="text-left font-bold text-xl text-black dark:text-white">
+                  {/* <div className="shadow-lg rounded-2xl p-4 bg-white dark:bg-gray-700">
+                    <div className="flex flex-wrap overflow-hidden">
+                      <div className="w-full rounded shadow-sm">
+                        <div className="flex items-center justify-between mb-4">
+                          <div className="text-left font-bold text-xl text-black dark:text-white">
                             Dec 2021
                           </div>
-                          <div class="flex space-x-4">
-                            <button class="p-2 rounded-full bg-blue-500 text-white">
+                          <div className="flex space-x-4">
+                            <button className="p-2 rounded-full bg-blue-500 text-white">
                               <svg
                                 width="15"
                                 height="15"
@@ -945,7 +945,7 @@ export default function Dashboard() {
                                 ></path>
                               </svg>
                             </button>
-                            <button class="p-2 rounded-full bg-blue-500 text-white">
+                            <button className="p-2 rounded-full bg-blue-500 text-white">
                               <svg
                                 width="15"
                                 height="15"
@@ -960,142 +960,142 @@ export default function Dashboard() {
                             </button>
                           </div>
                         </div>
-                        <div class="-mx-2">
-                          <table class="w-full dark:text-white">
+                        <div className="-mx-2">
+                          <table className="w-full dark:text-white">
                             <tr>
-                              <th class="py-3 px-2 md:px-3 ">S</th>
-                              <th class="py-3 px-2 md:px-3 ">M</th>
-                              <th class="py-3 px-2 md:px-3 ">T</th>
-                              <th class="py-3 px-2 md:px-3 ">W</th>
-                              <th class="py-3 px-2 md:px-3 ">T</th>
-                              <th class="py-3 px-2 md:px-3 ">F</th>
-                              <th class="py-3 px-2 md:px-3 ">S</th>
+                              <th className="py-3 px-2 md:px-3 ">S</th>
+                              <th className="py-3 px-2 md:px-3 ">M</th>
+                              <th className="py-3 px-2 md:px-3 ">T</th>
+                              <th className="py-3 px-2 md:px-3 ">W</th>
+                              <th className="py-3 px-2 md:px-3 ">T</th>
+                              <th className="py-3 px-2 md:px-3 ">F</th>
+                              <th className="py-3 px-2 md:px-3 ">S</th>
                             </tr>
-                            <tr class="text-gray-400 dark:text-gray-500">
-                              <td class="py-3 px-2 md:px-3  text-center text-gray-300 dark:text-gray-500">
+                            <tr className="text-gray-400 dark:text-gray-500">
+                              <td className="py-3 px-2 md:px-3  text-center text-gray-300 dark:text-gray-500">
                                 25
                               </td>
-                              <td class="py-3 px-2 md:px-3  text-center text-gray-300 dark:text-gray-500">
+                              <td className="py-3 px-2 md:px-3  text-center text-gray-300 dark:text-gray-500">
                                 26
                               </td>
-                              <td class="py-3 px-2 md:px-3  text-center text-gray-300 dark:text-gray-500">
+                              <td className="py-3 px-2 md:px-3  text-center text-gray-300 dark:text-gray-500">
                                 27
                               </td>
-                              <td class="py-3 px-2 md:px-3  text-center text-gray-300 dark:text-gray-500">
+                              <td className="py-3 px-2 md:px-3  text-center text-gray-300 dark:text-gray-500">
                                 28
                               </td>
-                              <td class="py-3 px-2 md:px-3  text-center text-gray-300 dark:text-gray-500">
+                              <td className="py-3 px-2 md:px-3  text-center text-gray-300 dark:text-gray-500">
                                 29
                               </td>
-                              <td class="py-3 px-2 md:px-3  text-center text-gray-300 dark:text-gray-500">
+                              <td className="py-3 px-2 md:px-3  text-center text-gray-300 dark:text-gray-500">
                                 30
                               </td>
-                              <td class="py-3 px-2 md:px-3  hover:text-blue-500 text-center text-gray-800 cursor-pointer">
+                              <td className="py-3 px-2 md:px-3  hover:text-blue-500 text-center text-gray-800 cursor-pointer">
                                 1
                               </td>
                             </tr>
                             <tr>
-                              <td class="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
+                              <td className="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
                                 2
                               </td>
-                              <td class="py-3 relative px-1  hover:text-blue-500 text-center cursor-pointer">
+                              <td className="py-3 relative px-1  hover:text-blue-500 text-center cursor-pointer">
                                 3
-                                <span class="absolute rounded-full h-2 w-2 bg-blue-500 bottom-0 left-1/2 transform -translate-x-1/2"></span>
+                                <span className="absolute rounded-full h-2 w-2 bg-blue-500 bottom-0 left-1/2 transform -translate-x-1/2"></span>
                               </td>
-                              <td class="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
+                              <td className="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
                                 4
                               </td>
-                              <td class="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
+                              <td className="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
                                 5
                               </td>
-                              <td class="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
+                              <td className="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
                                 6
                               </td>
-                              <td class="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
+                              <td className="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
                                 7
                               </td>
-                              <td class="py-3 px-2 md:px-3 md:px-2 relative lg:px-3 hover:text-blue-500 text-center cursor-pointer">
+                              <td className="py-3 px-2 md:px-3 md:px-2 relative lg:px-3 hover:text-blue-500 text-center cursor-pointer">
                                 8
-                                <span class="absolute rounded-full h-2 w-2 bg-yellow-500 bottom-0 left-1/2 transform -translate-x-1/2"></span>
+                                <span className="absolute rounded-full h-2 w-2 bg-yellow-500 bottom-0 left-1/2 transform -translate-x-1/2"></span>
                               </td>
                             </tr>
                             <tr>
-                              <td class="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
+                              <td className="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
                                 9
                               </td>
-                              <td class="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
+                              <td className="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
                                 10
                               </td>
-                              <td class="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
+                              <td className="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
                                 11
                               </td>
-                              <td class="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
+                              <td className="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
                                 12
                               </td>
-                              <td class="py-3 px-2 md:px-3  text-center text-white cursor-pointer">
-                                <span class="p-2 rounded-full bg-blue-500">
+                              <td className="py-3 px-2 md:px-3  text-center text-white cursor-pointer">
+                                <span className="p-2 rounded-full bg-blue-500">
                                   13
                                 </span>
                               </td>
-                              <td class="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
+                              <td className="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
                                 14
                               </td>
-                              <td class="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
+                              <td className="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
                                 15
                               </td>
                             </tr>
                             <tr>
-                              <td class="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
+                              <td className="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
                                 16
                               </td>
-                              <td class="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
+                              <td className="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
                                 17
                               </td>
-                              <td class="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
+                              <td className="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
                                 18
                               </td>
-                              <td class="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
+                              <td className="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
                                 19
                               </td>
-                              <td class="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
+                              <td className="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
                                 20
                               </td>
-                              <td class="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
+                              <td className="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
                                 21
                               </td>
-                              <td class="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
+                              <td className="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
                                 22
                               </td>
                             </tr>
                             <tr>
-                              <td class="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
+                              <td className="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
                                 23
                               </td>
-                              <td class="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
+                              <td className="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
                                 24
                               </td>
-                              <td class="py-3 px-2 md:px-3  hover:text-blue-500 relative text-center cursor-pointer">
+                              <td className="py-3 px-2 md:px-3  hover:text-blue-500 relative text-center cursor-pointer">
                                 25
-                                <span class="absolute rounded-full h-2 w-2 bg-red-500 bottom-0 left-1/2 transform -translate-x-1/2"></span>
+                                <span className="absolute rounded-full h-2 w-2 bg-red-500 bottom-0 left-1/2 transform -translate-x-1/2"></span>
                               </td>
-                              <td class="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
+                              <td className="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
                                 26
                               </td>
-                              <td class="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
+                              <td className="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
                                 27
                               </td>
-                              <td class="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
+                              <td className="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
                                 28
                               </td>
-                              <td class="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
+                              <td className="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
                                 29
                               </td>
                             </tr>
                             <tr>
-                              <td class="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
+                              <td className="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
                                 30
                               </td>
-                              <td class="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
+                              <td className="py-3 px-2 md:px-3  hover:text-blue-500 text-center cursor-pointer">
                                 31
                               </td>
                               <td></td>
@@ -1111,100 +1111,7 @@ export default function Dashboard() {
                   </div> */}
                 </div>
                 {/* connects example */}
-                <div class="mb-4">
-                  <div class="shadow-lg rounded-2xl p-4 bg-white dark:bg-gray-700 w-full">
-                    <p class="font-bold text-md text-black dark:text-white">
-                      Connects
-                    </p>
-                    <ul>
-                      <li class="flex items-center my-6 space-x-2">
-                        <a href="#" class="block relative">
-                          <img
-                            alt="profil"
-                            src="/images/person/1.jpg"
-                            class="mx-auto object-cover rounded-full h-10 w-10 "
-                          />
-                        </a>
-                        <div class="flex flex-col">
-                          <span class="text-sm text-gray-900 font-semibold dark:text-white ml-2">
-                            Dommy
-                          </span>
-                          <span class="text-sm text-gray-400 dark:text-gray-300 ml-2">
-                            Hey John ! Do you read the NextJS doc ?
-                          </span>
-                        </div>
-                      </li>
-                      <li class="flex items-center my-6 space-x-2">
-                        <a href="#" class="block relative">
-                          <img
-                            alt="profil"
-                            src="/images/person/5.jpg"
-                            class="mx-auto object-cover rounded-full h-10 w-10 "
-                          />
-                        </a>
-                        <div class="flex flex-col">
-                          <span class="text-sm text-gray-900 font-semibold dark:text-white ml-2">
-                            Kev Dawg
-                          </span>
-                          <span class="text-sm text-gray-400 dark:text-gray-300 ml-2">
-                            No I think the dog is better...
-                          </span>
-                        </div>
-                      </li>
-                      <li class="flex items-center my-6 space-x-2">
-                        <a href="#" class="block relative">
-                          <img
-                            alt="profil"
-                            src="/images/person/6.jpg"
-                            class="mx-auto object-cover rounded-full h-10 w-10 "
-                          />
-                        </a>
-                        <div class="flex flex-col">
-                          <span class="text-sm text-gray-900 font-semibold dark:text-white ml-2">
-                            J DEE
-                          </span>
-                          <span class="text-sm text-gray-400 dark:text-gray-300 ml-2">
-                            Seriously ? haha Bob is not a child !
-                          </span>
-                        </div>
-                      </li>
-                      <li class="flex items-center my-6 space-x-2">
-                        <a href="#" class="block relative">
-                          <img
-                            alt="profil"
-                            src="/images/person/7.jpg"
-                            class="mx-auto object-cover rounded-full h-10 w-10 "
-                          />
-                        </a>
-                        <div class="flex flex-col">
-                          <span class="text-sm text-gray-900 font-semibold dark:text-white ml-2">
-                            Zak attack
-                          </span>
-                          <span class="text-sm text-gray-400 dark:text-gray-300 ml-2">
-                            Do you need that design ?
-                          </span>
-                        </div>
-                      </li>
-                      <li class="flex items-center my-6 space-x-2">
-                        <a href="#" class="block relative">
-                          <img
-                            alt="profil"
-                            src="/images/person/7.jpg"
-                            class="mx-auto object-cover rounded-full h-10 w-10 "
-                          />
-                        </a>
-                        <div class="flex flex-col">
-                          <span class="text-sm text-gray-900 font-semibold dark:text-white ml-2">
-                            Chrissy
-                          </span>
-                          <span class="text-sm text-gray-400 dark:text-gray-300 ml-2">
-                            What up ?
-                          </span>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+                <Connects></Connects>
               </div>
             </div>
           </div>
