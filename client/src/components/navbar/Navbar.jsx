@@ -19,7 +19,7 @@ const navigation = [
   { name: 'Profile', href: '/Profile', current: false },
   { name: 'Messages', href: '/Messages', current: false },
   { name: 'Register', href: '/Signup', current: false },
-  { name: 'Login', href: '/', current: false },
+  { name: 'Login', href: '/Login', current: false },
  
 ]
 const userNavigation = [

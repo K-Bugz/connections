@@ -14,20 +14,19 @@ export default function Navbar() {
                     </div>
                     <div class=' '>
                         <div class='text-center px-14'>
-                            <h2 class='text-gray-800 text-3xl font-bold'>Username</h2>
+                            <h2 class='text-gray-800 text-3xl font-bold'>First and Last Name</h2>
                             <p class='text-gray-400 mt-2'>Title</p>
                             <p class='mt-2 text-gray-600'>About Me Area </p>
                         </div>
                         <hr class='mt-6' />
                         <div class='flex  bg-gray-50 '>
-                            <div class='text-center w-1/2 p-4 hover:bg-gray-100 cursor-pointer'>
-                                <p><span class='font-semibold'>Resume Attachment</span></p>
-                            </div>
                             <div class='border'></div>
                             <div class='text-center w-1/2 p-4 hover:bg-gray-100 cursor-pointer'>
                                 <p> <span class='font-semibold'>Website</span></p>
                             </div>
-
+                            <div class='text-center w-1/2 p-4 hover:bg-gray-100 cursor-pointer'>
+                                <p> <span class='font-semibold'>Chat</span></p>
+                            </div>
                         </div>
                     </div>
                 </div>

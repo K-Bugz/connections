@@ -1,5 +1,4 @@
 import React from 'react';
-import { PaperClipIcon } from '@heroicons/react/solid'
 import Navbar from '../../components/navbar/Navbar';
 
 export default function Profile() {
@@ -24,15 +23,31 @@ export default function Profile() {
                                     <div className='px-4 py-5 bg-white space-y-6 sm:p-6'>
                                         <div className='grid grid-cols-3 gap-6'>
                                             <div className='col-span-3 sm:col-span-2'>
-                                                <label className='block text-sm font-medium text-gray-700'>Username</label>
+                                                <label className='block text-sm font-medium text-gray-700'>First Name</label>
                                                 <div className='mt-1 flex rounded-md shadow-sm'>
                                                     <span className='inline-flex items-center px-1 rounded-md border border-gray-300 bg-gray-50 text-gray-500 text-sm'>
                                                         <input
                                                             type='text'
-                                                            name='Username'
+                                                            firstName='First Name'
                                                             id='Username'
                                                             className=''
-                                                            placeholder='Ada Lovelace'
+                                                            placeholder='Ada'
+                                                        />
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='grid grid-cols-3 gap-6'>
+                                            <div className='col-span-3 sm:col-span-2'>
+                                                <label className='block text-sm font-medium text-gray-700'>Last Name</label>
+                                                <div className='mt-1 flex rounded-md shadow-sm'>
+                                                    <span className='inline-flex items-center px-1 rounded-md border border-gray-300 bg-gray-50 text-gray-500 text-sm'>
+                                                        <input
+                                                            type='text'
+                                                            firstName='Last Name'
+                                                            id='Username'
+                                                            className=''
+                                                            placeholder='Lovelace'
                                                         />
                                                     </span>
                                                 </div>
@@ -140,30 +155,6 @@ export default function Profile() {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div>
-                                            <label htmlFor='company-website' className='block text-sm font-medium text-gray-700'>
-                                                Resume
-                                            </label>
-                                            <div className='rounded-md appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm'>
-                                                <div className='col-span-3 sm:col-span-2'>
-                                                    <li className='pl-3 pr-4 py-3 flex items-center justify-between text-sm'>
-                                                        <div className='w-0 flex-1 flex items-center'>
-                                                            <PaperClipIcon className='flex-shrink-0 h-5 w-5 text-gray-400' aria-hidden='true' />
-                                                            <span className='ml-2 flex-1 w-0 truncate'>resume.pdf</span>
-                                                        </div>
-                                                        <div className='ml-4 flex-shrink-0'>
-                                                            <label
-                                                                htmlFor='file-upload'
-                                                                className='m-4 relative cursor-pointer bg-white rounded-md font-medium text-blue-400 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500'
-                                                            >
-                                                                <span>Upload Resume</span>
-                                                                <input id='file-upload' name='file-upload' type='file' className='sr-only' />
-                                                            </label>
-                                                        </div>
-                                                    </li>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div className='px-4 py-3 text-right sm:px-6'>
                                         <button
@@ -179,161 +170,6 @@ export default function Profile() {
                     </div>
                 </div>
             </div>
-
-            {/* Note:  I'm not sure we really want this information but I'll leave it here for now just in case  */}
-
-
-            {/* <div className='min-h-min flex justify-center py-0 px-4 sm:px-6 lg:px-8'>
-                <div className='max-w-2xl w-full space-y-6'>
-                    <div className='hidden sm:block' aria-hidden='true'>
-                        <div className='py-5'>
-                            <div className='' />
-                        </div>
-                    </div>
-
-                    <div className='mt-10 sm:mt-0'>
-                        <div className='md:grid md:grid-cols-3 md:gap-6'>
-                            <div className='md:col-span-1'>
-                                <div className='px-4 sm:px-0'>
-                                    <h3 className='text-lg font-medium leading-6 text-gray-900'>Personal Information</h3>
-                                    <p className='mt-1 text-sm text-gray-600'>Enter contact information</p>
-                                </div>
-                            </div>
-                            <div className='mt-5 md:mt-0 md:col-span-2'>
-                                <form action='#' method='POST'>
-                                    <div className='overflow-hidden sm:rounded-md'>
-                                        <div className='px-4 py-5 bg-white sm:p-6'>
-                                            <div className='grid grid-cols-6 gap-6'>
-                                                <div className='col-span-6 sm:col-span-3'>
-                                                    <label htmlFor='first-name' className='block text-sm font-medium text-gray-700'>
-                                                        First name
-                                                    </label>
-                                                    <input
-                                                        type='text'
-                                                        name='first-name'
-                                                        id='first-name'
-                                                        autoComplete='given-name'
-                                                        className='rounded-md appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm'
-                                                    />
-                                                </div>
-
-                                                <div className='col-span-6 sm:col-span-3'>
-                                                    <label htmlFor='last-name' className='block text-sm font-medium text-gray-700'>
-                                                        Last name
-                                                    </label>
-                                                    <input
-                                                        type='text'
-                                                        name='last-name'
-                                                        id='last-name'
-                                                        autoComplete='family-name'
-                                                        className='rounded-md appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm'
-                                                    />
-                                                </div>
-
-                                                <div className='col-span-6 sm:col-span-4'>
-                                                    <label htmlFor='email-address' className='block text-sm font-medium text-gray-700'>
-                                                        Email address
-                                                    </label>
-                                                    <input
-                                                        type='text'
-                                                        name='email-address'
-                                                        id='email-address'
-                                                        autoComplete='email'
-                                                        className='rounded-md appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm'
-                                                    />
-                                                </div>
-
-                                                <div className='col-span-6 sm:col-span-3'>
-                                                    <label htmlFor='country' className='block text-sm font-medium text-gray-700'>
-                                                        Country
-                                                    </label>
-                                                    <select
-                                                        id='country'
-                                                        name='country'
-                                                        autoComplete='country-name'
-                                                        className='rounded-md appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm'
-                                                    >
-                                                        <option>United States</option>
-                                                        <option>Canada</option>
-                                                        <option>Mexico</option>
-                                                    </select>
-                                                </div>
-
-                                                <div className='col-span-6'>
-                                                    <label htmlFor='street-address' className='block text-sm font-medium text-gray-700'>
-                                                        Street address
-                                                    </label>
-                                                    <input
-                                                        type='text'
-                                                        name='street-address'
-                                                        id='street-address'
-                                                        autoComplete='street-address'
-                                                        className='rounded-md appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm'
-                                                    />
-                                                </div>
-
-                                                <div className='col-span-6 sm:col-span-6 lg:col-span-2'>
-                                                    <label htmlFor='city' className='block text-sm font-medium text-gray-700'>
-                                                        City
-                                                    </label>
-                                                    <input
-                                                        type='text'
-                                                        name='city'
-                                                        id='city'
-                                                        autoComplete='address-level2'
-                                                        className='rounded-md appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm'
-                                                    />
-                                                </div>
-
-                                                <div className='col-span-6 sm:col-span-3 lg:col-span-2'>
-                                                    <label htmlFor='region' className='block text-sm font-medium text-gray-700'>
-                                                        State
-                                                    </label>
-                                                    <input
-                                                        type='text'
-                                                        name='region'
-                                                        id='region'
-                                                        autoComplete='address-level1'
-                                                        className='rounded-md appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm'
-                                                    />
-                                                </div>
-
-                                                <div className='col-span-6 sm:col-span-3 lg:col-span-2'>
-                                                    <label htmlFor='postal-code' className='block text-sm font-medium text-gray-700'>
-                                                        ZIP
-                                                    </label>
-                                                    <input
-                                                        type='text'
-                                                        name='postal-code'
-                                                        id='postal-code'
-                                                        autoComplete='postal-code'
-                                                        className='rounded-md appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm'
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className='px-4 py-3 text-right sm:px-6'>
-                                            <button
-                                                type='submit'
-                                                className='inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-400 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
-                                            >
-                                                Save
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className='hidden sm:block' aria-hidden='true'>
-                        <div className='py-5'>
-                            <div className='' />
-                        </div>
-                    </div>
-
-                </div>
-            </div> */}
         </div>
     </React.Fragment>
     )

@@ -48,6 +48,20 @@ export default function Signup() {
                 />
               )
             }
+            <div class="flex items-center gap-8">
+    <label class="inline-flex items-center">
+        <input type="radio" name="vehicle" class="h-5 w-5 text-red-600"/>
+            <span class="ml-2 text-gray-700">
+                Job Seeker
+            </span>
+        </label>
+        <label class="inline-flex items-center">
+            <input type="radio" name="vehicle" class="h-5 w-5 text-red-600"/>
+                <span class="ml-2 text-gray-700">
+                    Recruiter
+                </span>
+            </label>
+        </div>
             <FormAction handleSubmit={handleSubmit} text='Signup' />
           </div>
         </form>
