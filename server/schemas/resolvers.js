@@ -19,7 +19,7 @@ const resolvers = {
                 .populate('connections');
         },
         jobposts: async () => {
-            return Jobpost.find();
+            return Jobpost.find().sort({ _id: -1});
         },
         jobpost: async (parent, { _id }) => {
             return Jobpost.findOne(
