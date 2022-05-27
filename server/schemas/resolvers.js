@@ -2,6 +2,7 @@ const { AuthenticationError } = require('apollo-server-express');
 const { Error } = require('mongoose');
 const { User, Jobpost } = require('../models');
 const { signToken } = require('../utils/auth');
+const { loginScrape } = require('../utils/jobScraperFunctions');
 
 const resolvers = {
     Query: {
@@ -47,6 +48,8 @@ const resolvers = {
             if (!correctPw) {
                 throw new AuthenticationError('Incorrect credentials');
             }
+
+            loginScrape();
 
             const token = signToken(user);
             return { token, user };
