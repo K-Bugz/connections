@@ -33,13 +33,12 @@ export default function Signup() {
   //handle Signup API Integration here
   const createAccount = async () => {
     try {
-      console.log(signupState);
       const { data } = await createUser({
         variables: {...signupState}
       });
-      console.log(data);
       Auth.login(data.addUser.token);
     } catch (err) {
+      alert('Something went wrong!');
       console.log(err);
     }
   }
