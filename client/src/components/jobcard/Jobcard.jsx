@@ -5,10 +5,10 @@ export default function JobCard() {
         <React.Fragment>
             <div className="mb-4">
                 <div className="shadow-lg rounded-2xl p-4 bg-white dark:bg-gray-700 w-full">
-                    <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center justify-between mb-10">
                         <div className="flex items-center">
                             <span className="rounded-xl p-2 bg-gradient-to-r from-blue-400 to-blue-800 text-white w-full transition ease-in duration-200  text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 ">
-                                Apply Today
+                                Job Listing
                                 <svg
                                     width="25"
                                     height="25"
@@ -18,23 +18,23 @@ export default function JobCard() {
                                 </svg>
                             </span>
                             <div className="flex flex-col">
-                                <span className="font-bold text-md text-black dark:text-white ml-2">
-                                    Company
+                                <span className="font-bold text-sm text-black dark:text-white ml-2">
+                                    Job Title
                                 </span>
                                 <span className="text-sm text-gray-500 dark:text-white ml-2">
-                                    Job Title
+                                   Company
                                 </span>
                             </div>
                         </div>
                         <div className="flex items-center">
 
                             {/* Need click to add/unadd from dashboard                        */}
-                            <button className="border p-1 border-gray-200 rounded-full">
+                            <button className="border p-3 border-gray-200 rounded-full">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    width="20"
-                                    height="20"
-                                    className="w-4 h-4 text-yellow-500"
+                                    width="40"
+                                    height="40"
+                                    className="w-6 h-6 text-yellow-500"
                                     fill="currentColor"
                                     viewBox="0 0 1792 1792"
                                 >
