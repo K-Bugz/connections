@@ -1,31 +1,28 @@
 import React from 'react';
 
-    export default function JobCard (props) {
-        const {
-            id,
-            title,
-            link,
-            company,
-            location,
-            timePosted,
-            createdAt,
-    } = props;
-
-        return (
-            <React.Fragment>
-                <div className="mb-4">
-                    <div className="shadow-lg rounded-2xl p-4 bg-white dark:bg-gray-700 w-full">
-                        <div className="flex items-center justify-between mb-10">
-                            <div className="flex items-center">
-                                <span className="rounded-xl p-2 bg-gradient-to-r from-blue-400 to-blue-800 text-white w-full transition ease-in duration-200  text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 ">
-                                    Job {id}
-                                    <svg
-                                        width="25"
-                                        height="25"
-                                        viewBox="0 0 256 262"
-                                        preserveAspectRatio="xMidYMid"
-                                    >
-                                    </svg>
+export default function JobCard(jobPosts) {
+    return (
+        <React.Fragment>
+            <div className="mb-4">
+                <div className="shadow-lg rounded-2xl p-4 bg-white dark:bg-gray-700 w-full">
+                    <div className="flex items-center justify-between mb-10">
+                        <div className="flex items-center">
+                            <span className="rounded-xl p-2 bg-gradient-to-r from-blue-400 to-blue-800 text-white w-full transition ease-in duration-200  text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 ">
+                                Job Listing
+                                <svg
+                                    width="25"
+                                    height="25"
+                                    viewBox="0 0 256 262"
+                                    preserveAspectRatio="xMidYMid"
+                                >
+                                </svg>
+                            </span>
+                            <div className="flex flex-col">
+                                <span className="font-bold text-sm text-black dark:text-white ml-2">
+                                    Job Title
+                                </span>
+                                <span className="text-sm text-gray-500 dark:text-white ml-2">
+                                   Company
                                 </span>
                                 <div className="flex flex-col">
                                     <span className="font-bold text-sm text-black dark:text-white ml-2">

@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useState } from 'react';
 import Navbar from '../../components/navbar/Navbar';
+import { useQuery, useMutation } from '@apollo/client';
+import { QUERY_USER } from '../../utils/queries';
 
 export default function Profile() {
+    const [profileState, setProfileState] = useState({})
+    const { loading, data } = useQuery(QUERY_USER);
+
+    const handleChange = (e) => setProfileState({ ...profileState, [e.target.id]: e.target.value });
+
+    if (loading) {
+        return <h2>loading...</h2>
+    }
+    const { user } = data;
+
+    console.log(user);
     return (
         <React.Fragment>
         <Navbar></Navbar>
@@ -28,10 +42,10 @@ export default function Profile() {
                                                     <span className='inline-flex items-center px-1 rounded-md border border-gray-300 bg-gray-50 text-gray-500 text-sm'>
                                                         <input
                                                             type='text'
-                                                            firstName='First Name'
                                                             id='Username'
                                                             className=''
-                                                            placeholder='Ada'
+                                                            placeholder={user.firstName}
+                                                            onBlur={handleChange}
                                                         />
                                                     </span>
                                                 </div>
@@ -44,7 +58,6 @@ export default function Profile() {
                                                     <span className='inline-flex items-center px-1 rounded-md border border-gray-300 bg-gray-50 text-gray-500 text-sm'>
                                                         <input
                                                             type='text'
-                                                            firstName='Last Name'
                                                             id='Username'
                                                             className=''
                                                             placeholder='Lovelace'
