@@ -34,10 +34,9 @@ const typeDefs = gql`
 
   type Query {
     users: [User]
-    user(email: String!): User
-    jobposts: [Jobpost]
-    jobpost(_id: ID!): Jobpost
-    events: [events]
+    user: User
+    jobPosts: [Jobpost]
+    jobPost(_id: ID!): Jobpost
   }
 
   type Auth {
