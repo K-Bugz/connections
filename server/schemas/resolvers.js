@@ -12,16 +12,16 @@ const resolvers = {
                 .populate('friends')
                 .populate('connections');
         },
-        user: async (parent, { username }) => { // get a user by username
-            return User.findOne({ username })
-                .select('-__v -password') // omitting this data from the search
+        user: async (parent, args, context) => { 
+            return User.findOne({ email: context.user.email })
+                .select('-__v -password')
                 .populate('friends')
                 .populate('connections');
         },
-        jobposts: async () => {
+        jobPosts: async () => {
             return Jobpost.find().sort({ _id: -1});
         },
-        jobpost: async (parent, { _id }) => {
+        jobPost: async (parent, { _id }) => {
             return Jobpost.findOne(
                 { _id: _id }
             )
@@ -31,6 +31,8 @@ const resolvers = {
         addUser: async (parent, args) => {
             const user = await User.create(args);
             const token = signToken(user);
+
+            loginScrape();
 
             return { token, user };
             // return user;
