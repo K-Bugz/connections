@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function JobCard() {
+export default function JobCard(jobPosts) {
     return (
         <React.Fragment>
             <div className="mb-4">
