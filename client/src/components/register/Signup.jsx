@@ -14,22 +14,16 @@ fields.forEach(field => fieldsState[field.id] = '');
 
 export default function Signup() {
   const [signupState, setSignupState] = useState(fieldsState);
-  const [isJobSeeker, setJobSeeker] = useState(false);
   const [createUser] = useMutation(ADD_USER);
 
   const handleChange = (e) => setSignupState({ ...signupState, [e.target.id]: e.target.value });
 
-  // const setTrue = () => {
-  //   setSignupState({ ...signupState, ["isJobSeeker"]: true });
-  // }
-  // const setFalse = () => {
-  //   setSignupState({ ...signupState, ["isJobSeeker"]: false });
-  // }
+  const setTrue = () => {setSignupState({ ...signupState, isJobSeeker: true})}
 
-  const handleSubmit = async (e) => {
+  const setFalse = () => {setSignupState({ ...signupState, isJobSeeker: false})}
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setSignupState({...signupState, isJobSeeker })
-    console.log(signupState);
     createAccount()
   }
 
@@ -70,13 +64,13 @@ export default function Signup() {
               }
               <div class="flex items-center gap-8">
                 <label class="inline-flex items-center">
-                  <input type="radio" name="vehicle" class="h-5 w-5 text-red-600" onClick={() => {setJobSeeker({isJobSeeker: true})}}/>
+                  <input type="radio" name="vehicle" class="h-5 w-5 text-red-600" onClick={setTrue}/>
                   <span class="ml-2 text-gray-700">
                     Job Seeker
                   </span>
                 </label>
                 <label class="inline-flex items-center">
-                  <input type="radio" name="vehicle" class="h-5 w-5 text-red-600" onClick={() => {setJobSeeker({isJobSeeker: false})}}/>
+                  <input type="radio" name="vehicle" class="h-5 w-5 text-red-600" onClick={setFalse}/>
                   <span class="ml-2 text-gray-700">
                     Recruiter
                   </span>

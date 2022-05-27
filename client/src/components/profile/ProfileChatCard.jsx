@@ -38,7 +38,7 @@ export default function ProfileChatCard() {
                             <div className="flex flex-col w-10 h-10 justify-center items-center mr-2">
                                 <a href="link" className="block relative">
                                     <img alt="Avatar" src={user.imageUrl} className="h-8 w-8 rounded-full " />
-                                    <span class="absolute w-3 border-2 left-1/2 -bottom-2 transform -translate-x-1/2 border-white h-3 bg-green-500 rounded-full">
+                                    <span className="absolute w-3 border-2 left-1/2 -bottom-2 transform -translate-x-1/2 border-white h-3 bg-green-500 rounded-full">
                                     </span>
                                 </a>
                             </div>

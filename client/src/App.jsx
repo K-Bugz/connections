@@ -9,6 +9,7 @@ import ProfilePage from './components/profile/Profile';
 import ProfileCard from './components/profile/ProfileCard';
 import Map from './components/googlemaps/Map';
 import Main from './pages/Main';
+import Jobs from './pages/Jobs';
 import {
   BrowserRouter,
   Routes,
@@ -47,6 +48,7 @@ function App() {
             <Route path='/Dashboard' element={<Dashboard />} />
             <Route path='/Messages' element={<Messages />} />
             <Route path='/Map' element={<Map />} />
+            <Route path='/Jobs' element={<Jobs />} />
           </Routes>
         </BrowserRouter>
       </React.Fragment>

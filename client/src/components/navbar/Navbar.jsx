@@ -15,7 +15,7 @@ const user = {
 const navigation = [
   { name: 'Dashboard', href: '/Dashboard', current: false },
   { name: 'Connect', href: '#', current: false },
-  { name: 'Jobs', href: '#', current: false },
+  { name: 'Jobs', href: '/Jobs', current: false },
   { name: 'Profile', href: '/Profile', current: false },
   { name: 'Messages', href: '/Messages', current: false },
   { name: 'Register', href: '/Signup', current: false },
@@ -25,6 +25,7 @@ const navigation = [
 const userNavigation = [
   { name: 'Your Profile', href: '/Profile' },
   { name: 'Connect', href: '#' },
+  { name: 'Jobs', href: '/Jobs'},
   { name: 'Dashboard', href: '/Dashboard' },
   { name: 'Sign out', href: '#' }
 ]
