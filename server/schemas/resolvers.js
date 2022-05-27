@@ -1,6 +1,6 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { Error } = require('mongoose');
-const { User, Jobpost } = require('../models');
+const { User, Jobpost, Events } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -24,6 +24,11 @@ const resolvers = {
             return Jobpost.findOne(
                 { _id: _id }
             )
+        },
+        events: async (parent, { username }) => { 
+            return User.findOne({ username })
+                .select('-__v -password') 
+                .populate('events')
         }
     },
     Mutation: {
@@ -86,7 +91,21 @@ const resolvers = {
             } catch (err) {
                 console.log(err)
             }
-        }
+        },
+        addEvent: async (parent, args) => {
+            const newEvent = await Events.create({
+                title: args.title,
+                date: args.date,
+            })
+            return newEvent;
+        },
+        deleteEvents: async (parent, { _id}) => {
+            const deletedEvents = await Events.findByIdAndDelete({ _id: _id });
+            if (!deletedEvents) {
+                throw new Error('No events with that id found');
+            }
+            return deletedEvents;
+        },
     }
 };
 

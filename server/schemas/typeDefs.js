@@ -26,11 +26,18 @@ const typeDefs = gql`
     createdAt: String
   }
 
+  type Events {
+    _id: ID
+    title: String!
+    date: String!
+  }
+
   type Query {
     users: [User]
     user(email: String!): User
     jobposts: [Jobpost]
     jobpost(_id: ID!): Jobpost
+    events: [events]
   }
 
   type Auth {
@@ -45,6 +52,8 @@ const typeDefs = gql`
     updateJob(_id: ID!, isSaved: Boolean!): Jobpost
     deleteJobpost(_id: ID!): Jobpost
     deleteJobposts: [Jobpost]
+    addEvent(title: String!, date: String!): Events
+    deleteEvents: [Events]
   }
 `;
 
