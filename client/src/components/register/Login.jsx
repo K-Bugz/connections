@@ -14,7 +14,7 @@ fields.forEach(field => fieldsState[field.id] = '');
 
 export default function Login() {
     const [loginState, setLoginState] = useState(fieldsState);
-    const [loginUser, { error }] = useMutation(LOGIN);
+    const [loginUser] = useMutation(LOGIN);
 
     const handleChange = (e) => {
         setLoginState({ ...loginState, [e.target.id]: e.target.value })
