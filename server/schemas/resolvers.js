@@ -12,9 +12,9 @@ const resolvers = {
                 .populate('friends')
                 .populate('connections');
         },
-        user: async (parent, { username }) => { // get a user by username
-            return User.findOne({ username })
-                .select('-__v -password') // omitting this data from the search
+        user: async (parent, args, context) => { 
+            return User.findOne({ email: context.user.email })
+                .select('-__v -password')
                 .populate('friends')
                 .populate('connections');
         },
