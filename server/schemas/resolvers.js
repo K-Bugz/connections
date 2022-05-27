@@ -39,7 +39,7 @@ const resolvers = {
 
             if (!user) {
                 throw new AuthenticationError('Incorrect credentials');
-            // we say 'Incorrect credentials' because we don't want anyone know they got something right.
+                // we say 'Incorrect credentials' because we don't want anyone know they got something right.
             }
 
             const correctPw = await user.isCorrectPassword(password);
@@ -51,6 +51,24 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
             // return user;
+        },
+        updateProfile: async (parent, args, context) => {
+            try {
+                const user = await User.findByIdAndUpdate(
+                    { _id: context.user._id },
+                    {
+                        firstName: args.firstName,
+                        lastName: args.lastName,
+                        title: args.title,
+                        website: args.website,
+                        about: args.about
+                    },
+                    { new: true }
+                );
+                return user;
+            } catch (err) {
+                console.log(err);
+            }
         },
         addJobs: async (parent, args) => {
             const newjob = await Jobpost.insertMany({
@@ -70,7 +88,7 @@ const resolvers = {
             )
             return updatedJob;
         },
-        deleteJobpost: async (parent, { _id}) => {
+        deleteJobpost: async (parent, { _id }) => {
             const deletedJob = await Jobpost.findByIdAndDelete({ _id: _id });
             if (!deletedJob) {
                 throw new Error('No job with that id found');
