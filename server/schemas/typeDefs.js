@@ -12,6 +12,7 @@ const typeDefs = gql`
     profilePic: String
     coverPhoto: String
     resume: String
+    isJobSeeker: Boolean
   }
 
   type Jobpost {
@@ -39,7 +40,7 @@ const typeDefs = gql`
 
   type Mutation {
     login(email: String!, password: String!): Auth
-    addUser(email: String!, password: String!): Auth
+    addUser(firstName: String!, lastName: String!, email: String!, password: String!, isJobSeeker: Boolean!): Auth
     addJobs(title: String!, link: String!, company: String!, location: String, timePosted: String): [Jobpost]
     updateJob(_id: ID!, isSaved: Boolean!): Jobpost
     deleteJobpost(_id: ID!): Jobpost

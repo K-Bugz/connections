@@ -46,6 +46,10 @@ const userSchema = new Schema(
             required: true,
             minlength: 5
         },
+        isJobSeeker: {
+            type: Boolean,
+            required: true
+        },
         friends: [
             {
                 type: Schema.Types.ObjectId,
