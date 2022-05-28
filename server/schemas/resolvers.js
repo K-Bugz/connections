@@ -12,21 +12,28 @@ const resolvers = {
                 .populate('friends')
                 .populate('connections');
         },
-        user: async (parent, args, context) => { 
+        user: async (parent, args, context) => {
             return User.findOne({ email: context.user.email })
                 .select('-__v -password')
                 .populate('friends')
                 .populate('connections');
         },
         jobPosts: async () => {
-            return Jobpost.find().sort({ _id: -1});
+            return Jobpost.find().sort({ _id: -1 });
         },
         jobPost: async (parent, { _id }) => {
             return Jobpost.findOne(
                 { _id: _id }
             )
+        },
+        // Find one user's message array
+        messages: async (parent, args, context) => {
+            return User.findOne({ _id: context.user._id })
+                .select('-__v -password')
+                .populate('messages')
         }
     },
+
     Mutation: {
         addUser: async (parent, args) => {
             const user = await User.create(args);
