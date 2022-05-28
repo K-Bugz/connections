@@ -42,10 +42,11 @@ export default function Profile() {
                                                     <span className='inline-flex items-center px-1 rounded-md border border-gray-300 bg-gray-50 text-gray-500 text-sm'>
                                                         <input
                                                             type='text'
-                                                            id='Username'
+                                                            id='firstName'
                                                             className=''
-                                                            placeholder={user.firstName}
-                                                            onBlur={handleChange}
+                                                            value={profileState.firstName}
+                                                            placeholder=''
+                                                            onChange={handleChange}
                                                         />
                                                     </span>
                                                 </div>
