@@ -32,3 +32,21 @@ mutation saveJob($id: ID!, $isSaved: Boolean!) {
   }
 }
 `;
+
+export const UPDATE_PROFILE = gql`
+mutation Mutation($firstName: String!, $lastName: String, $title: String, $website: String, $about: String) {
+  updateProfile(firstName: $firstName, lastName: $lastName, title: $title, website: $website, about: $about) {
+    _id
+    firstName
+    lastName
+    email
+    title
+    about
+    website
+    profilePic
+    coverPhoto
+    resume
+    isJobSeeker
+  }
+}
+`;
