@@ -1,6 +1,6 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { Error } = require('mongoose');
-const { User, Jobpost } = require('../models');
+const { User, Jobpost, Messege } = require('../models');
 const { signToken } = require('../utils/auth');
 const { loginScrape } = require('../utils/jobScraperFunctions');
 
@@ -114,6 +114,18 @@ const resolvers = {
                     return Jobpost.find();
                 }
             } catch (err) {
+                console.log(err)
+            }
+        },
+        addMessage: async (parent, args, context) => {
+            try {
+                const newMessage = await Message.create({ $push: { sender: context.user._id } }, { new: true })
+                if (newMessage) {
+                    const user = await User.findOneAndUpdate({ _id: context.user._id }, { $push: { messeges: newMessage._id } }, { new: true })
+                    return user;
+                }
+            }
+            catch (err) {
                 console.log(err)
             }
         }

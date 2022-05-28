@@ -13,7 +13,7 @@ const typeDefs = gql`
     coverPhoto: String
     resume: String
     isJobSeeker: Boolean
-    messages: [ID]
+    messages: [Message]
   }
 
   type Jobpost {
@@ -61,6 +61,7 @@ const typeDefs = gql`
     updateJob(_id: ID!, isSaved: Boolean!): Jobpost
     deleteJobpost(_id: ID!): Jobpost
     deleteJobposts: [Jobpost]
+    addMessage: User
   }
 `;
 
