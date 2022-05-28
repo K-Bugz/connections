@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import './App.css';
 import SignupPage from './pages/Signup';
@@ -36,20 +37,23 @@ const client = new ApolloClient({
 function App() {
 
   return (
-    <React.Fragment>     
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Main />} />
-          <Route path='/login' element={<LoginPage />} />
-          <Route path='/signup' element={<SignupPage />} />
-          <Route path='/profile' element={<ProfilePage />} />
-          <Route path='/profiledetail' element={<ProfileCard />} />
-          <Route path='/Dashboard' element={<Dashboard />} />
-          <Route path='/Messages' element={<Messages />} />
-          <Route path='/Map' element={<Map />} />
-        </Routes>
-      </BrowserRouter>
-    </React.Fragment>
+    <ApolloProvider client={client}>
+      <React.Fragment>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Main />} />
+            <Route path='/Login' element={<LoginPage />} />
+            <Route path='/Signup' element={<SignupPage />} />
+            <Route path='/Profile' element={<ProfilePage />} />
+            <Route path='/Profiledetail' element={<ProfileCard />} />
+            <Route path='/Dashboard' element={<Dashboard />} />
+            <Route path='/Messages' element={<Messages />} />
+            <Route path='/Map' element={<Map />} />
+            <Route path='/Jobs' element={<Jobs />} />
+          </Routes>
+        </BrowserRouter>
+      </React.Fragment>
+    </ApolloProvider>
   );
 }
 
