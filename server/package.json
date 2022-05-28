@@ -1,28 +1,31 @@
 {
-    "name": "backend-server",
-    "version": "1.0.0",
-    "description": "",
-    "main": "server.js",
-    "scripts": {
-        "start": "node server.js",
-        "watch": "nodemon server.js",
-        "seed": "node seeders/seeds.js"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "apollo-server-express": "^3.7.0",
-        "axios": "^0.27.2",
-        "bcrypt": "^5.0.0",
-        "cheerio": "^1.0.0-rc.11",
-        "dotenv": "^16.0.1",
-        "express": "^4.17.1",
-        "graphql": "^15.5.0",
-        "jsonwebtoken": "^8.5.1",
-        "mongoose": "^5.9.10"
-    },
-    "devDependencies": {
-        "nodemon": "^2.0.3"
-    }
+  "name": "backend-server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "seed": "node seeders/seeds.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-express": "^3.7.0",
+    "axios": "^0.27.2",
+    "bcrypt": "^5.0.0",
+    "cheerio": "^1.0.0-rc.11",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.17.1",
+    "graphql": "^15.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.10",
+    "stripe": "^9.5.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  },
+  "description": ""
 }
