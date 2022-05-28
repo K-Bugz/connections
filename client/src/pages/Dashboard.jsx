@@ -8,6 +8,7 @@ import ProfileCard from '../components/profile/ProfileCard';
 
 
 export default function Dashboard() {
+  const saveJobs = [];
 
   return (
     <React.Fragment>
@@ -25,9 +26,7 @@ export default function Dashboard() {
                 <div className="w-full sm:w-1/2 xl:w-1/3">
                   <div className="mb-4">
                     <div className="shadow-lg rounded-2xl p-4 bg-white dark:bg-gray-700 w-full">
-                      <JobCard></JobCard>
-                     <JobCard></JobCard>
-                      <JobCard></JobCard>
+                      {saveJobs? <p>no saved jobs yet</p> : <JobCard></JobCard>}
                     </div>
                   </div>
                 </div>
