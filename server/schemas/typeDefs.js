@@ -13,6 +13,7 @@ const typeDefs = gql`
     coverPhoto: String
     resume: String
     isJobSeeker: Boolean
+    savedJobs:[Jobpost]
   }
 
   type Jobpost {
@@ -43,7 +44,7 @@ const typeDefs = gql`
     addUser(firstName: String!, lastName: String!, email: String!, password: String!, isJobSeeker: Boolean!): Auth
     updateProfile(firstName: String!, lastName: String, title: String, website: String, about: String): User
     addJobs(title: String!, link: String!, company: String!, location: String, timePosted: String): [Jobpost]
-    updateJob(_id: ID!, isSaved: Boolean!): Jobpost
+    saveJob(_id: ID!, isSaved: Boolean!): Jobpost
     deleteJobpost(_id: ID!): Jobpost
     deleteJobposts: [Jobpost]
   }

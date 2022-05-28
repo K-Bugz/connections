@@ -9,14 +9,14 @@ const resolvers = {
         users: async () => {
             return User.find()
                 .select('-__v -password')
-                .populate('friends')
-                .populate('connections');
+                .populate('savedJobs')
+                .populate('friends');
         },
         user: async (parent, args, context) => { 
             return User.findOne({ email: context.user.email })
                 .select('-__v -password')
                 .populate('friends')
-                .populate('connections');
+                .populate('savedJobs');
         },
         jobPosts: async () => {
             return Jobpost.find().sort({ _id: -1});
@@ -85,13 +85,24 @@ const resolvers = {
             })
             return newjob;
         },
-        updateJob: async (parent, { _id, isSaved }) => {
-            const updatedJob = await Jobpost.findByIdAndUpdate(
-                { _id: _id },
-                { isSaved: isSaved },
-                { new: true }
-            )
-            return updatedJob;
+        saveJob: async (parent, { _id, isSaved }, context) => {
+            try {
+                const updatedJob = await Jobpost.findByIdAndUpdate(
+                    { _id: _id },
+                    { isSaved: isSaved },
+                    { new: true }
+                );
+                const user = await User.findByIdAndUpdate(
+                    { _id: context.user._id },
+                    { $addToSet: { savedJobs: _id } },
+                    { new: true }
+                ).populate('savedJobs');
+                if (updatedJob && user) {
+                    return updatedJob;
+                }
+            } catch (err) {
+                console.log(err);
+            }
         },
         deleteJobpost: async (parent, { _id }) => {
             const deletedJob = await Jobpost.findByIdAndDelete({ _id: _id });

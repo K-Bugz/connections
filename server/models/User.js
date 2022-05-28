@@ -63,7 +63,7 @@ const userSchema = new Schema(
         //         ref: 'Message'
         //     }
         // ],
-        connections: [ // connections is the saved jobs
+        savedJobs: [ // connections is the saved jobs
             {
                 type: Schema.Types.ObjectId,
                 ref: 'Jobpost'
