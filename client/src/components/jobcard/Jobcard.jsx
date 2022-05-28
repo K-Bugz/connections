@@ -1,6 +1,12 @@
 import React from 'react';
+import { useMutation } from '@apollo/client';
+import { SAVE_JOB } from '../../utils/mutations';
 
-export default function JobCard(jobPosts) {
+export default function JobCard( {job} ) {
+    const [saveJob] = useMutation(SAVE_JOB);
+    const handleSaveJob = () => {
+        saveJob({ variables: { id: job._id, isSaved: true}});
+    }
     return (
         <React.Fragment>
             <div className="mb-4">
@@ -19,17 +25,17 @@ export default function JobCard(jobPosts) {
                             </span>
                             <div className="flex flex-col">
                                 <span className="font-bold text-sm text-black dark:text-white ml-2">
-                                    Job Title
+                                    {job.title}
                                 </span>
                                 <span className="text-sm text-gray-500 dark:text-white ml-2">
-                                   Company
+                                   {job.company}
                                 </span>
                             </div>
                         </div>
                         <div className="flex items-center">
 
                             {/* Need click to add/unadd from dashboard                        */}
-                            <button className="border p-3 border-gray-200 rounded-full">
+                            <button className="border p-3 border-gray-200 rounded-full" onClick={handleSaveJob}>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="40"
@@ -44,16 +50,16 @@ export default function JobCard(jobPosts) {
                         </div>
                     </div>
                     <div className="flex items-center justify-start my-4 space-x-4">
-                        {/* <span className="px-2 py-1 flex items-center text-xs rounded-md font-semibold text-green-500 bg-green-50">
-                            Date Posted
-                        </span> */}
+                        <span className="px-2 py-1 flex items-center text-xs rounded-md font-semibold text-green-500 bg-green-50">
+                            {job.location}
+                        </span>
                         <span className="px-2 py-1 flex items-center text-xs rounded-md text-blue-500 font-semibold bg-blue-100">
-                            Date Posted
+                            {job.timePosted}
                         </span>
                     </div>
-                    <span className="px-2 py-1 flex w-36 mt-4 items-center text-xs rounded-md font-bold text-blue-500 bg-blue-100">
-                        Link to Apply
-                    </span>
+                    <a href={job.link} target="_blank"><span className="px-2 py-1 flex w-36 mt-4 items-center text-xs rounded-md font-bold text-blue-500 bg-blue-100">
+                        Click to Apply!
+                    </span></a>
                 </div>
             </div>
 

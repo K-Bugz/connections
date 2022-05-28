@@ -11,27 +11,24 @@ export const LOGIN = gql`
   }
 `;
 
-export const ADD_ORDER = gql`
-  mutation addOrder($products: [ID]!) {
-    addOrder(products: $products) {
-      purchaseDate
-      products {
-        _id
-        name
-        description
-        price
-        quantity
-        category {
-          name
-        }
-      }
-    }
-  }
-`;
-
 export const ADD_USER = gql`
 mutation Mutation($firstName: String!, $lastName: String!, $email: String!, $password: String!, $isJobSeeker: Boolean!) {
   addUser(firstName: $firstName, lastName: $lastName, email: $email, password: $password, isJobSeeker: $isJobSeeker) {
     token
   }
 }`;
+
+export const SAVE_JOB = gql`
+mutation saveJob($id: ID!, $isSaved: Boolean!) {
+  saveJob(_id: $id, isSaved: $isSaved) {
+    _id
+    title
+    link
+    company
+    location
+    timePosted
+    isSaved
+    createdAt
+  }
+}
+`;

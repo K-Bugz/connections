@@ -7,15 +7,22 @@ import { QUERY_USER } from '../../utils/queries';
 export default function Profile() {
     const [profileState, setProfileState] = useState({})
     const { loading, data } = useQuery(QUERY_USER);
+    // useEffect(() => {
+    //     setProfileState(data.user)
+    // },[data])
+    // if (data) {
+    //     const { user } = data;
+    //     const setUserData = (user) => {
+    //         setProfileState(user);
+    //     }
+    // }
 
     const handleChange = (e) => setProfileState({ ...profileState, [e.target.id]: e.target.value });
 
     if (loading) {
         return <h2>loading...</h2>
     }
-    const { user } = data;
 
-    console.log(user);
     return (
         <React.Fragment>
         <Navbar></Navbar>
@@ -42,10 +49,11 @@ export default function Profile() {
                                                     <span className='inline-flex items-center px-1 rounded-md border border-gray-300 bg-gray-50 text-gray-500 text-sm'>
                                                         <input
                                                             type='text'
-                                                            id='Username'
+                                                            id='fistName'
                                                             className=''
-                                                            placeholder={user.firstName}
-                                                            onBlur={handleChange}
+                                                            value={profileState.firstName}
+                                                            placeholder=""
+                                                            onChange={handleChange}
                                                         />
                                                     </span>
                                                 </div>
