@@ -15,8 +15,9 @@ query FindAllJobs {
 }`;
 
 export const QUERY_USER = gql`
-query QueryUser {
+query queryUser {
   user {
+    _id
     firstName
     lastName
     email
@@ -27,7 +28,16 @@ query QueryUser {
     coverPhoto
     resume
     isJobSeeker
-    _id
+    savedJobs {
+      _id
+      title
+      link
+      company
+      location
+      timePosted
+      isSaved
+      createdAt
+    }
   }
 }
 `;

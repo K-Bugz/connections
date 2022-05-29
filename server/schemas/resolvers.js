@@ -104,6 +104,20 @@ const resolvers = {
                 console.log(err);
             }
         },
+        removeJob: async (parent, { _id }, context) => {
+            try {
+                const user = await User.findByIdAndUpdate(
+                    { _id: context.user._id },
+                    { $pull: { savedJobs: _id } },
+                    { new: true }
+                ).populate('savedJobs');
+                if (user) {
+                    return user;
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        },
         deleteJobpost: async (parent, { _id }) => {
             const deletedJob = await Jobpost.findByIdAndDelete({ _id: _id });
             if (!deletedJob) {

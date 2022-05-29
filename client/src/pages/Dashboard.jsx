@@ -3,19 +3,42 @@ import React from 'react';
 import Calendario from "./Calender";
 import Navbar from '../components/navbar/Navbar';
 import Connects from '../components/connects/Connects';
-import JobCard from '../components/jobcard/Jobcard';
+import Jobcard from '../components/jobcard/Jobcard';
 import ProfileCard from '../components/profile/ProfileCard';
+import { useState, useEffect } from 'react';
+import { useQuery, useMutation } from "@apollo/client";
+import { QUERY_USER } from "../utils/queries";
+import { REMOVE_JOB } from "../utils/mutations";
 
 
 export default function Dashboard() {
-  const saveJobs = [];
+  const { loading, data } = useQuery(QUERY_USER);
+  const { updateSavedJobs } = useMutation(REMOVE_JOB);
+  const [jobsToPost, setJobsToPost] = useState([]);
+  let savedJobs = [];
+
+  const getSavedJobs = async (data) => {
+    try {
+      if (!loading) {
+        const { user } = data;
+        savedJobs = user.savedJobs.slice(0, 10);
+        setJobsToPost(savedJobs);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  useEffect(() => {
+    getSavedJobs(data);
+  }, [data])
 
   return (
     <React.Fragment>
       <Navbar></Navbar>
       <main className="bg-gray-100 dark:bg-gray-800  h-screen overflow-hidden relative">
         <div className="flex items-start justify-between">
-          <div className="h-screen hidden lg:block my-4 ml-4 shadow-lg relative w-80">
+          <div className="h-screen hidden lg:block my-4 ml-4 shadow-lg w-80">
             <div className="bg-white h-full rounded-2xl dark:bg-gray-700">
               <ProfileCard></ProfileCard>
             </div>
@@ -26,7 +49,8 @@ export default function Dashboard() {
                 <div className="w-full sm:w-1/2 xl:w-1/3">
                   <div className="mb-4">
                     <div className="shadow-lg rounded-2xl p-4 bg-white dark:bg-gray-700 w-full">
-                      {saveJobs? <p>no saved jobs yet</p> : <JobCard></JobCard>}
+                      {!jobsToPost ? <p>no saved jobs yet</p> : jobsToPost.map(job => {
+                        return <Jobcard job={job} key={job._id} ></Jobcard>})}
                     </div>
                   </div>
                 </div>
@@ -187,15 +211,15 @@ export default function Dashboard() {
                     </div>
                   </div>
                 </div>
-     {/* Calender Area */}
+                {/* Calender Area */}
                 <div className="w-full sm:w-1/2 xl:w-1/3">
                   <div className="mb-4">
                     <div className="shadow-lg rounded-2xl p-4 bg-white dark:bg-gray-700">
                       <Calendario></Calendario>
-                     
+
                     </div>
                   </div>
-    {/* Chat area */}
+                  {/* Chat area */}
                   <div className="mb-4">
                     <div className="shadow-lg rounded-2xl p-4 bg-white dark:bg-gray-700 w-full">
                       <Connects></Connects>

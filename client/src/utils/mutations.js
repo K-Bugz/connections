@@ -34,7 +34,7 @@ mutation saveJob($id: ID!, $isSaved: Boolean!) {
 `;
 
 export const UPDATE_PROFILE = gql`
-mutation Mutation($firstName: String!, $lastName: String, $title: String, $website: String, $about: String) {
+mutation updateProfile($firstName: String!, $lastName: String, $title: String, $website: String, $about: String) {
   updateProfile(firstName: $firstName, lastName: $lastName, title: $title, website: $website, about: $about) {
     _id
     firstName
@@ -47,6 +47,34 @@ mutation Mutation($firstName: String!, $lastName: String, $title: String, $websi
     coverPhoto
     resume
     isJobSeeker
+  }
+}
+`;
+
+export const REMOVE_JOB = gql`
+mutation removeJob($id: ID!) {
+  removeJob(_id: $id) {
+    _id
+    firstName
+    lastName
+    email
+    title
+    about
+    website
+    profilePic
+    coverPhoto
+    resume
+    isJobSeeker
+    savedJobs {
+      _id
+      title
+      link
+      company
+      location
+      timePosted
+      isSaved
+      createdAt
+    }
   }
 }
 `;

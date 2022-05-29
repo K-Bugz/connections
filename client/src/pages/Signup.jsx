@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from '../components/register/Header';
 import Signup from '../components/register/Signup';
-import Navbar from '../components/navbar/Navbar';
+import Nav from '../components/mainpage/Mainnav'
 
 export default function SignupPage() {
     return (
         <React.Fragment>
-            <Navbar>
-            </Navbar>
+            <Nav>
+            </Nav>
             <Header
                 heading='Signup to create an account'
                 paragraph='Already have an account? '
