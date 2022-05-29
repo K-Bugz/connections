@@ -26,7 +26,7 @@ export default function Navbar() {
                                 <p> <span className='font-semibold'>Website</span></p>
                             </div>
                             <div className='text-center w-1/2 p-4 hover:bg-gray-100 cursor-pointer'>
-                                <p> <span className='font-semibold'>Chat</span></p>
+                                <p> <span className='font-semibold'>Email</span></p>
                             </div>
                         </div>
                     </div>

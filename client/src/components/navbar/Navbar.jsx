@@ -1,10 +1,12 @@
 import React from 'react';
 import logo from '../../assets/connectedPurple.png';
-
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import {  MenuIcon, XIcon } from '@heroicons/react/outline'
+import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { Link } from "react-router-dom";
+import auth from '../../utils/auth';
+
+const Login = auth.loggedIn (); 
 
 
 const user = {
@@ -19,16 +21,15 @@ const navigation = [
   { name: 'Jobs', href: '/Jobs', current: false },
   { name: 'Profile', href: '/Profile', current: false },
   { name: 'Messages', href: '/Messages', current: false },
-  { name: 'Register', href: '/Signup', current: false },
-  { name: 'Login', href: '/Login', current: false },
- 
+  Login ? ({ name: 'Log Out', href: '/',  }): ({ name: 'Log In', href: '/Login',  })
+  
 ]
 const userNavigation = [
   { name: 'Your Profile', href: '/Profile' },
   { name: 'Connect', href: '#' },
-  { name: 'Jobs', href: '/Jobs'},
+  { name: 'Jobs', href: '/Jobs' },
   { name: 'Dashboard', href: '/Dashboard' },
-  { name: 'Sign out', href: '#' }
+  Login ? ({ name: 'Log Out', href: '/',  }): ({ name: 'Log In', href: '/Login',  })
 ]
 
 function classNames(...classes) {
@@ -54,8 +55,10 @@ export default function Navbar() {
                         />
                       </a>
                     </div>
+
                     <div className='hidden md:block'>
                       <div className='ml-10 flex items-baseline space-x-4'>
+                        
                         {navigation.map((item) => (
                           <a
                             key={item.name}
@@ -76,10 +79,10 @@ export default function Navbar() {
                   </div>
                   <div className='hidden md:block'>
                     <div className='ml-4 flex items-center md:ml-6'>
-                    <Link to="/Shopping">
-          <span role="img" aria-label="shopping bag">🛒</span>
-          Shop
-        </Link>
+                      <Link to="/Shopping">
+                        <span role="img" aria-label="shopping bag">🛒</span>
+                        Shop
+                      </Link>
 
                       {/* Profile dropdown */}
                       <Menu as='div' className='ml-3 relative'>
@@ -151,6 +154,7 @@ export default function Navbar() {
                   ))}
                 </div>
                 <div className='pt-4 pb-3 border-t border-gray-700'>
+                  
                   <div className='flex items-center px-5'>
                     <div className='flex-shrink-0'>
                       <img className='h-10 w-10 rounded-full' src={user.imageUrl} alt='' />
@@ -159,13 +163,6 @@ export default function Navbar() {
                       <div className='text-base font-medium leading-none text-white'>{user.name}</div>
                       <div className='text-sm font-medium leading-none text-gray-400'>{user.email}</div>
                     </div>
-                    {/* <button
-                      type='button'
-                      className='ml-auto bg-gray-800 flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white'
-                    >
-                      <span className='sr-only'>View notifications</span>
-                      <BellIcon className='h-6 w-6' aria-hidden='true' />
-                    </button> */}
                   </div>
                   <div className='mt-3 px-2 space-y-1'>
                     {userNavigation.map((item) => (
@@ -180,11 +177,15 @@ export default function Navbar() {
                     ))}
                   </div>
                 </div>
+
               </Disclosure.Panel>
+
             </>
           )}
         </Disclosure>
+
       </div>
+
     </React.Fragment>
   )
 }
