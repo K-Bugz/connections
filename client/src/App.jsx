@@ -39,7 +39,6 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
-      <React.Fragment>
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<Main />} />
@@ -55,7 +54,6 @@ function App() {
             <Route path='/Connections' element={<Connections />} />
           </Routes>
         </BrowserRouter>
-      </React.Fragment>
     </ApolloProvider>
   );
 }

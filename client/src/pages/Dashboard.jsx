@@ -14,7 +14,7 @@ import { REMOVE_JOB } from "../utils/mutations";
 
 export default function Dashboard() {
   const { loading, data } = useQuery(QUERY_USER);
-  const { updateSavedJobs } = useMutation(REMOVE_JOB);
+  const { } = useMutation(REMOVE_JOB);
   const [jobsToPost, setJobsToPost] = useState([]);
   let savedJobs = [];
 
