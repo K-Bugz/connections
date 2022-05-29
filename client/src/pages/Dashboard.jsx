@@ -36,7 +36,7 @@ export default function Dashboard() {
   return (
     <React.Fragment>
       <Navbar></Navbar>
-      <main className="bg-gray-100 dark:bg-gray-800 rounded-2xl h-screen overflow-hidden">
+      <main className="bg-gray-100 dark:bg-gray-800  h-screen overflow-hidden relative">
         <div className="flex items-start justify-between">
           <div className="h-screen hidden lg:block my-4 ml-4 shadow-lg w-80">
             <div className="bg-white h-full rounded-2xl dark:bg-gray-700">

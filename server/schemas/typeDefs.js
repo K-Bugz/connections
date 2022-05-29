@@ -48,6 +48,7 @@ const typeDefs = gql`
     removeJob(_id: ID!): User
     deleteJobpost(_id: ID!): Jobpost
     deleteJobposts: [Jobpost]
+    deleteAllUser: User
   }
 `;
 

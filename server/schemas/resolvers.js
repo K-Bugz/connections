@@ -134,6 +134,16 @@ const resolvers = {
             } catch (err) {
                 console.log(err)
             }
+        },
+        deleteAllUser: async () => {
+            try {
+                const remainingJobs = await User.deleteMany({});
+                if (remainingJobs) {
+                    return User.find();
+                }
+            } catch (err) {
+                console.log(err)
+            }
         }
     }
 };
