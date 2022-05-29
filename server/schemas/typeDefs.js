@@ -45,6 +45,7 @@ const typeDefs = gql`
     updateProfile(firstName: String!, lastName: String, title: String, website: String, about: String): User
     addJobs(title: String!, link: String!, company: String!, location: String, timePosted: String): [Jobpost]
     saveJob(_id: ID!, isSaved: Boolean!): Jobpost
+    removeJob(_id: ID!): User
     deleteJobpost(_id: ID!): Jobpost
     deleteJobposts: [Jobpost]
   }

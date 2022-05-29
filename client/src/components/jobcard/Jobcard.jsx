@@ -1,21 +1,34 @@
 import React from 'react';
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { SAVE_JOB } from '../../utils/mutations';
+import { SAVE_JOB, REMOVE_JOB } from '../../utils/mutations';
 
 export default function JobCard( {job} ) {
     const [ jobInfo, setJobInfo ] = useState(job);
     const [saveJobPost] = useMutation(SAVE_JOB);
+    const [removeFromSaved] = useMutation(REMOVE_JOB);
     const handleSaveJob =async () => {
         try {
-            const upDatedJob = await saveJobPost({ variables: { id: job._id, isSaved: true}});
-            const { data } = upDatedJob;
+            const updatedJob = await saveJobPost({ variables: { id: job._id, isSaved: true}});
+            const { data } = updatedJob;
             setJobInfo(data.saveJob);
-            alert("Save Job!");
+            alert("Job Saved!");
         } catch (err) {
             console.log(err);
         }
     }
+
+    const handleRemoveJob =async () => {
+        try {
+            const updatedJob = await removeFromSaved({ variables: { id: job._id}});
+            if (updatedJob) {
+                alert("Job removed from saved");
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
     return (
         <React.Fragment>
             <div className="mb-4">
@@ -43,7 +56,7 @@ export default function JobCard( {job} ) {
                         </div>
                         <div className="flex items-center">
 
-                            {jobInfo.isSaved? (<p>Is Saved</p>
+                            {jobInfo.isSaved? (<button onClick={handleRemoveJob}>Remove from Saved</button>
                             ) : (
                                 <button className="border p-3 border-gray-200 rounded-full" onClick={handleSaveJob}>
                                 <svg
