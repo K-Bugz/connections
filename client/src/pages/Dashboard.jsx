@@ -231,6 +231,7 @@ export default function Dashboard() {
           </div>
         </div>
       </main>
+     
     </React.Fragment>
   );
 }

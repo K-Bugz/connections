@@ -5,6 +5,7 @@ import Jobcard from '../components/jobcard/Jobcard';
 import Map from '../components/googlemaps/Map';
 import { useQuery } from '@apollo/client';
 import { QUERY_ALLJOBS } from '../utils/queries';
+import '../pages/pages.styles/Jobs.css'
 
 export default function Jobs() {
     const { loading, data } = useQuery(QUERY_ALLJOBS);
@@ -27,7 +28,7 @@ export default function Jobs() {
     return (
         <React.Fragment>
             <Navbar></Navbar>
-            <h1>Job Posts</h1>
+            <h1 class="flex justify-center " id="job-nav">Job Listings</h1>
             {loading ? (
                 <h3>loading...</h3>
             ) : (
@@ -37,7 +38,9 @@ export default function Jobs() {
                         })};
                     </div>
             )}
+            <div className="flex justify-center">
             <Map></Map>
+            </div>
         </React.Fragment>
     )
 }

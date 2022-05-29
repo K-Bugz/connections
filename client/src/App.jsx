@@ -11,6 +11,7 @@ import Map from './components/googlemaps/Map';
 import Main from './pages/Main';
 import Jobs from './pages/Jobs';
 import Shopping from './pages/Shopping';
+
 import {
   BrowserRouter,
   Routes,
