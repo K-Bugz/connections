@@ -16,6 +16,8 @@
         "concurrently": "^5.1.0"
     },
     "dependencies": {
+        "@userfront/core": "^0.3.5",
+        "@userfront/react": "^0.2.22",
         "autoprefixer": "^10.4.7",
         "concurrently": "^5.1.0",
         "jwt-decode": "^3.1.2",
