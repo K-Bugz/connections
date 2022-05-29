@@ -18,9 +18,9 @@ export default function Signup() {
 
   const handleChange = (e) => setSignupState({ ...signupState, [e.target.id]: e.target.value });
 
-  const setTrue = () => {setSignupState({ ...signupState, isJobSeeker: true})}
+  const setTrue = () => { setSignupState({ ...signupState, isJobSeeker: true }) }
 
-  const setFalse = () => {setSignupState({ ...signupState, isJobSeeker: false})}
+  const setFalse = () => { setSignupState({ ...signupState, isJobSeeker: false }) }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,7 +31,7 @@ export default function Signup() {
   const createAccount = async () => {
     try {
       const { data } = await createUser({
-        variables: {...signupState}
+        variables: { ...signupState }
       });
       Auth.login(data.addUser.token);
     } catch (err) {
@@ -62,16 +62,16 @@ export default function Signup() {
                   />
                 )
               }
-              <div class="flex items-center gap-8">
-                <label class="inline-flex items-center">
-                  <input type="radio" name="vehicle" class="h-5 w-5 text-red-600" onClick={setTrue}/>
-                  <span class="ml-2 text-gray-700">
+              <div className="flex items-center gap-8">
+                <label className="inline-flex items-center">
+                  <input type="radio" name="vehicle" className="h-5 w-5 text-red-600" onClick={setTrue} />
+                  <span className="ml-2 text-gray-700">
                     Job Seeker
                   </span>
                 </label>
-                <label class="inline-flex items-center">
-                  <input type="radio" name="vehicle" class="h-5 w-5 text-red-600" onClick={setFalse}/>
-                  <span class="ml-2 text-gray-700">
+                <label className="inline-flex items-center">
+                  <input type="radio" name="vehicle" className="h-5 w-5 text-red-600" onClick={setFalse} />
+                  <span className="ml-2 text-gray-700">
                     Recruiter
                   </span>
                 </label>

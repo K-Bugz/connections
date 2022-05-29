@@ -5,6 +5,7 @@ import Navbar from '../components/navbar/Navbar';
 import Connects from '../components/connects/Connects';
 import Jobcard from '../components/jobcard/Jobcard';
 import ProfileCard from '../components/profile/ProfileCard';
+import Map from '../components/googlemaps/Map';
 import { useState, useEffect } from 'react';
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_USER } from "../utils/queries";
@@ -36,10 +37,10 @@ export default function Dashboard() {
   return (
     <React.Fragment>
       <Navbar></Navbar>
-      <main className="bg-gray-100 dark:bg-gray-800  h-screen overflow-hidden relative">
+      <main className="bg-white dark:bg-white  h-screen overflow-hidden">
         <div className="flex items-start justify-between">
           <div className="h-screen hidden lg:block my-4 ml-4 shadow-lg w-80">
-            <div className="bg-white h-full rounded-2xl dark:bg-gray-700">
+            <div className="bg-white h-full rounded-2xl dark:bg-white">
               <ProfileCard></ProfileCard>
             </div>
           </div>
@@ -208,9 +209,12 @@ export default function Dashboard() {
                           </svg>
                         </li>
                       </ul>
+                    
                     </div>
+                    <Map></Map>
                   </div>
                 </div>
+            
                 {/* Calender Area */}
                 <div className="w-full sm:w-1/2 xl:w-1/3">
                   <div className="mb-4">

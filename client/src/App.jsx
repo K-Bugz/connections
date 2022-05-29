@@ -11,6 +11,7 @@ import Map from './components/googlemaps/Map';
 import Main from './pages/Main';
 import Jobs from './pages/Jobs';
 import Shopping from './pages/Shopping';
+import Connections from './pages/Connections'
 import {
   BrowserRouter,
   Routes,
@@ -51,6 +52,7 @@ function App() {
             <Route path='/Map' element={<Map />} />
             <Route path='/Jobs' element={<Jobs />} />
             <Route path='/Shopping' element={<Shopping />} />
+            <Route path='/Connections' element={<Connections />} />
           </Routes>
         </BrowserRouter>
       </React.Fragment>

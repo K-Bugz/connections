@@ -1,5 +1,6 @@
 import React from "react";
 import { useLoadScript, GoogleMap, Marker } from "@react-google-maps/api";
+import { graphqlSync } from "graphql";
 
 export default function Map() {
   const { isLoaded } = useLoadScript({
@@ -14,9 +15,10 @@ export default function Map() {
         center={{ lat: 30.266666, lng: -97.733330 }}
         zoom={8}
         mapContainerStyle={{
+          borderRadius: '10px',
           margin: "20px 0 0",
           height: "50vh",
-          width: "50vh"
+          width: "53vh"
         }}
       >
         <Marker
@@ -28,6 +30,7 @@ export default function Map() {
 
   return isLoaded ? renderMap() : null;
 }
+
 
 
 

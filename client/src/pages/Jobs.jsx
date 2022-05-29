@@ -27,17 +27,35 @@ export default function Jobs() {
     return (
         <React.Fragment>
             <Navbar></Navbar>
-            <h1>Job Posts</h1>
+            <div className='container rounded-2xl my-4  flex flex-col mx-auto w-full items-center justify-between'>
+                <div className='px-4 py-5 sm:px-6 w-full border dark:bg-gray-800 bg-white shadow mb-2 rounded-md flex justify-between items-center'>
+                    <h3 className='text-lg leading-6 font-medium text-gray-900 dark:text-white'>
+                        Recommended for you
+                    </h3>
+                    <div className='w-3/6'>
+                        <p className='text-gray-500 text-sm'>
+                            Get
+                            <span className='text-blue-400 font-bold'>
+                                &nbsp;Connected&nbsp;
+                            </span>
+                            To Your Dream Job
+                        </p>
+                    </div>
+                    <div className='w-1/6 text-right'>
+                    </div>
+                </div>
+               
+            </div>
             {loading ? (
                 <h3>loading...</h3>
             ) : (
-                    <div className='container'>
+                    <div className='container' >
                         {jobsToPost && jobsToPost.map(job => {
                         return <Jobcard job={job} key={job._id} ></Jobcard>
                         })};
                     </div>
             )}
-            <Map></Map>
+
         </React.Fragment>
     )
 }
