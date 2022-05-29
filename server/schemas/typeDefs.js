@@ -47,6 +47,7 @@ const typeDefs = gql`
     saveJob(_id: ID!, isSaved: Boolean!): Jobpost
     deleteJobpost(_id: ID!): Jobpost
     deleteJobposts: [Jobpost]
+    deleteAllUser: User
   }
 `;
 
