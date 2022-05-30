@@ -38,7 +38,7 @@ export default function JobCard( {job} ) {
                     <div className="flex items-center justify-between mb-10">
                         <div className="flex items-center">
                             <span className="rounded-xl p-2 bg-gradient-to-r from-blue-400 to-blue-800 text-white w-full transition ease-in duration-200  text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 ">
-                                Job Listing
+                            {jobInfo.title} <br/> {jobInfo.company}
                                 <svg
                                     width="25"
                                     height="25"
@@ -47,14 +47,6 @@ export default function JobCard( {job} ) {
                                 >
                                 </svg>
                             </span>
-                            <div className="flex flex-col">
-                                <span className="font-bold text-sm text-black dark:text-white ml-2">
-                                    {jobInfo.title}
-                                </span>
-                                <span className="text-sm text-gray-500 dark:text-white ml-2">
-                                   {jobInfo.company}
-                                </span>
-                            </div>
                         </div>
                         <div className="flex items-center">
 
