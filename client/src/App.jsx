@@ -7,10 +7,10 @@ import Dashboard from './pages/Dashboard'
 import Messages from './pages/Messages'
 import ProfilePage from './components/profile/Profile';
 import ProfileCard from './components/profile/ProfileCard';
-import Map from './components/googlemaps/Map';
 import Main from './pages/Main';
 import Jobs from './pages/Jobs';
 import Shopping from './pages/Shopping';
+import Connections from './pages/Connections'
 import {
   BrowserRouter,
   Routes,
@@ -38,7 +38,6 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
-      <React.Fragment>
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<Main />} />
@@ -48,12 +47,11 @@ function App() {
             <Route path='/Profiledetail' element={<ProfileCard />} />
             <Route path='/Dashboard' element={<Dashboard />} />
             <Route path='/Messages' element={<Messages />} />
-            <Route path='/Map' element={<Map />} />
             <Route path='/Jobs' element={<Jobs />} />
             <Route path='/Shopping' element={<Shopping />} />
+            <Route path='/Connections' element={<Connections />} />
           </Routes>
         </BrowserRouter>
-      </React.Fragment>
     </ApolloProvider>
   );
 }

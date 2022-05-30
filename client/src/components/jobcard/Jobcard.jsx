@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useMutation, useQuery } from '@apollo/client';
 import { SAVE_JOB, REMOVE_JOB } from '../../utils/mutations';
 import { QUERY_USER } from '../../utils/queries';
+import './Jobcard.css'
 
 export default function JobCard({ job }) {
     const [userSaved, setUserSaved] = useState();
@@ -27,14 +28,6 @@ export default function JobCard({ job }) {
         }
     }
 
-    const handleUserSaved = () => {
-        if (usersSavedJobIds.includes(job._id)) {
-            setUserSaved(true);
-            return;
-        }
-        setUserSaved(false);
-    }
-
     const handleSaveJob = async () => {
         try {
             const updatedJob = await saveJobPost({ variables: { id: job._id, isSaved: true } });
@@ -46,6 +39,14 @@ export default function JobCard({ job }) {
         } catch (err) {
             console.log(err);
         }
+    }
+
+    const handleUserSaved = () => {
+        if (usersSavedJobIds.includes(job._id)) {
+            setUserSaved(true);
+            return;
+        }
+        setUserSaved(false);
     }
 
     const handleRemoveJob = async () => {
@@ -64,17 +65,18 @@ export default function JobCard({ job }) {
             console.log(err);
         }
     }
-// eslint-disable-next-line
+    // eslint-disable-next-line
     useEffect(() => { getSavedJobs(data); }, [loading])
 
     return (
         <React.Fragment>
-            <div className="mb-4">
-                <div className="shadow-lg rounded-2xl p-4 bg-white dark:bg-gray-700 w-full">
+
+            <div className="mb-4 flex justify-center " id="job-container">
+                <div className="shadow-lg rounded-2xl p-4 bg-white dark:bg-gray-700 w-full ">
                     <div className="flex items-center justify-between mb-10">
                         <div className="flex items-center">
                             <span className="rounded-xl p-2 bg-gradient-to-r from-blue-400 to-blue-800 text-white w-full transition ease-in duration-200  text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 ">
-                                Job Listing
+                                {jobInfo.title} <br /> {jobInfo.company}
                                 <svg
                                     width="25"
                                     height="25"
@@ -111,7 +113,7 @@ export default function JobCard({ job }) {
                             )}
                         </div>
                     </div>
-                    <div className="flex items-center justify-start my-4 space-x-4">
+                    <div className="flex items-center justify-start my-4 space-x-4 ">
                         <span className="px-2 py-1 flex items-center text-xs rounded-md font-semibold text-green-500 bg-green-50">
                             {job.location}
                         </span>
@@ -125,6 +127,7 @@ export default function JobCard({ job }) {
                 </div>
             </div>
 
+
         </React.Fragment>
     )
-}
+};

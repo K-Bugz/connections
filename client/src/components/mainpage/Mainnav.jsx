@@ -1,7 +1,5 @@
 import React from 'react';
 import logo from '../../assets/connectedPurple.png';
-
-
 import { Disclosure } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 
@@ -55,9 +53,7 @@ export default function Navbar() {
                   </div>
                   <div className='hidden md:block'>
                     <div className='ml-4 flex items-center md:ml-6'>
-
                       {/* Profile dropdown */}
-
                     </div>
                   </div>
                   <div className='-mr-2 flex md:hidden'>
@@ -73,7 +69,6 @@ export default function Navbar() {
                   </div>
                 </div>
               </div>
-
               <Disclosure.Panel className='md:hidden'>
                 <div className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
                   {navigation.map((item) => (

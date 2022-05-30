@@ -4,19 +4,20 @@ import styled, { keyframes } from "styled-components";
 export default function Main() {
   return (
     <div className="bg-zinc-900 sm:px-6 lg:py-16 lg:px-8 z-20">
-
       <div className="text-center w-full mx-auto py-0 px-4 sm:px-6 lg:py-16 lg:px-8 z-20">
         <h2 className="text-3xl font-extrabold text-blue-400 dark:text-white sm:text-4xl">
           <span className="block">
             Connecting you to a brighter future
           </span>
-          <span className="block text-blue-400">
-            Join today
-          </span>
+          <a href="/Signup">
+            <span className="block text-blue-400">
+              Join today
+            </span>
+          </a>
         </h2>
       </div>
-
       <Wrapper>
+        {/* Animation for the lines */}
         <svg className="lines" width="1363" height="921" viewBox="0 0 1363 921" fill="none">
           <path id="line1" d="M1 921V789M73 921V575" stroke="#8BD5FF" />
           <path id="line2" d="M37 921V875L93.5 818.5M123 752V408" stroke="#8BD5FF" />
@@ -38,8 +39,7 @@ export default function Main() {
           <path id="line18" d="M1183.5 921V842L1241.5 784V486L1183 427.5V295.5M1183 214V102.5" stroke="#8BD5FF" />
           <path id="line19" d="M1362 921V787L1303 728V632.5M1303 507V407.5" stroke="#8BD5FF" />
         </svg>
-
-
+        {/* Animation for the rings */}
         <svg className="ring1" width="159" height="160" viewBox="0 0 159 160" fill="none">
           <path id="ring1" d="M112.776 101.784C109.07 107.576 103.917 112.301 97.8257 115.492C91.7342 118.682 84.9154 120.227 78.0437 119.973C71.1721 119.72 64.4857 117.677 58.6458 114.046C52.8059 110.416 48.0149 105.324 44.7467 99.2738C41.4785 93.2238 39.8462 86.4255 40.0114 79.5511C40.1766 72.6768 42.1335 65.9646 45.6885 60.0786C49.2436 54.1925 54.2736 49.3365 60.2811 45.9908C66.2886 42.6451 73.0655 40.9256 79.9414 41.0025L79.7475 58.3526C75.892 58.3096 72.092 59.2737 68.7234 61.1497C65.3549 63.0258 62.5344 65.7487 60.541 69.0491C58.5476 72.3496 57.4503 76.1133 57.3576 79.9679C57.265 83.8226 58.1803 87.6346 60.0129 91.027C61.8454 94.4194 64.5319 97.2747 67.8065 99.3103C71.081 101.346 74.8303 102.492 78.6834 102.634C82.5366 102.776 86.3601 101.91 89.7757 100.121C93.1914 98.332 96.0809 95.6824 98.1585 92.4343L112.776 101.784Z" stroke="#8BD5FF" strokeWidth="3" />
           <path id="ring1" d="M51.5693 108.431C57.2956 114.157 64.6437 117.985 72.6181 119.396C80.5925 120.807 88.8079 119.733 96.1515 116.319C103.495 112.905 109.612 107.316 113.673 100.31C117.735 93.3039 119.545 85.2186 118.858 77.1495C118.171 69.0804 115.02 61.4174 109.833 55.1986C104.646 48.9797 97.6723 44.5055 89.8573 42.3821C82.0424 40.2586 73.7636 40.5885 66.1424 43.3271C58.5213 46.0656 51.926 51.0805 47.25 57.6924L61.4165 67.7112C64.0385 64.0037 67.7366 61.1917 72.01 59.6561C76.2835 58.1205 80.9256 57.9355 85.3076 59.1262C89.6897 60.3169 93.5999 62.8257 96.5085 66.3128C99.4172 69.7999 101.184 74.0967 101.569 78.6213C101.954 83.1459 100.939 87.6795 98.6619 91.608C96.3845 95.5366 92.9547 98.6703 88.837 100.585C84.7192 102.499 80.1126 103.101 75.6411 102.31C71.1697 101.519 67.0494 99.3725 63.8385 96.1615L51.5693 108.431Z" stroke="#8BD5FF" strokeWidth="3" />
@@ -139,7 +139,6 @@ export default function Main() {
           </defs>
         </svg>
 
-
         <svg className="ring5" width="250" height="250" viewBox="0 0 250 250" fill="none">
           <circle id="ring5" cx="125" cy="125" r="75" stroke="#8BD5FF" strokeWidth="3" />
           <path id="ring5" d="M125 50C115.151 50 105.398 51.9399 96.2987 55.709C87.1993 59.4781 78.9314 65.0026 71.967 71.967C65.0026 78.9314 59.4781 87.1993 55.709 96.2987C51.9399 105.398 50 115.151 50 125C50 134.849 51.9399 144.602 55.709 153.701C59.4781 162.801 65.0026 171.069 71.967 178.033C78.9314 184.997 87.1993 190.522 96.2987 194.291C105.398 198.06 115.151 200 125 200L125 170.09C119.079 170.09 113.215 168.924 107.745 166.658C102.274 164.392 97.3034 161.071 93.1164 156.884C88.9294 152.697 85.6081 147.726 83.3421 142.255C81.0761 136.785 79.9098 130.921 79.9098 125C79.9098 119.079 81.0761 113.215 83.3421 107.745C85.6081 102.274 88.9294 97.3034 93.1164 93.1164C97.3034 88.9294 102.274 85.6081 107.745 83.3421C113.215 81.0761 119.079 79.9098 125 79.9098L125 50Z" stroke="#8BD5FF" strokeWidth="3" />
@@ -192,7 +191,7 @@ export default function Main() {
             </filter>
           </defs>
         </svg>
-
+        {/* Animation for the strokes */}
         <svg className="stroke" width="1003" height="543" viewBox="0 0 1003 543" fill="none">
           <circle id="stroke" cx="52.5" cy="264.5" r="39.5" stroke="#8BD5FF" strokeWidth="3" />
           <g filter="url(#filter0_f_2_405)">
@@ -224,7 +223,7 @@ export default function Main() {
             </filter>
           </defs>
         </svg>
-
+        {/* Animation for the larger circles */}
         <svg className="mcircles" width="1282" height="397" viewBox="0 0 1282 397" fill="none">
           <circle cx="51" cy="346" r="6" fill="#37C9E9" />
           <g filter="url(#filter0_f_2_368)">
@@ -337,7 +336,7 @@ export default function Main() {
             </filter>
           </defs>
         </svg>
-
+        {/* Animations for the smaller circles */}
         <svg className="circle" width="1244" height="851" viewBox="0 0 1244 851" fill="none">
           <circle cx="31" cy="820" r="6" fill="#8BD5FF" />
           <g filter="url(#filter0_f_2_325)">
@@ -391,77 +390,12 @@ export default function Main() {
           <g filter="url(#filter12_f_2_325)">
             <circle cx="1175" cy="385" r="11" fill="#3CE5FC" fillOpacity="0.6" />
           </g>
-          <circle cx="1213" cy="133" r="6" fill="#8BD5FF" />
+            <circle cx="1213" cy="133" r="6" fill="#8BD5FF" />
           <g filter="url(#filter13_f_2_325)">
             <circle cx="1213" cy="133" r="11" fill="#3CE5FC" fillOpacity="0.6" />
           </g>
           <defs>
-            <filter id="filter0_f_2_325" x="0" y="789" width="62" height="62" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-              <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-              <feGaussianBlur stdDeviation="10" result="effect1_foregroundBlur_2_325" />
-            </filter>
-            <filter id="filter1_f_2_325" x="72" y="578" width="62" height="62" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-              <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-              <feGaussianBlur stdDeviation="10" result="effect1_foregroundBlur_2_325" />
-            </filter>
-            <filter id="filter2_f_2_325" x="142" y="135" width="62" height="62" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-              <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-              <feGaussianBlur stdDeviation="10" result="effect1_foregroundBlur_2_325" />
-            </filter>
-            <filter id="filter3_f_2_325" x="224" y="0" width="62" height="62" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-              <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-              <feGaussianBlur stdDeviation="10" result="effect1_foregroundBlur_2_325" />
-            </filter>
-            <filter id="filter4_f_2_325" x="492" y="134" width="62" height="62" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-              <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-              <feGaussianBlur stdDeviation="10" result="effect1_foregroundBlur_2_325" />
-            </filter>
-            <filter id="filter5_f_2_325" x="563" y="26" width="62" height="62" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-              <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-              <feGaussianBlur stdDeviation="10" result="effect1_foregroundBlur_2_325" />
-            </filter>
-            <filter id="filter6_f_2_325" x="665" y="362" width="62" height="62" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-              <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-              <feGaussianBlur stdDeviation="10" result="effect1_foregroundBlur_2_325" />
-            </filter>
-            <filter id="filter7_f_2_325" x="785" y="200" width="62" height="62" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-              <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-              <feGaussianBlur stdDeviation="10" result="effect1_foregroundBlur_2_325" />
-            </filter>
-            <filter id="filter8_f_2_325" x="869" y="516" width="62" height="62" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-              <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-              <feGaussianBlur stdDeviation="10" result="effect1_foregroundBlur_2_325" />
-            </filter>
-            <filter id="filter9_f_2_325" x="868" y="48" width="62" height="62" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-              <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-              <feGaussianBlur stdDeviation="10" result="effect1_foregroundBlur_2_325" />
-            </filter>
-            <filter id="filter10_f_2_325" x="1022" y="396" width="62" height="62" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-              <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-              <feGaussianBlur stdDeviation="10" result="effect1_foregroundBlur_2_325" />
-            </filter>
-            <filter id="filter11_f_2_325" x="1081" y="218" width="62" height="62" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-              <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-              <feGaussianBlur stdDeviation="10" result="effect1_foregroundBlur_2_325" />
-            </filter>
-            <filter id="filter12_f_2_325" x="1144" y="354" width="62" height="62" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-              <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-              <feGaussianBlur stdDeviation="10" result="effect1_foregroundBlur_2_325" />
-            </filter>
-            <filter id="filter13_f_2_325" x="1182" y="102" width="62" height="62" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+            <filter id="filter0_f_2_325, filter1_f_2_325, filter2_f_2_325, filter3_f_2_325, filter4_f_2_32, filter5_f_2_325, filter6_f_2_325, filter7_f_2_325, filter8_f_2_325, filter9_f_2_325, filter10_f_2_325, filter11_f_2_325, filter12_f_2_325, filter13_f_2_325" x="0" y="789" width="62" height="62" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
               <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
               <feGaussianBlur stdDeviation="10" result="effect1_foregroundBlur_2_325" />
@@ -473,7 +407,7 @@ export default function Main() {
   );
 }
 
-// Animation
+// Animation detailed 
 const dash = keyframes`
   from { stroke-dashoffset: 2000}
   to { stroke-dashoffset: 0; }
@@ -621,5 +555,4 @@ media: screen and (max-width: 600px);
   opacity: 0;
   animation: ${fadein} 1s 3s infinite ease forwards;
 }
-
 `;
