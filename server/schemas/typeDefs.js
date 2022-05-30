@@ -14,6 +14,11 @@ const typeDefs = gql`
     resume: String
     isJobSeeker: Boolean
     messages: [Message]
+<<<<<<< HEAD
+    
+=======
+    savedJobs:[Jobpost]
+>>>>>>> 49c1d4791f15888aa09596c8ecade7f728792b0c
   }
 
   type Jobpost {
@@ -69,8 +74,18 @@ const typeDefs = gql`
     removeJob(_id: ID!): User
     deleteJobpost(_id: ID!): Jobpost
     deleteJobposts: [Jobpost]
+<<<<<<< HEAD
     addEvent(title: String!, date: String!): Events
     deleteEvents: [Events]
+=======
+    addMessage: User
+    addReply(replyText: String!, messageId: ID!): Message
+<<<<<<< HEAD
+    
+=======
+    deleteAllUser: User
+>>>>>>> 49c1d4791f15888aa09596c8ecade7f728792b0c
+>>>>>>> develop
   }
 `;
 

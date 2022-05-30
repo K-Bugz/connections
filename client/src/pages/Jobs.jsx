@@ -8,12 +8,12 @@ import Map from '../components/googlemaps/Map'
 import '../pages/pages.styles/Jobs.css'
 
 export default function Jobs() {
-    const { loading, data } = useQuery(QUERY_ALLJOBS);
     const [jobsToPost, setJobsToPost] = useState([]);
+    const { loading, data} = useQuery(QUERY_ALLJOBS);
 
     useEffect(() => {
         getJobsToPost(data);
-    }, [data])
+    }, [loading])
 
     const getJobsToPost = async (data) => {
         try {
@@ -28,8 +28,8 @@ export default function Jobs() {
     return (
         <React.Fragment>
             <Navbar></Navbar>
-            <h1 class="flex justify-center " id="job-nav">Job Listings</h1>
-            {loading ? (
+            <h1>Job Posts</h1>
+            {!jobsToPost ? (
                 <h3>loading...</h3>
             ) : (
                 <div className='container' >
