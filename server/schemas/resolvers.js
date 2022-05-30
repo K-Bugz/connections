@@ -1,6 +1,6 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { Error } = require('mongoose');
-const { User, Jobpost } = require('../models');
+const { User, Jobpost, Message } = require('../models');
 const { signToken } = require('../utils/auth');
 const { loginScrape } = require('../utils/jobScraperFunctions');
 
@@ -9,24 +9,33 @@ const resolvers = {
         users: async () => {
             return User.find()
                 .select('-__v -password')
-                .populate('savedJobs')
-                .populate('friends');
+                .populate('friends')
+                .populate('connections')
+                .populate('messages');
         },
-        user: async (parent, args, context) => { 
+        user: async (parent, args, context) => {
             return User.findOne({ email: context.user.email })
                 .select('-__v -password')
                 .populate('friends')
-                .populate('savedJobs');
+                .populate('connections')
+                .populate('messages');
         },
         jobPosts: async () => {
-            return Jobpost.find().sort({ _id: -1});
+            return Jobpost.find().sort({ _id: -1 });
         },
         jobPost: async (parent, { _id }) => {
             return Jobpost.findOne(
                 { _id: _id }
             )
+        },
+        // Find one user's message array
+        messages: async (parent, args, context) => {
+            return User.findOne({ _id: context.user._id })
+                .select('-__v -password')
+                .populate('messages')
         }
     },
+
     Mutation: {
         addUser: async (parent, args) => {
             const user = await User.create(args);
@@ -135,13 +144,26 @@ const resolvers = {
                 console.log(err)
             }
         },
-        deleteAllUser: async () => {
+        addMessage: async (parent, args, context) => {
             try {
-                const remainingJobs = await User.deleteMany({});
-                if (remainingJobs) {
-                    return User.find();
+                const newMessage = await Message.create({})
+                const sender = await Message.findOneAndUpdate({ _id: newMessage._id }, { $push: { sender: context.user._id } }, { new: true })
+                if (newMessage) {
+                    const user = await User.findOneAndUpdate({ _id: context.user._id }, { $push: { messages: newMessage._id } }, { new: true })
+                    return user;
                 }
-            } catch (err) {
+            }
+            catch (err) {
+                console.log(err)
+            }
+        },
+        // May need to update. Two different users. How about notifications? 
+        addReply: async (parent, args, context) => {
+            try {
+                const newReply = await Message.findOneAndUpdate({ _id: args.messageId }, { $push: { reply: { authorId: context.user._id, replyText: args.replyText } } }, { new: true })
+                return newReply;
+            }
+            catch (err) {
                 console.log(err)
             }
         }
@@ -149,4 +171,3 @@ const resolvers = {
 };
 
 module.exports = resolvers;
-

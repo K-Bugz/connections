@@ -56,14 +56,13 @@ const userSchema = new Schema(
                 ref: 'User'
             }
         ],
-        // May need to put back in for our own API for messages.
-        // messages: [
-        //     {
-        //         type: Schema.Types.ObjectId,
-        //         ref: 'Message'
-        //     }
-        // ],
-        savedJobs: [ // connections is the saved jobs
+        messages: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Message'
+            }
+        ],
+        connections: [ // connections is the saved jobs
             {
                 type: Schema.Types.ObjectId,
                 ref: 'Jobpost'
