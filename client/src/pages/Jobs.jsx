@@ -28,7 +28,9 @@ export default function Jobs() {
     return (
         <React.Fragment>
             <Navbar></Navbar>
+            <div className="flex justify-center" id="job-nav">
             <h1>Job Posts</h1>
+            </div>
             {!jobsToPost ? (
                 <h3>loading...</h3>
             ) : (
