@@ -1,7 +1,7 @@
 const { Schema } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
-const reply = new Schema(
+const replySchema = new Schema(
     {
         replyText: {
             type: String,
@@ -12,6 +12,10 @@ const reply = new Schema(
             type: Date,
             default: Date.now,
             get: timestamp => dateFormat(timestamp)
+        },
+        authorId: {
+            type: String,
+            required: true,
         }
     },
     {
@@ -21,4 +25,4 @@ const reply = new Schema(
     }
 );
 
-module.exports = reply;
+module.exports = replySchema;

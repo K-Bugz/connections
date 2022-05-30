@@ -1,6 +1,6 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { Error } = require('mongoose');
-const { User, Jobpost, Messege } = require('../models');
+const { User, Jobpost, Message } = require('../models');
 const { signToken } = require('../utils/auth');
 const { loginScrape } = require('../utils/jobScraperFunctions');
 
@@ -10,13 +10,15 @@ const resolvers = {
             return User.find()
                 .select('-__v -password')
                 .populate('friends')
-                .populate('connections');
+                .populate('connections')
+                .populate('messages');
         },
         user: async (parent, args, context) => {
             return User.findOne({ email: context.user.email })
                 .select('-__v -password')
                 .populate('friends')
-                .populate('connections');
+                .populate('connections')
+                .populate('messages');
         },
         jobPosts: async () => {
             return Jobpost.find().sort({ _id: -1 });
@@ -119,11 +121,22 @@ const resolvers = {
         },
         addMessage: async (parent, args, context) => {
             try {
-                const newMessage = await Message.create({ $push: { sender: context.user._id } }, { new: true })
+                const newMessage = await Message.create({})
+                const sender = await Message.findOneAndUpdate({ _id: newMessage._id }, { $push: { sender: context.user._id } }, { new: true })
                 if (newMessage) {
-                    const user = await User.findOneAndUpdate({ _id: context.user._id }, { $push: { messeges: newMessage._id } }, { new: true })
+                    const user = await User.findOneAndUpdate({ _id: context.user._id }, { $push: { messages: newMessage._id } }, { new: true })
                     return user;
                 }
+            }
+            catch (err) {
+                console.log(err)
+            }
+        },
+        // May need to update. Two different users. How about notifications? 
+        addReply: async (parent, args, context) => {
+            try {
+                const newReply = await Message.findOneAndUpdate({ _id: args.messageId }, { $push: { reply: { authorId: context.user._id, replyText: args.replyText } } }, { new: true })
+                return newReply;
             }
             catch (err) {
                 console.log(err)
@@ -133,4 +146,3 @@ const resolvers = {
 };
 
 module.exports = resolvers;
-

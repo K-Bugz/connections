@@ -37,6 +37,7 @@ const typeDefs = gql`
     _id: ID
     replyText: String!
     createdAt: String
+    authorId: String
   }
 
 
@@ -62,6 +63,7 @@ const typeDefs = gql`
     deleteJobpost(_id: ID!): Jobpost
     deleteJobposts: [Jobpost]
     addMessage: User
+    addReply(replyText: String!, messageId: ID!): Message
   }
 `;
 
