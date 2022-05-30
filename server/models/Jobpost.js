@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const dateFormat = require('../utils/dateFormat');
 
 const jobpostSchema = new Schema(
     {
@@ -8,7 +9,8 @@ const jobpostSchema = new Schema(
         },
         link: {
             type: String,
-            required: true
+            required: true,
+            unique: true
         },
         company: {
             type: String,
@@ -19,6 +21,15 @@ const jobpostSchema = new Schema(
         },
         timePosted: {
             type: String
+        },
+        isSaved: {
+            type: Boolean,
+            default: false
+        },
+        createdAt: {
+            type: Date,
+            default: Date.now,
+            get: timestamp => dateFormat(timestamp)
         }
     },
 );
