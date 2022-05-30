@@ -11,14 +11,16 @@ const resolvers = {
                 .select('-__v -password')
                 .populate('friends')
                 .populate('connections')
-                .populate('messages');
+                .populate('messages')
+                .populate('savedJobs')
         },
         user: async (parent, args, context) => {
             return User.findOne({ email: context.user.email })
                 .select('-__v -password')
                 .populate('friends')
                 .populate('connections')
-                .populate('messages');
+                .populate('messages')
+                .populate('savedJobs')
         },
         jobPosts: async () => {
             return Jobpost.find().sort({ _id: -1 });
@@ -44,7 +46,6 @@ const resolvers = {
             loginScrape();
 
             return { token, user };
-            // return user;
         },
         login: async (parent, { email, password }) => {
             const user = await User.findOne({ email: email });
@@ -139,6 +140,16 @@ const resolvers = {
                 const remainingJobs = await Jobpost.deleteMany({ isSaved: false });
                 if (remainingJobs) {
                     return Jobpost.find();
+                }
+            } catch (err) {
+                console.log(err)
+            }
+        },
+        deleteAllUser: async () => {
+            try {
+                const remainingJobs = await User.deleteMany({});
+                if (remainingJobs) {
+                    return User.find();
                 }
             } catch (err) {
                 console.log(err)

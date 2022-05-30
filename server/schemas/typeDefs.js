@@ -14,6 +14,7 @@ const typeDefs = gql`
     resume: String
     isJobSeeker: Boolean
     messages: [Message]
+    savedJobs:[Jobpost]
   }
 
   type Jobpost {
@@ -65,6 +66,7 @@ const typeDefs = gql`
     deleteJobposts: [Jobpost]
     addMessage: User
     addReply(replyText: String!, messageId: ID!): Message
+    deleteAllUser: User
   }
 `;
 
