@@ -41,6 +41,12 @@ const typeDefs = gql`
   }
 
 
+  type Events {
+    _id: ID
+    title: String!
+    date: String!
+  }
+
   type Query {
     users: [User]
     user: User
@@ -63,8 +69,8 @@ const typeDefs = gql`
     removeJob(_id: ID!): User
     deleteJobpost(_id: ID!): Jobpost
     deleteJobposts: [Jobpost]
-    addMessage: User
-    addReply(replyText: String!, messageId: ID!): Message
+    addEvent(title: String!, date: String!): Events
+    deleteEvents: [Events]
   }
 `;
 
