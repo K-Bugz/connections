@@ -18,7 +18,7 @@ export default function Map() {
           borderRadius: '10px',
           margin: "20px 0 0",
           height: "50vh",
-          width: "53vh"
+          width: "45vh"
         }}
       >
         <Marker
