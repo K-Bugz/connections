@@ -9,25 +9,16 @@ const resolvers = {
         users: async () => {
             return User.find()
                 .select('-__v -password')
-<<<<<<< HEAD
-                .populate('savedJobs')
-                .populate('friends');
-=======
                 .populate('friends')
                 .populate('connections')
                 .populate('messages');
->>>>>>> feature/messages
         },
         user: async (parent, args, context) => {
             return User.findOne({ email: context.user.email })
                 .select('-__v -password')
                 .populate('friends')
-<<<<<<< HEAD
-                .populate('savedJobs');
-=======
                 .populate('connections')
                 .populate('messages');
->>>>>>> feature/messages
         },
         jobPosts: async () => {
             return Jobpost.find().sort({ _id: -1 });
@@ -153,15 +144,6 @@ const resolvers = {
                 console.log(err)
             }
         },
-<<<<<<< HEAD
-        deleteAllUser: async () => {
-            try {
-                const remainingJobs = await User.deleteMany({});
-                if (remainingJobs) {
-                    return User.find();
-                }
-            } catch (err) {
-=======
         addMessage: async (parent, args, context) => {
             try {
                 const newMessage = await Message.create({})
@@ -182,7 +164,6 @@ const resolvers = {
                 return newReply;
             }
             catch (err) {
->>>>>>> feature/messages
                 console.log(err)
             }
         }

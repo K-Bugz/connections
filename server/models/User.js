@@ -56,16 +56,6 @@ const userSchema = new Schema(
                 ref: 'User'
             }
         ],
-<<<<<<< HEAD
-        // May need to put back in for our own API for messages.
-        // messages: [
-        //     {
-        //         type: Schema.Types.ObjectId,
-        //         ref: 'Message'
-        //     }
-        // ],
-        savedJobs: [ // connections is the saved jobs
-=======
         messages: [
             {
                 type: Schema.Types.ObjectId,
@@ -73,7 +63,6 @@ const userSchema = new Schema(
             }
         ],
         connections: [ // connections is the saved jobs
->>>>>>> feature/messages
             {
                 type: Schema.Types.ObjectId,
                 ref: 'Jobpost'
