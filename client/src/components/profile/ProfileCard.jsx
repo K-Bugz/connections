@@ -1,6 +1,26 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
+import { useQuery } from '@apollo/client';
+import { QUERY_USER } from '../../utils/queries';
 
 export default function Navbar() {
+    const [profileState, setProfileState] = useState({});
+    const { loading, data } = useQuery(QUERY_USER);
+
+    useEffect(() => {
+        addUserData(data);// eslint-disable-next-line
+    }, [data]);
+
+    const addUserData = async (data) => {
+        try {
+            if (!loading) {
+                const { user } = data;
+                setProfileState(user);
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    }
     return (
         <React.Fragment>
             <div className=' bg-white-200 dark:bg-white flex flex-wrap items-center justify-center '>
@@ -14,19 +34,19 @@ export default function Navbar() {
                     </div>
                     <div className=' '>
                         <div className='text-center px-5'>
-                            <h2 className='text-gray-800 text-3xl font-bold'>Martin Short</h2>
-                            <p className='text-gray-400 mt-2'>Junior Developer</p>
+                            <h2 className='text-gray-800 text-3xl font-bold'>{profileState.firstName + ' ' + profileState.lastName}</h2>
+                            <p className='text-gray-400 mt-2'>{profileState.title}</p>
     {/* This has a character limit of 250 */}
-                            <p className='mt-2 text-gray-600'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. sdffdsdfdfsdf  dfd</p>
+                            <p className='mt-2 text-gray-600'>{profileState.about}</p>
                         </div>
                         <hr className='mt-6' />
                         <div className='flex  bg-gray-50 '>
                             <div className='border'></div>
                             <div className='text-center w-1/2 p-4 hover:bg-gray-100 cursor-pointer'>
-                                <p> <span className='font-semibold'>Website</span></p>
+                                <p> <span className='font-semibold'>{profileState.website}</span></p>
                             </div>
                             <div className='text-center w-1/2 p-4 hover:bg-gray-100 cursor-pointer'>
-                                <p> <span className='font-semibold'>Email</span></p>
+                                <p> <span className='font-semibold'>{profileState.email}</span></p>
                             </div>
                         </div>
                     </div>
