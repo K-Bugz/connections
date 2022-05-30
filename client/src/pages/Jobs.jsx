@@ -2,7 +2,6 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import Navbar from '../components/navbar/Navbar';
 import Jobcard from '../components/jobcard/Jobcard';
-import Map from '../components/googlemaps/Map';
 import { useQuery } from '@apollo/client';
 import { QUERY_ALLJOBS } from '../utils/queries';
 import '../pages/pages.styles/Jobs.css'
@@ -17,7 +16,7 @@ export default function Jobs() {
 
     const getJobsToPost = async (data) => {
         try {
-            if (!loading){
+            if (!loading) {
                 const { jobPosts } = data;
                 const slicedPost = jobPosts.slice(0, 11);
                 setJobsToPost(slicedPost);
@@ -32,11 +31,11 @@ export default function Jobs() {
             {loading ? (
                 <h3>loading...</h3>
             ) : (
-                    <div className='container'>
-                        {jobsToPost && jobsToPost.map(job => {
+                <div className='container' >
+                    {jobsToPost && jobsToPost.map(job => {
                         return <Jobcard job={job} key={job._id} ></Jobcard>
-                        })};
-                    </div>
+                    })};
+                </div>
             )}
             <div className="flex justify-center">
             <Map></Map>

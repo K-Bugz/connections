@@ -4,13 +4,13 @@ import { useMutation } from '@apollo/client';
 import { SAVE_JOB, REMOVE_JOB } from '../../utils/mutations';
 import './Jobcard.css'
 
-export default function JobCard( {job} ) {
-    const [ jobInfo, setJobInfo ] = useState(job);
+export default function JobCard({ job }) {
+    const [jobInfo, setJobInfo] = useState(job);
     const [saveJobPost] = useMutation(SAVE_JOB);
     const [removeFromSaved] = useMutation(REMOVE_JOB);
-    const handleSaveJob =async () => {
+    const handleSaveJob = async () => {
         try {
-            const updatedJob = await saveJobPost({ variables: { id: job._id, isSaved: true}});
+            const updatedJob = await saveJobPost({ variables: { id: job._id, isSaved: true } });
             const { data } = updatedJob;
             setJobInfo(data.saveJob);
             alert("Job Saved!");
@@ -19,9 +19,9 @@ export default function JobCard( {job} ) {
         }
     }
 
-    const handleRemoveJob =async () => {
+    const handleRemoveJob = async () => {
         try {
-            const updatedJob = await removeFromSaved({ variables: { id: job._id}});
+            const updatedJob = await removeFromSaved({ variables: { id: job._id } });
             if (updatedJob) {
                 alert("Job removed from saved");
             }
@@ -49,8 +49,7 @@ export default function JobCard( {job} ) {
                             </span>
                         </div>
                         <div className="flex items-center">
-
-                            {jobInfo.isSaved? (<button onClick={handleRemoveJob}>Remove from Saved</button>
+                            {jobInfo.isSaved ? (<button className="rounded-md appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 bg-blue-200 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm" onClick={handleRemoveJob}>Saved</button>
                             ) : (
                                 <button className="border p-3 border-gray-200 rounded-full " onClick={handleSaveJob}>
                                 <svg

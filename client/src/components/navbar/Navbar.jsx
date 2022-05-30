@@ -6,8 +6,7 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { Link } from "react-router-dom";
 import auth from '../../utils/auth';
 
-const Login = auth.loggedIn (); 
-
+const Login = auth.loggedIn();
 
 const user = {
   name: 'Tom Cook',
@@ -17,19 +16,19 @@ const user = {
 }
 const navigation = [
   { name: 'Dashboard', href: '/Dashboard', current: false },
-  { name: 'Connect', href: '#', current: false },
+  { name: 'Connect', href: '/Connections', current: false },
   { name: 'Jobs', href: '/Jobs', current: false },
   { name: 'Profile', href: '/Profile', current: false },
   { name: 'Messages', href: '/Messages', current: false },
-  Login ? ({ name: 'Log Out', href: '/',  }): ({ name: 'Log In', href: '/Login',  })
-  
+  Login ? ({ name: 'Log Out', href: '/', }) : ({ name: 'Log In', href: '/Login', })
 ]
+
 const userNavigation = [
   { name: 'Your Profile', href: '/Profile' },
-  { name: 'Connect', href: '#' },
+  { name: 'Connect', href: '/Connections' },
   { name: 'Jobs', href: '/Jobs' },
   { name: 'Dashboard', href: '/Dashboard' },
-  Login ? ({ name: 'Log Out', href: '/',  }): ({ name: 'Log In', href: '/Login',  })
+  Login ? ({ name: 'Log Out', href: '/', }) : ({ name: 'Log In', href: '/Login', })
 ]
 
 function classNames(...classes) {
@@ -51,14 +50,12 @@ export default function Navbar() {
                         <img
                           className='h-11 w-100'
                           src={logo}
-                          alt='Workflow'
+                          alt='logo'
                         />
                       </a>
                     </div>
-
                     <div className='hidden md:block'>
                       <div className='ml-10 flex items-baseline space-x-4'>
-                        
                         {navigation.map((item) => (
                           <a
                             key={item.name}
@@ -83,7 +80,6 @@ export default function Navbar() {
                         <span role="img" aria-label="shopping bag">🛒</span>
                         Shop
                       </Link>
-
                       {/* Profile dropdown */}
                       <Menu as='div' className='ml-3 relative'>
                         <div>
@@ -135,7 +131,6 @@ export default function Navbar() {
                   </div>
                 </div>
               </div>
-
               <Disclosure.Panel className='md:hidden'>
                 <div className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
                   {navigation.map((item) => (
@@ -154,10 +149,9 @@ export default function Navbar() {
                   ))}
                 </div>
                 <div className='pt-4 pb-3 border-t border-gray-700'>
-                  
                   <div className='flex items-center px-5'>
                     <div className='flex-shrink-0'>
-                      <img className='h-10 w-10 rounded-full' src={user.imageUrl} alt='' />
+                      <img className='h-10 w-10 rounded-full' src={user.imageUrl} alt='logo' />
                     </div>
                     <div className='ml-3'>
                       <div className='text-base font-medium leading-none text-white'>{user.name}</div>
@@ -177,15 +171,11 @@ export default function Navbar() {
                     ))}
                   </div>
                 </div>
-
               </Disclosure.Panel>
-
             </>
           )}
         </Disclosure>
-
       </div>
-
     </React.Fragment>
   )
 }

@@ -6,6 +6,8 @@ import Connects from '../components/connects/Connects';
 import Jobcard from '../components/jobcard/Jobcard';
 import Notecard from '../pages/Notes'
 import ProfileCard from '../components/profile/ProfileCard';
+import Map from '../components/googlemaps/Map';
+import Notepad from '../components/notepad/Notepad'
 import { useState, useEffect } from 'react';
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_USER } from "../utils/queries";
@@ -14,7 +16,7 @@ import { REMOVE_JOB } from "../utils/mutations";
 
 export default function Dashboard() {
   const { loading, data } = useQuery(QUERY_USER);
-  const { updateSavedJobs } = useMutation(REMOVE_JOB);
+  const { } = useMutation(REMOVE_JOB);
   const [jobsToPost, setJobsToPost] = useState([]);
   let savedJobs = [];
 
@@ -37,10 +39,10 @@ export default function Dashboard() {
   return (
     <React.Fragment>
       <Navbar></Navbar>
-      <main className="bg-gray-100 dark:bg-gray-800  h-screen overflow-hidden relative">
+      <main className="bg-white dark:bg-white  h-screen overflow-hidden">
         <div className="flex items-start justify-between">
           <div className="h-screen hidden lg:block my-4 ml-4 shadow-lg w-80">
-            <div className="bg-white h-full rounded-2xl dark:bg-gray-700">
+            <div className="bg-white h-full rounded-2xl dark:bg-white">
               <ProfileCard></ProfileCard>
             </div>
           </div>
@@ -61,7 +63,6 @@ export default function Dashboard() {
                   <div className="mb-4">
                     <div className="shadow-lg rounded-2xl p-4 bg-white dark:bg-gray-700">
                       <Calendario></Calendario>
-
                     </div>
                   </div>
                   {/* Chat area */}
