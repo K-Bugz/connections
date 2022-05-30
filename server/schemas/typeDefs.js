@@ -13,7 +13,7 @@ const typeDefs = gql`
     coverPhoto: String
     resume: String
     isJobSeeker: Boolean
-    savedJobs:[Jobpost]
+    messages: [Message]
   }
 
   type Jobpost {
@@ -26,12 +26,27 @@ const typeDefs = gql`
     isSaved: Boolean
     createdAt: String
   }
+  type Message {
+    _id: ID
+    sender: [User]
+    reciever: [User]
+    createdAt: String
+    reply: [Reply]
+  }
+  type Reply {
+    _id: ID
+    replyText: String!
+    createdAt: String
+    authorId: String
+  }
+
 
   type Query {
     users: [User]
     user: User
     jobPosts: [Jobpost]
     jobPost(_id: ID!): Jobpost
+    messages: User
   }
 
   type Auth {
@@ -48,7 +63,8 @@ const typeDefs = gql`
     removeJob(_id: ID!): User
     deleteJobpost(_id: ID!): Jobpost
     deleteJobposts: [Jobpost]
-    deleteAllUser: User
+    addMessage: User
+    addReply(replyText: String!, messageId: ID!): Message
   }
 `;
 

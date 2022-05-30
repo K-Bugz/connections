@@ -4,6 +4,7 @@ import Calendario from "./Calender";
 import Navbar from '../components/navbar/Navbar';
 import Connects from '../components/connects/Connects';
 import Jobcard from '../components/jobcard/Jobcard';
+import Notecard from '../pages/Notes'
 import ProfileCard from '../components/profile/ProfileCard';
 import Map from '../components/googlemaps/Map';
 import Notepad from '../components/notepad/Notepad'
@@ -56,18 +57,7 @@ export default function Dashboard() {
                     </div>
                   </div>
                 </div>
-                <div className="w-full sm:w-1/2 xl:w-1/3">
-                  <div className="mb-4 mx-0 sm:ml-4 xl:mr-4">
-                    <div className="shadow-lg rounded-2xl bg-white dark:bg-gray-700 w-full">
-                    </div>
-                    <div>
-                    <Notepad></Notepad>
-                    </div>
-                    <div className="mt-8">
-                    <Map></Map>
-                    </div>
-                  </div>
-                </div>
+                <Notecard/>
                 {/* Calender Area */}
                 <div className="w-full sm:w-1/2 xl:w-1/3">
                   <div className="mb-4">
@@ -87,6 +77,7 @@ export default function Dashboard() {
           </div>
         </div>
       </main>
+     
     </React.Fragment>
   );
 }
