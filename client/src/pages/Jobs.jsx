@@ -9,21 +9,54 @@ import '../pages/pages.styles/Jobs.css'
 
 export default function Jobs() {
     const [jobsToPost, setJobsToPost] = useState([]);
-    const { loading, data} = useQuery(QUERY_ALLJOBS);
+    const [jobPages, setJobPages] = useState([]);
+    const [currentPage, setCurrentPage] = useState(0);
+    const [numOfPages, setNumOfPages] = useState(0);
+    const { loading, data } = useQuery(QUERY_ALLJOBS);
 
-    useEffect(() => {
-        getJobsToPost(data);
-    }, [loading])
+    useEffect(() => { getNumOfPages(data); }, [data])
+    useEffect(() => { createPages(); }, [numOfPages])
+    // useEffect(() => { setPage(); }, [jobPages])
+    useEffect(() => { setPage(); }, [currentPage, jobPages])
 
-    const getJobsToPost = async (data) => {
-        try {
-            if (!loading) {
-                const { jobPosts } = data;
-                const slicedPost = jobPosts.slice(0, 11);
-                setJobsToPost(slicedPost);
-            }
-        } catch (err) { console.log(err) };
+    const getNumOfPages = async (data) => {
+        if (!loading) {
+            const { jobPosts } = data;
+            let numOfPages = Math.ceil(jobPosts.length / 15)
+            setNumOfPages(numOfPages);
+        }
     };
+
+    const createPages = () => {
+        if (!loading) {
+            const { jobPosts } = data;
+            let copyOfJobpost = [...jobPosts];
+            let pages = [];
+            for (let i = 0; i < numOfPages; i++) {
+                const newPage = copyOfJobpost.splice(0, 15)
+                pages.push(newPage);
+            }
+            setJobPages(pages);
+        }
+    }
+
+    const setPage = () => {
+        if (!loading) {
+            setJobsToPost(jobPages[currentPage]);
+        }
+    }
+
+    const nextPage = () => {
+        if (currentPage < numOfPages -1 ) {
+            setCurrentPage(currentPage + 1);
+        }
+    }
+
+    const previousPage = () => {
+        if (currentPage >= 1) {
+            setCurrentPage(currentPage - 1);
+        }
+    }
 
     return (
         <React.Fragment>
@@ -33,13 +66,19 @@ export default function Jobs() {
                 <h3>loading...</h3>
             ) : (
                 <div className='container' >
+                    <button onClick={previousPage}>Previous Page</button>
+                    <p>Page {currentPage + 1} out of {numOfPages}</p>
+                    <button onClick={nextPage}>Next Page</button>
                     {jobsToPost && jobsToPost.map(job => {
                         return <Jobcard job={job} key={job._id} ></Jobcard>
-                    })};
+                    })}
+                    <button onClick={previousPage}>Previous Page</button>
+                    <p>Page {currentPage + 1} out of {numOfPages}</p>
+                    <button onClick={nextPage}>Next Page</button>
                 </div>
             )}
             <div className="flex justify-center">
-            <Map></Map>
+                <Map></Map>
             </div>
         </React.Fragment>
     )

@@ -66,7 +66,7 @@ export default function JobCard({ job }) {
         }
     }
     // eslint-disable-next-line
-    useEffect(() => { getSavedJobs(data); }, [loading])
+    useEffect(() => { getSavedJobs(data); }, [data])
 
     return (
         <React.Fragment>
