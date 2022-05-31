@@ -23,31 +23,21 @@ const defaultImageDataBGURI =
   }
 
 
-export default function Navbar() {
+export default function Navbar({userInfo}) {
     const [profileState, setProfileState] = useState({});
     const { loading, data } = useQuery(QUERY_USER);
 
     useEffect(() => {
-        addUserData(data);// eslint-disable-next-line
-    }, [data]);
-
-    const addUserData = async (data) => {
-        try {
-            if (!loading) {
-                const { user } = data;
-                setProfileState(user);
-            }
-        } catch (err) {
-            console.log(err);
-        }
-    }
+        setProfileState(userInfo);
+    }, [userInfo]);
+    
     return (
         <React.Fragment>
             <div className=' bg-white-200 dark:bg-white flex flex-wrap items-center justify-center m-6 '>
                 <div className='container bg-white shadow-lg transform duration-200 easy-in-out'>
                     <div className='h-32 overflow-hidden' >
                         <img className='w-full' 
-                        src={profileState.coverPhoto  || defaultImageDataBGURI} 
+                        src={profileState.coverPhoto? profileState.coverPhoto : defaultImageDataBGURI } 
                         alt="bgpic"
                         height="600px"
                         width="600px"
@@ -56,7 +46,7 @@ export default function Navbar() {
                     </div>
                     <div className='flex justify-center px-8 '>
                         <img className='h-50 w-50 bg-white p-2 rounded-full' 
-                        src={profileState.profilePic || defaultImageDataURI}
+                        src={profileState.profilePic? profileState.profilePic : defaultImageDataURI}
                         alt={profileState.firstName}
                         height="128px"
                         width="128px"

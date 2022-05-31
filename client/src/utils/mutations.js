@@ -78,3 +78,21 @@ mutation removeJob($id: ID!) {
   }
 }
 `;
+
+export const OTHER_USERS = gql`
+query allOtherUsers {
+  users {
+    _id
+    firstName
+    lastName
+    email
+    title
+    about
+    website
+    profilePic
+    coverPhoto
+    resume
+    isJobSeeker
+  }
+}
+`;
