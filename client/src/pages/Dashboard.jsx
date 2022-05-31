@@ -10,6 +10,7 @@ import { useState, useEffect } from 'react';
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_USER } from "../utils/queries";
 import { REMOVE_JOB } from "../utils/mutations";
+import Footer from '../components/footer/Footer'
 
 
 export default function Dashboard() {
@@ -75,7 +76,7 @@ export default function Dashboard() {
           </div>
         </div>
       </main>
-     
+     <Footer></Footer>
     </React.Fragment>
   );
 }

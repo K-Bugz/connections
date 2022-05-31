@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import Navbar from '../components/navbar/Navbar';
 import Jobcard from '../components/jobcard/Jobcard';
+import Footer from '../components/footer/Footer'
 import { useQuery } from '@apollo/client';
 import { QUERY_ALLJOBS } from '../utils/queries';
 import '../pages/pages.styles/Jobs.css'
@@ -79,6 +80,7 @@ export default function Jobs() {
             )}
             <div className="flex justify-center">
             </div>
+            <Footer></Footer>
         </React.Fragment>
     )
 }

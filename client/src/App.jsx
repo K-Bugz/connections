@@ -11,6 +11,7 @@ import Main from './pages/Main';
 import Jobs from './pages/Jobs';
 import Shopping from './pages/Shopping';
 import Connections from './pages/Connections'
+import Footer from './components/footer/Footer'
 import {
   BrowserRouter,
   Routes,
@@ -50,6 +51,7 @@ function App() {
             <Route path='/Jobs' element={<Jobs />} />
             <Route path='/Shopping' element={<Shopping />} />
             <Route path='/Connections' element={<Connections />} />
+            <Route path='/Footer' element={<Footer />} />
           </Routes>
         </BrowserRouter>
     </ApolloProvider>

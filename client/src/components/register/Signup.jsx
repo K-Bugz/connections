@@ -6,6 +6,7 @@ import Input from './Input';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../../utils/mutations';
 import Auth from '../../utils/auth';
+import Footer from '../../components/footer/Footer'
 
 const fields = signupFields;
 let fieldsState = {};
@@ -42,7 +43,7 @@ export default function Signup() {
 
   return (
     <React.Fragment>
-      <div className='min-h-min flex justify-center py-0 px-4 sm:px-6 lg:px-8'>
+      <div className='h-screen flex justify-center py-0 px-4 sm:px-6 lg:px-8'>
         <div className='max-w-md w-full space-y-8'>
           <form className='mt-8 space-y-6' onSubmit={handleSubmit}>
             <div className=''>
@@ -81,6 +82,7 @@ export default function Signup() {
           </form>
         </div>
       </div >
+      <Footer></Footer>
     </React.Fragment>
   )
 }

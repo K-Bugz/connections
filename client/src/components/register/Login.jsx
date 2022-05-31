@@ -40,7 +40,7 @@ export default function Login() {
 
 
     return (
-        <div className='min-h-min flex justify-center py-0 px-4 sm:px-6 lg:px-8'>
+        <div className='h-screen flex justify-center py-0 px-4 sm:px-6 lg:px-8'>
             <div className='max-w-md w-full space-y-6'>
                 <form className='mt-0 space-y-6' onSubmit={handleSubmit}>
                     <div className='-space-y-px'>

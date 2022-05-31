@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import Navbar from '../../components/navbar/Navbar';
+import Footer from '../../components/footer/Footer'
 import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_USER } from '../../utils/queries';
 import { UPDATE_PROFILE } from '../../utils/mutations';
@@ -214,6 +215,7 @@ export default function Profile() {
                 </div>
             </div>
         </div>
+        <Footer></Footer>
     </React.Fragment>
     )
 }
