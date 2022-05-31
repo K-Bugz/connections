@@ -10,7 +10,7 @@ export default function Main() {
             Connecting you to a brighter future
           </span>
           <a href="/Signup">
-            <span className="block text-blue-400">
+            <span className="block text-blue-400 hover:text-blue-200 dark:hover:text-blue-200">
               Join today
             </span>
           </a>
