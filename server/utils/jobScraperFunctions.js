@@ -1,7 +1,7 @@
 const careerBuilderScraper = require('./careerBuilderScraper');
 const indeedScraper = require('./indeedScraper');
 const linkedinScraper = require('./linkedinScraper');
-const { Jobpost } = require('../models');;
+const { Jobpost, User } = require('../models');;
 
 async function scrapeSites(nameOfCity) {
     try {
@@ -40,8 +40,11 @@ async function addJobsToDB(scrapedJobsArr) {
 };
 
 async function removeUnsavedJobs() {
-    await Jobpost.deleteMany({ isSaved: false });
-    console.log('Unsaved jobs removed from DB');
+    const jobs = await Jobpost.find({});
+    if (jobs.length > 300) {
+        await Jobpost.deleteMany({ isSaved: false });
+        console.log('Unsaved jobs removed from DB');
+    }
 };
 
 async function loginScrape() {
@@ -55,6 +58,24 @@ async function refreshDBJobs() {
     await loginScrape();
     console.log('Jobs in DB refreshed!')
 };
+
+// async function removeUnusedIsSaved () {
+//     const usersWithSavedJobs = await User.find({savedJobs: {$type: 'array', $ne: []} })
+//     let userSavedJobs = [];
+//     usersWithSavedJobs.forEach((user) => {
+//         userSavedJobs = userSavedJobs.concat(user.savedJobs);
+//     })
+//     const isSavedJobs = await Jobpost.find({ isSaved: true });
+//     let jobsToDelete = [];
+//     console.log(isSavedJobs);
+//     isSavedJobs.forEach(job => {
+//        if(!userSavedJobs.includes(job._id)) {
+//         jobsToDelete.push(job);
+//        }
+//     })
+//     console.log(jobsToDelete);
+
+// }
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {

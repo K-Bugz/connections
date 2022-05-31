@@ -2,8 +2,22 @@ import React from 'react';
 import Navbar from '../components/navbar/Navbar';
 import ProfileCard from '../components/profile/ProfileCard';
 import Footer from '../components/footer/Footer'
+import { useQuery } from '@apollo/client';
+import { useState, useEffect } from 'react';
+import { OTHER_USERS } from '../utils/mutations';
 
 export default function Connections() {
+    const { loading, data } = useQuery(OTHER_USERS);
+    const [users, setUsers] = useState([]);
+
+    const getOtherUsers = (data) => {
+        if (!loading) {
+            const { users } = data;
+            setUsers(users);
+        }
+    }
+
+    useEffect(() => { getOtherUsers(data) }, [data]);
     return (
         <React.Fragment>
             <Navbar></Navbar>
@@ -24,11 +38,13 @@ export default function Connections() {
                     <div className='w-1/6 text-right'>
                     </div>
                 </div>
+
             </div>
             <div className='container rounded-2xl flex flex-row mx-auto w-full items-center m-8'>
-                <ProfileCard></ProfileCard>
+                {users && users.map(user => {
+                    return <ProfileCard userInfo={user} key={user._id}></ProfileCard>
+                })}
             </div>
-            <Footer></Footer>
         </React.Fragment>
     )
 }

@@ -2,12 +2,12 @@ const { AuthenticationError } = require('apollo-server-express');
 const { Error } = require('mongoose');
 const { User, Jobpost, Message } = require('../models');
 const { signToken } = require('../utils/auth');
-const { loginScrape } = require('../utils/jobScraperFunctions');
+const { refreshDBJobs } = require('../utils/jobScraperFunctions');
 
 const resolvers = {
     Query: {
-        users: async () => {
-            return User.find()
+        users: async (parent, args, context) => {
+            return User.find({ _id: { $ne: context.user._id }})
                 .select('-__v -password')
                 .populate('friends')
                 .populate('connections')
@@ -61,7 +61,7 @@ const resolvers = {
                 throw new AuthenticationError('Incorrect credentials');
             }
 
-            loginScrape();
+            refreshDBJobs();
 
             const token = signToken(user);
             return { token, user };

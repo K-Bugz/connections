@@ -15,15 +15,14 @@ import Footer from '../components/footer/Footer'
 
 export default function Dashboard() {
   const { loading, data } = useQuery(QUERY_USER);
-  const { } = useMutation(REMOVE_JOB);
   const [jobsToPost, setJobsToPost] = useState([]);
+  const [userInfo, setUserInfo] = useState([]);
   let savedJobs = [];
 
-  const getSavedJobs = async (data) => {
+  const getSavedJobs = async (userInfo) => {
     try {
       if (!loading) {
-        const { user } = data;
-        savedJobs = user.savedJobs.slice(0, 10);
+        savedJobs = userInfo.savedJobs.slice(0, 10);
         setJobsToPost(savedJobs);
       }
     } catch (err) {
@@ -31,9 +30,19 @@ export default function Dashboard() {
     }
   }
 
-  useEffect(() => {
-    getSavedJobs(data);
-  }, [data])
+  const getDataForProfileCard = async (data) => {
+    try{
+      if (!loading) {
+        const { user } = data;
+        setUserInfo(user);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  useEffect(() => {getSavedJobs(userInfo)}, [userInfo])
+  useEffect(() => { getDataForProfileCard(data)}, [data])
 
   return (
     <React.Fragment>
@@ -42,7 +51,7 @@ export default function Dashboard() {
         <div className="flex items-start justify-between">
           <div className="h-screen hidden lg:block my-4 ml-4 shadow-lg w-80">
             <div className="bg-white h-full rounded-2xl dark:bg-white">
-              <ProfileCard></ProfileCard>
+              <ProfileCard userInfo={userInfo}></ProfileCard>
             </div>
           </div>
           <div className="flex flex-col w-full pl-0 md:p-4 md:space-y-4">
