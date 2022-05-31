@@ -71,7 +71,7 @@ export default function JobCard({ job }) {
     return (
         <React.Fragment>
 
-            <div className="mb-4 flex justify-center " id="job-container">
+            <div className="mb-4 flex justify-center" id="job-container">
                 <div className="shadow-lg rounded-2xl p-4 bg-white dark:bg-gray-700 w-full ">
                     <div className="flex items-center justify-between mb-10">
                         <div className="flex items-center">

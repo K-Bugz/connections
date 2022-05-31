@@ -4,7 +4,6 @@ import Navbar from '../components/navbar/Navbar';
 import Jobcard from '../components/jobcard/Jobcard';
 import { useQuery } from '@apollo/client';
 import { QUERY_ALLJOBS } from '../utils/queries';
-import Map from '../components/googlemaps/Map'
 import '../pages/pages.styles/Jobs.css'
 
 export default function Jobs() {
@@ -79,7 +78,6 @@ export default function Jobs() {
                 </div>
             )}
             <div className="flex justify-center">
-                <Map></Map>
             </div>
         </React.Fragment>
     )

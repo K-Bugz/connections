@@ -6,8 +6,6 @@ import Connects from '../components/connects/Connects';
 import Jobcard from '../components/jobcard/Jobcard';
 import Notecard from '../pages/Notes'
 import ProfileCard from '../components/profile/ProfileCard';
-import Map from '../components/googlemaps/Map';
-import Notepad from '../components/notepad/Notepad'
 import { useState, useEffect } from 'react';
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_USER } from "../utils/queries";
