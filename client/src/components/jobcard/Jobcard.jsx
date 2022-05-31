@@ -85,14 +85,7 @@ export default function JobCard({ job }) {
                                 >
                                 </svg>
                             </span>
-                            <div className="flex flex-col">
-                                <span className="font-bold text-sm text-black dark:text-white ml-2">
-                                    {job.title}
-                                </span>
-                                <span className="text-sm text-gray-500 dark:text-white ml-2">
-                                    {job.company}
-                                </span>
-                            </div>
+                            
                         </div>
                         <div className="flex items-center">
 
