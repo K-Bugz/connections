@@ -78,3 +78,31 @@ mutation removeJob($id: ID!) {
   }
 }
 `;
+
+export const ADD_Message = gql`
+mutation removeJob {
+  removeJob(_id: $id) {
+    _id
+    firstName
+    lastName
+    email
+    title
+    about
+    website
+    profilePic
+    coverPhoto
+    resume
+    isJobSeeker
+    savedJobs {
+      _id
+      title
+      link
+      company
+      location
+      timePosted
+      isSaved
+      createdAt
+    }
+  }
+}
+`;

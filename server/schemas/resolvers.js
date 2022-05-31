@@ -28,11 +28,11 @@ const resolvers = {
                 { _id: _id }
             )
         },
-        // Find one user's message array
-        messages: async (parent, args, context) => {
-            return User.findOne({ _id: context.user._id })
-                .select('-__v -password')
-                .populate('messages')
+        // Find a message by ID
+        message: async (parent, args, context) => {
+            return Message.findById(args._id)
+                .populate('sender') // get sender or logged in person's info
+                .populate('reciever') // get whom ever they are sending's info
         }
     },
 
@@ -144,20 +144,16 @@ const resolvers = {
                 console.log(err)
             }
         },
-        addMessage: async (parent, args, context) => {
+        addMessage: async (parent, args, context) => { // This works
             try {
-                const newMessage = await Message.create({})
-                const sender = await Message.findOneAndUpdate({ _id: newMessage._id }, { $push: { sender: context.user._id } }, { new: true })
-                if (newMessage) {
-                    const user = await User.findOneAndUpdate({ _id: context.user._id }, { $push: { messages: newMessage._id } }, { new: true })
-                    return user;
-                }
+                const newMessage = await Message.create({ sender: context.user._id, reciever: args.reciever });
+                return newMessage;
             }
             catch (err) {
                 console.log(err)
             }
         },
-        // May need to update. Two different users. How about notifications? 
+        // SUPERMVP! How about notifications? 
         addReply: async (parent, args, context) => {
             try {
                 const newReply = await Message.findOneAndUpdate({ _id: args.messageId }, { $push: { reply: { authorId: context.user._id, replyText: args.replyText } } }, { new: true })

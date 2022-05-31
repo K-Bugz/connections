@@ -56,12 +56,6 @@ const userSchema = new Schema(
                 ref: 'User'
             }
         ],
-        messages: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'Message'
-            }
-        ],
         connections: [ // connections is the saved jobs
             {
                 type: Schema.Types.ObjectId,
