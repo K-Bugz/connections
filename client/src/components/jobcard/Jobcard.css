@@ -1,9 +1,49 @@
-#job-container{
-    padding: 0% 5% 0% 15%;
+#job-container {
+  padding: 0% 5% 0% 15%;
+}
+
+#back-btn {
+    background-color: white; 
+  border: 2px solid rgb(55 65 81);
+  color: black; 
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius:10px;
+}
+
+#forward-btn {
+    background-color: white; 
+    border: 2px solid rgb(55 65 81);
+    color: black; 
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius:10px;
+}
+
+#back-btn:hover {
+    background-color: rgb(55 65 81);
+    color: white;
+}
+
+#forward-btn:hover {
+    background-color: rgb(55 65 81);
+    color: white;
 }
 
 @media screen and (max-width: 480px) {
-    #job-container{
-        padding: 0% 0% 0% 0%;
-    }
+  #job-container {
+    padding: 0% 0% 0% 0%;
+  }
 }

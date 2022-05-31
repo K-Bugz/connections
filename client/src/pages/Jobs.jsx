@@ -66,15 +66,15 @@ export default function Jobs() {
                 <h3>loading...</h3>
             ) : (
                 <div className='container' >
-                    <button onClick={previousPage}>Previous Page</button>
+                    <button id="forward-btn" onClick={nextPage}>Next Page</button>
                     <p>Page {currentPage + 1} out of {numOfPages}</p>
-                    <button onClick={nextPage}>Next Page</button>
+                    <button id="back-btn" onClick={previousPage}>Previous Page</button>
                     {jobsToPost && jobsToPost.map(job => {
                         return <Jobcard job={job} key={job._id} ></Jobcard>
                     })}
-                    <button onClick={previousPage}>Previous Page</button>
+                    <button id="forward-btn" onClick={nextPage}>Next Page</button>
                     <p>Page {currentPage + 1} out of {numOfPages}</p>
-                    <button onClick={nextPage}>Next Page</button>
+                    <button id="back-btn" onClick={previousPage}>Previous Page</button>
                 </div>
             )}
             <div className="flex justify-center">
