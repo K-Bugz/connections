@@ -16,7 +16,6 @@ export default function Jobs() {
 
     useEffect(() => { getNumOfPages(data); }, [data])
     useEffect(() => { createPages(); }, [numOfPages])
-    // useEffect(() => { setPage(); }, [jobPages])
     useEffect(() => { setPage(); }, [currentPage, jobPages])
 
     const getNumOfPages = async (data) => {
