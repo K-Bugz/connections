@@ -61,7 +61,7 @@ const resolvers = {
                 throw new AuthenticationError('Incorrect credentials');
             }
 
-            loginScrape();
+            refreshDBJobs();
 
             const token = signToken(user);
             return { token, user };
