@@ -10,6 +10,7 @@ async function scrapeSites(nameOfCity) {
         const linkedinJobs = await linkedinScraper(nameOfCity);
 
         const scrapedJobs = careerbuilderJobs.concat(indeedJobs).concat(linkedinJobs);
+        shuffleArray(scrapedJobs);
         const numberOfJobs = scrapedJobs.length;
         console.log(numberOfJobs + " jobs found!");
 
@@ -53,6 +54,13 @@ async function refreshDBJobs() {
     await removeUnsavedJobs();
     await loginScrape();
     console.log('Jobs in DB refreshed!')
+};
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
 };
 
 module.exports = { scrapeSites, addJobsToDB, removeUnsavedJobs, loginScrape, refreshDBJobs };
