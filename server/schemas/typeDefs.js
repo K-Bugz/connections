@@ -15,6 +15,7 @@ const typeDefs = gql`
     isJobSeeker: Boolean
     messages: [Message]
     savedJobs:[Jobpost]
+    connections: [User]
   }
 
   type Jobpost {
@@ -67,6 +68,7 @@ const typeDefs = gql`
     addMessage: User
     addReply(replyText: String!, messageId: ID!): Message
     deleteAllUser: User
+    addFriend(_id: ID!): User
   }
 `;
 

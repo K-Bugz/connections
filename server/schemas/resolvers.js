@@ -9,7 +9,6 @@ const resolvers = {
         users: async (parent, args, context) => {
             return User.find({ _id: { $ne: context.user._id }})
                 .select('-__v -password')
-                .populate('friends')
                 .populate('connections')
                 .populate('messages')
                 .populate('savedJobs')
@@ -17,7 +16,6 @@ const resolvers = {
         user: async (parent, args, context) => {
             return User.findOne({ email: context.user.email })
                 .select('-__v -password')
-                .populate('friends')
                 .populate('connections')
                 .populate('messages')
                 .populate('savedJobs')
@@ -176,6 +174,20 @@ const resolvers = {
             }
             catch (err) {
                 console.log(err)
+            }
+        },
+        addFriend: async (parent, args, context) => {
+            if (args._id != context.user._id) {
+                try {
+                    const newFriend = await User.findOneAndUpdate(
+                        { _id: context.user._id },
+                        { $addToSet: { connections: args._id }},
+                        { new: true}
+                    ).populate('connections')
+                    return newFriend;
+                } catch (err) {
+                    console.log(err)
+                }
             }
         }
     }
