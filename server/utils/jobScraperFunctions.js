@@ -14,7 +14,7 @@ async function scrapeSites(nameOfCity) {
         const numberOfJobs = scrapedJobs.length;
         console.log(numberOfJobs + " jobs found!");
 
-        return scrapedJo
+        return scrapedJobs
     } catch (err) {
         console.log(err);
     }
