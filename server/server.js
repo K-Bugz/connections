@@ -20,7 +20,9 @@ app.use(express.json());
 const startApolloServer = async (typeDefs, resolvers) => {
     await server.start();
     server.applyMiddleware({ app });
-
+    if (process.env.NODE_ENV === 'production') {
+        app.use(express.static(path.join(__dirname, '../client/build')));
+    }
     db.once('open', () => {
         app.listen(PORT, () => {
             console.log(`API server running on port ${PORT}!`);
