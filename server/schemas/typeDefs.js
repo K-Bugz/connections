@@ -47,6 +47,9 @@ const typeDefs = gql`
     jobPosts: [Jobpost]
     jobPost(_id: ID!): Jobpost
     message(_id: ID!): Message
+    findAllUserMessages: [Message]
+    findMessagesSender: [Message]
+    findMessagesReciever: [Message]
   }
 
   type Auth {
@@ -63,7 +66,7 @@ const typeDefs = gql`
     removeJob(_id: ID!): User
     deleteJobpost(_id: ID!): Jobpost
     deleteJobposts: [Jobpost]
-    addMessage(reciever: ID!): User
+    addMessage(reciever: ID!): Message
     addReply(replyText: String!, messageId: ID!): Message
   }
 `;

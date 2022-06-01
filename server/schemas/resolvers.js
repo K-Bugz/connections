@@ -28,11 +28,39 @@ const resolvers = {
                 { _id: _id }
             )
         },
-        // Find a message by ID
+        // Find a message by ID of reciever and token is sender
         message: async (parent, args, context) => {
             return Message.findById(args._id)
                 .populate('sender') // get sender or logged in person's info
                 .populate('reciever') // get whom ever they are sending's info
+        },
+        // The goal is to find all the messages of a particular user regardless if started (sender) or recived a message
+        findAllUserMessages: async (parent, args, context) => {
+            const group1 = Message.find({ sender: context.user._id })
+                .populate('sender')
+                .populate('reciever')
+            const group2 = Message.find({ reciever: context.user._id })
+                .populate('sender')
+                .populate('reciever')
+            if (group1 && group2) {
+                return { group1, group2 };
+            }
+            if (group1) {
+                return group1
+            }
+            if (group2) {
+                return group2
+            }
+        },
+        findMessagesSender: async (parent, args, context) => {
+            return Message.find({ sender: context.user._id })
+                .populate('sender')
+                .populate('reciever')
+        },
+        findMessagesReciever: async (parent, args, context) => {
+            return Message.find({ reciever: context.user._id })
+                .populate('sender')
+                .populate('reciever')
         }
     },
 
@@ -144,10 +172,12 @@ const resolvers = {
                 console.log(err)
             }
         },
-        addMessage: async (parent, args, context) => { // This works
+        addMessage: async (parent, args, context) => { // This works but only gives back IDs of users
             try {
-                const newMessage = await Message.create({ sender: context.user._id, reciever: args.reciever });
-                return newMessage;
+                const newMessage = await Message.create({ sender: context.user._id, reciever: args.reciever })
+                // .populate('sender')
+                // .populate('reciever')
+                return newMessage; // does not show up in Apollo
             }
             catch (err) {
                 console.log(err)
