@@ -7,7 +7,8 @@ async function scrapeSites(nameOfCity) {
     try {
         const careerbuilderJobs = await careerBuilderScraper(nameOfCity);
         const indeedJobs = await indeedScraper(nameOfCity);
-        const linkedinJobs = await linkedinScraper(nameOfCity);
+        // We believe that it is taking in international LinkedIN for Austin. 
+        // const linkedinJobs = await linkedinScraper(nameOfCity);
 
         const scrapedJobs = careerbuilderJobs.concat(indeedJobs).concat(linkedinJobs);
         shuffleArray(scrapedJobs);
