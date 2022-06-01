@@ -55,7 +55,7 @@ async function loginScrape() {
 
 async function refreshDBJobs() {
     await removeUnsavedJobs();
-    await loginScrape();
+    await loginScrape("Austin");
     console.log('Jobs in DB refreshed!')
 };
 
