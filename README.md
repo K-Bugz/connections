@@ -28,9 +28,7 @@ Need a job? Need a better job? Lets connect and find a better future together.
 - [Outro](#Outro)
 
 ## Description
-This was a group project to make a fantasy football game called G.O.A.T Scale.
-A place where you can still keep the football season alive!! Test your knowledge
-on fantasy football!!!
+Need a job? Need a better job? Lets connect and find a better future together. 
 
 ![picture of landing page]()
 ![Snapshot of the Desktop version]()
