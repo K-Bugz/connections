@@ -1,5 +1,4 @@
 # Connected
-Need a job? Need a better job? Lets connect and find a better future together. 
 
 ![HTML](https://img.shields.io/badge/HTML-%23dd4b25?logo=html5&style=plastic)
 ![CSS](https://img.shields.io/badge/CSS-%23146eb0?logo=css3&style=plastic)
