@@ -18,7 +18,6 @@ async function scrapeSites(nameOfCity) {
     } catch (err) {
         console.log(err);
     }
-
 };
 
 async function addJobsToDB(scrapedJobsArr) {
