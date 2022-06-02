@@ -30,10 +30,6 @@ Need a job? Need a better job? Lets connect and find a better future together.
 ## Description
 Need a job? Need a better job? Lets connect and find a better future together. 
 
-![picture of landing page]()
-![Snapshot of the Desktop version]()
-![Snapshot of the Mobile version]()
-
 ## Roles
 ### React/ Frontend
 - Dominique Akers
