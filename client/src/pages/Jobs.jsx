@@ -47,15 +47,17 @@ export default function Jobs() {
 
     const nextPage = () => {
         if (currentPage < numOfPages -1 ) {
+            window.scrollTo(0,0);
             setCurrentPage(currentPage + 1);
         }
     }
 
     const previousPage = () => {
         if (currentPage >= 1) {
+            window.scrollTo(0,0);
             setCurrentPage(currentPage - 1);
         }
-    }
+    } 
 
     return (
         <React.Fragment>

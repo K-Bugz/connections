@@ -21,24 +21,28 @@ async function scrapeSites(nameOfCity) {
 };
 
 async function addJobsToDB(scrapedJobsArr) {
-    const savedJobs = await Jobpost.find();
-    if (savedJobs) {
-        const savedLinks = savedJobs.map((job) => {
-            const { link } = job;
-            return link;
-        });
-        const jobsToSave = []
-        scrapedJobsArr.forEach(job => {
-            if (!savedLinks.includes(job.link)) {
-                jobsToSave.push(job);
-            }
-        })
-        await Jobpost.insertMany(jobsToSave);
-        console.log(jobsToSave.length + " new jobs added!");
-        return;
-    };
-    await Jobpost.insertMany(scrapedJobsArr);
-    console.log(scrapedJobsArr.length + " new jobs added!")
+    try {
+        const savedJobs = await Jobpost.find();
+        if (savedJobs.length > 0) {
+            const savedLinks = savedJobs.map((job) => {
+                const { link } = job;
+                return link;
+            });
+            const jobsToSave = []
+            scrapedJobsArr.forEach(job => {
+                if (!savedLinks.includes(job.link)) {
+                    jobsToSave.push(job);
+                }
+            })
+            await Jobpost.insertMany(jobsToSave);
+            console.log(jobsToSave.length + " new jobs added!");
+            return;
+        };
+        await Jobpost.insertMany(scrapedJobsArr);
+        console.log(scrapedJobsArr.length + " new jobs added!")
+    } catch (err) {
+        console.log(err);
+    }
 };
 
 async function removeUnsavedJobs() {
