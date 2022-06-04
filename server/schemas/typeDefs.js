@@ -30,8 +30,8 @@ const typeDefs = gql`
   }
   type Message {
     _id: ID
-    sender: [User]
-    reciever: [User]
+    sender: User
+    reciever: User
     createdAt: String
     reply: [Reply]
   }
@@ -48,7 +48,10 @@ const typeDefs = gql`
     user: User
     jobPosts: [Jobpost]
     jobPost(_id: ID!): Jobpost
-    messages: User
+    message(_id: ID!): Message
+    findAllUserMessages: [Message]
+    findMessagesSender: [Message]
+    findMessagesReciever: [Message]
   }
 
   type Auth {
@@ -65,7 +68,7 @@ const typeDefs = gql`
     removeJob(_id: ID!): User
     deleteJobpost(_id: ID!): Jobpost
     deleteJobposts: [Jobpost]
-    addMessage: User
+    addMessage(reciever: ID!): Message
     addReply(replyText: String!, messageId: ID!): Message
     deleteAllUser: User
     addFriend(_id: ID!): User

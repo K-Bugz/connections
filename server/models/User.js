@@ -50,10 +50,10 @@ const userSchema = new Schema(
             type: Boolean,
             required: true
         },
-        messages: [
+        friends: [
             {
                 type: Schema.Types.ObjectId,
-                ref: 'Message'
+                ref: 'User'
             }
         ],
         connections: [ // connections is the saved jobs
